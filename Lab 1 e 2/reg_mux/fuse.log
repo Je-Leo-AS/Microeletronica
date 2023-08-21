@@ -1,0 +1,14 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux_tb_isim_beh.exe -prj /home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux_tb_beh.prj work.reg_mux_tb 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux.vhd" into library work
+Parsing VHDL file "/home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 83080 KB
+Fuse CPU Usage: 1800 ms
+Compiling package standard
+Compiling package std_logic_1164
+FATAL_ERROR:Simulator:CompilerUtils.cpp:570:1.51 - /usr/bin/gcc not found, please install GCC for your Linux distribution   For technical support on this issue, please visit http://www.xilinx.com/support.

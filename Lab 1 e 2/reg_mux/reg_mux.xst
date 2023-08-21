@@ -1,0 +1,5 @@
+set -tmpdir "/home/jeas/microeletronica/mux_flipflop/reg_mux/xst/projnav.tmp"
+set -xsthdpdir "/home/jeas/microeletronica/mux_flipflop/reg_mux/xst"
+elaborate
+-ifn reg_mux.prj
+-ifmt mixed

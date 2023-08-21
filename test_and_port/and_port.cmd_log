@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/and_port.xst" -ofn "/home/jeas/Microeletronica/and_port.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xbr and_port.ngc and_port.ngd  
+cpldfit -intstyle ise -p xc2c*-*-* -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 and_port.ngd 
+XSLTProcess and_port_build.xml 
+tsim -intstyle ise and_port and_port.nga 
+taengine -intstyle ise -f and_port -w --format html1 -l and_port_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i and_port 
