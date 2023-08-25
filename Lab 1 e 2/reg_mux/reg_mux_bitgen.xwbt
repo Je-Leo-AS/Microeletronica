@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux.ncd
-OUTFILE=/home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux.bit
-FAMILY=Spartan3E
-PART=xc3s500e-5fg320
-WORKINGDIR=/home/jeas/microeletronica/mux_flipflop/reg_mux
-LICENSE=WebPack
-USER_INFO=__0_0_0

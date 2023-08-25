@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "/home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux_tb_isim_beh.exe" -prj "/home/jeas/microeletronica/mux_flipflop/reg_mux/reg_mux_tb_beh.prj" "work.reg_mux_tb" 

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/jeas/Microeletronica/test_and_port/and_port/and_port_isim_beh.exe" -prj "/home/jeas/Microeletronica/test_and_port/and_port/and_port_beh.prj" "work.and_port" 

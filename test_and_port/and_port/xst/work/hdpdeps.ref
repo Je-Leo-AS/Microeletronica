@@ -1,0 +1,8 @@
+V3 3
+FL /home/jeas/Microeletronica/test_and_port/and_port/and_port.vhd 2023/08/16.19:48:38 P.20131013
+EN work/and_port 1692703216 \
+      FL /home/jeas/Microeletronica/test_and_port/and_port/and_port.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/and_port/Behavioral 1692703217 \
+      FL /home/jeas/Microeletronica/test_and_port/and_port/and_port.vhd \
+      EN work/and_port 1692703216

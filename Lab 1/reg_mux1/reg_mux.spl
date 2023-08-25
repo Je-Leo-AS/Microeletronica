@@ -1,0 +1,11 @@
+[Inputs]
+a
+b
+c
+d
+clk
+=sel[1:0]=
+[Outputs]
+=x[3:0]=
+=y[3:0]=
+[BiDir]

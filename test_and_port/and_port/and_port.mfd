@@ -1,0 +1,12 @@
+MDF Database:  version 1.0
+MDF_INFO | and_port | XC2C32A-4-QFG32
+MACROCELL | 0 | 3 | y_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 2 | b  | a
+INPUTP | 2 | 43 | 44
+EQ | 1 | 
+   y = b & a;	// (1 pt, 2 inp)
+
+PIN | a | 64 | 16 | LVCMOS18 | 44 | 1 | 0 | 3
+PIN | b | 64 | 16 | LVCMOS18 | 43 | 1 | 0 | 3
+PIN | y | 536871040 | 0 | LVCMOS18 | 1

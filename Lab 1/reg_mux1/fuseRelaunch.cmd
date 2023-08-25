@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/jeas/Microeletronica/Lab 1/reg_mux1/reg_mux_isim_beh.exe" -prj "/home/jeas/Microeletronica/Lab 1/reg_mux1/reg_mux_beh.prj" "work.reg_mux" 
