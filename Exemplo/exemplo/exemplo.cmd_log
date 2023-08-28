@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Exemplo/exemplo/exemplo.xst" -ofn "/home/jeas/Microeletronica/Exemplo/exemplo/exemplo.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Exemplo/exemplo/exemplo.xst" -ofn "/home/jeas/Microeletronica/Exemplo/exemplo/exemplo.syr" 

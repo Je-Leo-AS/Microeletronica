@@ -1,0 +1,6 @@
+V3 3
+FL /home/jeas/Microeletronica/Exemplo/exemplo/exemplo.vhd 2023/08/25.15:22:11 P.20131013
+EN work/exemplo 0 FL /home/jeas/Microeletronica/Exemplo/exemplo/exemplo.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/exemplo/Behavioral 0 \
+      FL /home/jeas/Microeletronica/Exemplo/exemplo/exemplo.vhd EN work/exemplo 0
