@@ -1,0 +1,7 @@
+net "entrada(3)" loc = "R17";net "entrada(2)" loc = "K18";net "entrada(1)" loc = "H18";net "entrada(0)" loc = "G18";
+net "saida(6)" loc = "CG";net "saida(5)" loc = "CF";net "saida(4)" loc = "CE";net "saida(3)" loc = "CD";net "saida(2)" loc = "CC";net "saida(1)" loc = "CB";net "saida(0)" loc = "CA";
+
+net "anodo(0)" loc = "AN0";
+net "anodo(1)" loc = "AN1";
+net "anodo(2)" loc = "AN2";
+net "anodo(3)" loc = "AN3";

@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 

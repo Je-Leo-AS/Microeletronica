@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLParsers" num="854" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. The expression can not be converted to type <arg fmt="%s" index="3">unsigned</arg>.
+</msg>
+
+</messages>
+
