@@ -43,14 +43,14 @@ architecture Behavioral of Proje4 is
 signal operation :  STD_LOGIC_VECTOR (N-1 downto 0);
 begin
 	with upcode select
-    operation <=     a+b when "000",
-						   a-b when "000",
-						  -a+b when "001",
-					  a+b+cin when "011",
-					  	   a+b when "100",
-						   a-b when "100",
-						  -a+b when "101",
-					  a+b+cin when "111";
+    operation <=     (a+b) when "000",
+		     (a-b) when "000",
+		    (-a+b) when "001",
+		   a+b&cin when "011",
+		       a+b when "100",
+		       a-b when "100",
+		      -a+b when "101",
+	           a+b&cin when "111";
 
 end Behavioral;
 
