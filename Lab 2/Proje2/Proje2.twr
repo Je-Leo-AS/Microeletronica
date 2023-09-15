@@ -1,0 +1,115 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/home/jeas/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml Proje2.twx Proje2.ncd -o Proje2.twr Proje2.pcf -ucf pins.ucf
+
+Design file:              Proje2.ncd
+Physical constraint file: Proje2.pcf
+Device,package,speed:     xc3s1200e,fg320,-5 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+InputVector<0> |saida<0>       |   11.700|
+InputVector<0> |saida<1>       |   12.577|
+InputVector<0> |saida<2>       |   13.582|
+InputVector<0> |saida<3>       |   12.590|
+InputVector<0> |saida<4>       |   11.968|
+InputVector<0> |saida<5>       |   12.793|
+InputVector<0> |saida<6>       |   13.294|
+InputVector<1> |saida<0>       |   12.249|
+InputVector<1> |saida<1>       |   13.126|
+InputVector<1> |saida<2>       |   14.131|
+InputVector<1> |saida<3>       |   13.139|
+InputVector<1> |saida<4>       |   12.517|
+InputVector<1> |saida<5>       |   13.342|
+InputVector<1> |saida<6>       |   13.843|
+InputVector<2> |saida<0>       |   11.727|
+InputVector<2> |saida<1>       |   12.604|
+InputVector<2> |saida<2>       |   13.675|
+InputVector<2> |saida<3>       |   12.617|
+InputVector<2> |saida<4>       |   11.995|
+InputVector<2> |saida<5>       |   12.886|
+InputVector<2> |saida<6>       |   13.387|
+InputVector<3> |saida<0>       |   11.298|
+InputVector<3> |saida<1>       |   12.175|
+InputVector<3> |saida<2>       |   13.180|
+InputVector<3> |saida<3>       |   12.188|
+InputVector<3> |saida<4>       |   11.566|
+InputVector<3> |saida<5>       |   12.391|
+InputVector<3> |saida<6>       |   12.892|
+InputVector<4> |saida<0>       |   10.857|
+InputVector<4> |saida<1>       |   11.734|
+InputVector<4> |saida<2>       |   12.739|
+InputVector<4> |saida<3>       |   11.747|
+InputVector<4> |saida<4>       |   11.125|
+InputVector<4> |saida<5>       |   11.950|
+InputVector<4> |saida<6>       |   12.451|
+InputVector<5> |saida<0>       |    9.984|
+InputVector<5> |saida<1>       |   10.861|
+InputVector<5> |saida<2>       |   12.127|
+InputVector<5> |saida<3>       |   10.874|
+InputVector<5> |saida<4>       |   10.252|
+InputVector<5> |saida<5>       |   11.338|
+InputVector<5> |saida<6>       |   11.839|
+InputVector<6> |saida<0>       |    8.852|
+InputVector<6> |saida<1>       |    9.729|
+InputVector<6> |saida<2>       |   10.974|
+InputVector<6> |saida<3>       |    9.742|
+InputVector<6> |saida<4>       |    9.120|
+InputVector<6> |saida<5>       |   10.185|
+InputVector<6> |saida<6>       |   10.686|
+InputVector<7> |saida<0>       |    8.603|
+InputVector<7> |saida<1>       |    9.919|
+InputVector<7> |saida<2>       |   10.821|
+InputVector<7> |saida<3>       |    9.466|
+InputVector<7> |saida<4>       |    8.888|
+InputVector<7> |saida<5>       |   10.032|
+InputVector<7> |saida<6>       |   10.533|
+---------------+---------------+---------+
+
+
+Analysis completed Fri Sep 15 14:37:28 2023 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 346 MB
+
+
+

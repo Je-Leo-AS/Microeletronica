@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-09-12T09:42:58</DateModified>
+  <DateModified>2023-09-15T14:38:31</DateModified>
   <ModuleName>Proje3</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/jeas/Microeletronica/Lab 2/Proje3/iseconfig/Proje3.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/jeas/Microeletronica/Lab 2/Proje3</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/jeas/Microeletronica/Lab 2/Proje3/</ImplementationReportsDirectory>
   <DateInitialized>2023-09-12T09:42:58</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

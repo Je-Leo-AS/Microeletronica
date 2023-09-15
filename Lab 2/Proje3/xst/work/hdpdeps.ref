@@ -1,7 +1,7 @@
 V3 3
-FL "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd" 2023/09/12.09:44:59 P.20131013
-EN work/Proje3 0 FL "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd" \
+FL "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd" 2023/09/15.15:20:53 P.20131013
+EN work/Proje3 1694802123 FL "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/NUMERIC_STD 1381692181
-AR work/Proje3/Behavioral 0 \
-      FL "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd" EN work/Proje3 0
+AR work/Proje3/Behavioral 1694802124 \
+      FL "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd" EN work/Proje3 1694802123

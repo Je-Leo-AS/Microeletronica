@@ -2,3 +2,28 @@ xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn
 xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
 xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
 xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-5 "Proje3.ngc" Proje3.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o Proje3_map.ncd Proje3.ngd Proje3.pcf 
+par -w -intstyle ise -ol high -t 1 Proje3_map.ncd Proje3.ncd Proje3.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Proje3.twx Proje3.ncd -o Proje3.twr Proje3.pcf 
+bitgen -intstyle ise -f Proje3.ut Proje3.ncd 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proje3.ngc" Proje3.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proje3.ngc" Proje3.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o Proje3_map.ncd Proje3.ngd Proje3.pcf 
+xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proje3.ngc" Proje3.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o Proje3_map.ncd Proje3.ngd Proje3.pcf 
+par -w -intstyle ise -ol high -t 1 Proje3_map.ncd Proje3.ncd Proje3.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Proje3.twx Proje3.ncd -o Proje3.twr Proje3.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f Proje3.ut Proje3.ncd 

@@ -1,19 +1,6 @@
 xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-5 "Proj1.ngc" Proj1.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proj1.ngc" Proj1.ngd  
 map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o Proj1_map.ncd Proj1.ngd Proj1.pcf 
 par -w -intstyle ise -ol high -t 1 Proj1_map.ncd Proj1.ncd Proj1.pcf 
-trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Proj1.twx Proj1.ncd -o Proj1.twr Proj1.pcf 
-xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1200e-fg320-5 "Proj1.ngc" Proj1.ngd  
-map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o Proj1_map.ncd Proj1.ngd Proj1.pcf 
-par -w -intstyle ise -ol high -t 1 Proj1_map.ncd Proj1.ncd Proj1.pcf 
-trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Proj1.twx Proj1.ncd -o Proj1.twr Proj1.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Proj1.twx Proj1.ncd -o Proj1.twr Proj1.pcf -ucf pins.ucf 
 bitgen -intstyle ise -f Proj1.ut Proj1.ncd 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proj1.ngc" Proj1.ngd  
-xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.syr" 
-xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.syr" 
-xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.syr" 
-xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proj1.ngc" Proj1.ngd  
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proj1.ngc" Proj1.ngd  
-map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o Proj1_map.ncd Proj1.ngd Proj1.pcf 

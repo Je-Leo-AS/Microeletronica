@@ -5,28 +5,28 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLParsers" num="808" delta="new" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">46</arg>. <arg fmt="%s" index="3">+</arg> can not have such operands in this context.
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">46</arg>. <arg fmt="%s" index="3">+</arg> can not have such operands in this context.
 </msg>
 
 <msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">47</arg>. <arg fmt="%s" index="3">-</arg> can not have such operands in this context.
 </msg>
 
-<msg type="error" file="HDLParsers" num="808" delta="new" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">48</arg>. <arg fmt="%s" index="3">-</arg> can not have such operands in this context.
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">48</arg>. <arg fmt="%s" index="3">-</arg> can not have such operands in this context.
 </msg>
 
 <msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. <arg fmt="%s" index="3">+</arg> can not have such operands in this context.
 </msg>
 
-<msg type="error" file="HDLParsers" num="808" delta="new" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">50</arg>. <arg fmt="%s" index="3">+</arg> can not have such operands in this context.
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">50</arg>. <arg fmt="%s" index="3">+</arg> can not have such operands in this context.
 </msg>
 
 <msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">51</arg>. <arg fmt="%s" index="3">-</arg> can not have such operands in this context.
 </msg>
 
-<msg type="error" file="HDLParsers" num="808" delta="new" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">52</arg>. <arg fmt="%s" index="3">-</arg> can not have such operands in this context.
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">52</arg>. <arg fmt="%s" index="3">-</arg> can not have such operands in this context.
 </msg>
 
-<msg type="error" file="HDLParsers" num="808" delta="new" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. <arg fmt="%s" index="3">+</arg> can not have such operands in this context.
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. <arg fmt="%s" index="3">+</arg> can not have such operands in this context.
 </msg>
 
 </messages>

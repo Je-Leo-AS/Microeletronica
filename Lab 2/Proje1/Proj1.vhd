@@ -39,17 +39,20 @@ end Proj1;
 architecture Behavioral of Proj1 is
 
 begin
-anodo <="0001";
+anodo <="1110";
         with entrada select
-				saida <= "0110000" when "0001",
-						   "1101101" when "0010",
-						   "1111001" when "0011",
-						   "0110011" when "0100",
-						   "1011011" when "0101",
-						   "1011111" when "0110",
-						   "1110000" when "0111",
-						   "1111111" when "1000",
-						   "1111101" when "1001",
-						   "0000000" when others;						
+				saida <= "1111001" when "0001",
+							"0100100" when "0010",
+							"0110000" when "0011",
+							"0011001" when "0100",
+							"0010010" when "0101",
+							"0000010" when "0110",
+							"1111000" when "0111",
+							"0000000" when "1000",
+							"0010000" when "1001",
+							"1111111" when others;
+
+						 		    
+						    						
 end Behavioral;
 

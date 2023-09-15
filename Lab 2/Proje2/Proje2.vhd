@@ -32,19 +32,34 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Proje2 is
 	Generic ( N : integer := 8);
     Port ( InputVector : in  STD_LOGIC_VECTOR (N-1 downto 0);
-           Peso : out  STD_LOGIC);
+           saida : out  STD_LOGIC_VECTOR (6 downto 0);
+			  anodo : out STD_LOGIC_VECTOR (3 downto 0));
 end Proje2;
 
 architecture Behavioral of Proje2 is
 
-    signal Hamming_Count : INTEGER := 0;
+    type integer_array is array (0 to N) of integer range 0 to N;
+    signal internal: integer_array;
+	 
+	 
 begin
     calculate_hamming: for i in 0 to N-1 generate
     begin
-        Hamming_Count <= Hamming_Count + to_integer(unsigned(InputVector(i)));
+        internal(i+1) <= internal(i) + 1 when InputVector(i) = '1' else internal(i);
     end generate;
-
-    Peso <= Hamming_Count;
-
-end Behavioral;
+	 anodo <= "1110";
+	with internal(N) select
+				saida <= "1111001" when 1,
+							"0100100" when 2,
+							"0110000" when 3,
+							"0011001" when 4,
+							"0010010" when 5,
+							"0000010" when 6,
+							"1111000" when 7,
+							"0000000" when 8,
+							"0010000" when 9,
+							"1111111" when others;
+	
+	
+	end Behavioral;
 

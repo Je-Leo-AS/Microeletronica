@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: Proj1.prj
@@ -108,19 +108,19 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "/home/jeas/Microeletronica/Lab 2/Proje1/Proj1.vhd" in Library work.
-Entity <proj1> compiled.
-Entity <proj1> (Architecture <behavioral>) compiled.
+Entity <Proj1> compiled.
+Entity <Proj1> (Architecture <Behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <Proj1> in library <work> (architecture <behavioral>).
+Analyzing hierarchy for entity <Proj1> in library <work> (architecture <Behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <Proj1> in library <work> (Architecture <behavioral>).
+Analyzing Entity <Proj1> in library <work> (Architecture <Behavioral>).
 Entity <Proj1> analyzed. Unit <Proj1> generated.
 
 
@@ -265,16 +265,16 @@ Timing constraint: Default path analysis
   Total number of paths / destination ports: 28 / 7
 -------------------------------------------------------------------------
 Delay:               5.998ns (Levels of Logic = 3)
-  Source:            entrada<3> (PAD)
+  Source:            entrada<2> (PAD)
   Destination:       saida<6> (PAD)
 
-  Data Path: entrada<3> to saida<6>
+  Data Path: entrada<2> to saida<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             7   1.106   0.754  entrada_3_IBUF (entrada_3_IBUF)
-     LUT4:I0->O            1   0.612   0.357  Mrom_saida41 (saida_4_OBUF)
-     OBUF:I->O                 3.169          saida_4_OBUF (saida<4>)
+     IBUF:I->O             7   1.106   0.754  entrada_2_IBUF (entrada_2_IBUF)
+     LUT4:I0->O            1   0.612   0.357  Mrom_saida51 (saida_5_OBUF)
+     OBUF:I->O                 3.169          saida_5_OBUF (saida<5>)
     ----------------------------------------
     Total                      5.998ns (4.887ns logic, 1.111ns route)
                                        (81.5% logic, 18.5% route)
@@ -282,13 +282,13 @@ Delay:               5.998ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.99 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.48 secs
  
 --> 
 
 
-Total memory usage is 496344 kilobytes
+Total memory usage is 496324 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

@@ -3,7 +3,7 @@ Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 /home/jeas/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 5 -n
-3 -fastpaths -xml Proj1.twx Proj1.ncd -o Proj1.twr Proj1.pcf
+3 -fastpaths -xml Proj1.twx Proj1.ncd -o Proj1.twr Proj1.pcf -ucf pins.ucf
 
 Design file:              Proj1.ncd
 Physical constraint file: Proj1.pcf
@@ -43,38 +43,38 @@ Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-entrada<0>     |a              |    5.804|
-entrada<0>     |b              |    6.109|
-entrada<0>     |c              |    6.053|
-entrada<0>     |d              |    6.011|
-entrada<0>     |e              |    5.846|
-entrada<0>     |f              |    5.553|
-entrada<0>     |g              |    5.560|
-entrada<1>     |a              |    5.473|
-entrada<1>     |b              |    5.841|
-entrada<1>     |c              |    5.835|
-entrada<1>     |d              |    5.235|
-entrada<1>     |e              |    5.723|
-entrada<1>     |f              |    5.334|
-entrada<1>     |g              |    5.291|
-entrada<2>     |a              |    5.843|
-entrada<2>     |b              |    6.374|
-entrada<2>     |c              |    6.341|
-entrada<2>     |d              |    5.278|
-entrada<2>     |e              |    6.267|
-entrada<2>     |f              |    5.791|
-entrada<2>     |g              |    5.789|
-entrada<3>     |a              |    6.203|
-entrada<3>     |b              |    6.411|
-entrada<3>     |c              |    6.411|
-entrada<3>     |d              |    5.858|
-entrada<3>     |e              |    6.156|
-entrada<3>     |f              |    6.191|
-entrada<3>     |g              |    6.142|
+entrada<0>     |saida<0>       |    6.340|
+entrada<0>     |saida<1>       |    7.324|
+entrada<0>     |saida<2>       |    7.872|
+entrada<0>     |saida<3>       |    7.977|
+entrada<0>     |saida<4>       |    7.637|
+entrada<0>     |saida<5>       |    6.930|
+entrada<0>     |saida<6>       |    7.002|
+entrada<1>     |saida<0>       |    6.103|
+entrada<1>     |saida<1>       |    7.109|
+entrada<1>     |saida<2>       |    8.168|
+entrada<1>     |saida<3>       |    7.397|
+entrada<1>     |saida<4>       |    7.895|
+entrada<1>     |saida<5>       |    6.296|
+entrada<1>     |saida<6>       |    6.814|
+entrada<2>     |saida<0>       |    6.610|
+entrada<2>     |saida<1>       |    7.593|
+entrada<2>     |saida<2>       |    8.371|
+entrada<2>     |saida<3>       |    7.702|
+entrada<2>     |saida<4>       |    8.003|
+entrada<2>     |saida<5>       |    6.523|
+entrada<2>     |saida<6>       |    7.368|
+entrada<3>     |saida<0>       |    7.291|
+entrada<3>     |saida<1>       |    8.300|
+entrada<3>     |saida<2>       |    8.825|
+entrada<3>     |saida<3>       |    8.348|
+entrada<3>     |saida<4>       |    8.409|
+entrada<3>     |saida<5>       |    7.160|
+entrada<3>     |saida<6>       |    7.785|
 ---------------+---------------+---------+
 
 
-Analysis completed Tue Sep  5 16:35:47 2023 
+Analysis completed Fri Sep 15 14:31:10 2023 
 --------------------------------------------------------------------------------
 
 Trace Settings:

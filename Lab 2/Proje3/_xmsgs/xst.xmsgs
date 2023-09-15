@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLParsers" num="854" delta="old" >&quot;<arg fmt="%s" index="1">/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd</arg>&quot; Line <arg fmt="%d" index="2">49</arg>. The expression can not be converted to type <arg fmt="%s" index="3">unsigned</arg>.
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">internal&lt;0&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0000</arg>.
 </msg>
 
 </messages>

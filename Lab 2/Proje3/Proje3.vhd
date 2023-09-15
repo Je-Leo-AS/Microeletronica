@@ -34,25 +34,40 @@ use IEEE.NUMERIC_STD.ALL;
 entity Proje3 is
 	 Generic ( N : integer := 8);
     Port ( InputVector : in  STD_LOGIC_VECTOR (N-1 downto 0);
-           OutputVector : out  STD_LOGIC_VECTOR (N-1 downto 0));
+           saida : out  STD_LOGIC_VECTOR (N-1 downto 0));
 end Proje3;
 
 architecture Behavioral of Proje3 is
 
-   signal Hamming_Count : INTEGER := 0;
-	signal update : STD_LOGIC_VECTOR (N-1 downto 0) := (others => '0');
-begin
 
-	
+    type integer_array is array (0 to N) of integer range 0 to N;
+    signal internal: integer_array;
+	 
+--	 signal reorder : std_logic_vector(N-1 downto 0) := (others => '0');
+	 
+begin
     calculate_hamming: for i in 0 to N-1 generate
     begin
-        Hamming_Count <= Hamming_Count + to_integer(unsigned(InputVector(i)));
+        internal(i+1) <= internal(i) + 1 when InputVector(i) = '1' else internal(i);
     end generate;
-	update_vector: for i in N-1-Hamming_Count to N-1 generate
-	begin
-		update(i) <= '1';
-	end generate;
-	
-	OutputVector <= update;
+	 --reorder_vector: for i in 0 to internal(N) generate
+    --begin
+    --    reorder(i) <= '1';
+    --end generate;
+	 
+	 --saida <= reorder;
+
+
+with internal(N) select
+				saida <= "11111110" when 1,
+						   "11111100" when 2,
+							"11111000" when 3,
+							"11110000" when 4,
+							"11100000" when 5,
+							"11000000" when 6,
+							"10000000" when 7,
+							"00000000" when 8,
+							"1111111" when others;
+
 end Behavioral;
 

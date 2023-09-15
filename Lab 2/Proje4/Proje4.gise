@@ -39,6 +39,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1694523144" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1694523144">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1694523144" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="5087018714994692003" xil_pn:start_ts="1694523144">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -64,7 +65,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1694523286" xil_pn:in_ck="3878120893538596" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-517724823855005121" xil_pn:start_ts="1694523284">
+    <transform xil_pn:end_ts="1694796631" xil_pn:in_ck="3878120893538596" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="8005260066534392267" xil_pn:start_ts="1694796626">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Proje4.lso"/>

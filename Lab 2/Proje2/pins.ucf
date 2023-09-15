@@ -1,0 +1,21 @@
+net "InputVector(7)" loc = "R17";
+net "InputVector(6)" loc = "N17";
+net "InputVector(5)" loc = "L13";
+net "InputVector(4)" loc = "L14";
+net "InputVector(3)" loc = "K17";
+net "InputVector(2)" loc = "K18";
+net "InputVector(1)" loc = "H18";
+net "InputVector(0)" loc = "G18";
+
+net "saida(6)" loc = "H14";
+net "saida(5)" loc = "J17";
+net "saida(4)" loc = "G14";
+net "saida(3)" loc = "D16";
+net "saida(2)" loc = "D17";
+net "saida(1)" loc = "F18";
+net "saida(0)" loc = "L18";
+
+net "anodo(0)" loc = "F17";
+net "anodo(1)" loc = "H17";
+net "anodo(2)" loc = "C18";
+net "anodo(3)" loc = "F15";

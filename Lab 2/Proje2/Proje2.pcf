@@ -1,0 +1,26 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Sep 15 14:37:15 2023
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "saida<3>" LOCATE = SITE "D16" LEVEL 1;
+COMP "saida<4>" LOCATE = SITE "G14" LEVEL 1;
+COMP "saida<5>" LOCATE = SITE "J17" LEVEL 1;
+COMP "saida<6>" LOCATE = SITE "H14" LEVEL 1;
+COMP "InputVector<0>" LOCATE = SITE "G18" LEVEL 1;
+COMP "InputVector<1>" LOCATE = SITE "H18" LEVEL 1;
+COMP "InputVector<2>" LOCATE = SITE "K18" LEVEL 1;
+COMP "InputVector<3>" LOCATE = SITE "K17" LEVEL 1;
+COMP "InputVector<4>" LOCATE = SITE "L14" LEVEL 1;
+COMP "InputVector<5>" LOCATE = SITE "L13" LEVEL 1;
+COMP "anodo<0>" LOCATE = SITE "F17" LEVEL 1;
+COMP "InputVector<6>" LOCATE = SITE "N17" LEVEL 1;
+COMP "anodo<1>" LOCATE = SITE "H17" LEVEL 1;
+COMP "InputVector<7>" LOCATE = SITE "R17" LEVEL 1;
+COMP "anodo<2>" LOCATE = SITE "C18" LEVEL 1;
+COMP "anodo<3>" LOCATE = SITE "F15" LEVEL 1;
+COMP "saida<0>" LOCATE = SITE "L18" LEVEL 1;
+COMP "saida<1>" LOCATE = SITE "F18" LEVEL 1;
+COMP "saida<2>" LOCATE = SITE "D17" LEVEL 1;
+SCHEMATIC END;
+

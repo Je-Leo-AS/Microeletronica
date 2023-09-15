@@ -1,7 +1,7 @@
 net "entrada(3)" loc = "R17";
-net "entrada(2)" loc = "K18";
-net "entrada(1)" loc = "H18";
-net "entrada(0)" loc = "G18";
+net "entrada(2)" loc = "N17";
+net "entrada(1)" loc = "L13";
+net "entrada(0)" loc = "L14";
 
 net "saida(6)" loc = "H14";
 net "saida(5)" loc = "J17";
