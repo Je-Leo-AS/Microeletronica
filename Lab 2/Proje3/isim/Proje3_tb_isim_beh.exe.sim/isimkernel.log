@@ -1,0 +1,10 @@
+Command line:
+   Proje3_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60275
+
+Sun Sep 17 15:49:42 2023
+
+
+ Elaboration Time: 0.12 sec

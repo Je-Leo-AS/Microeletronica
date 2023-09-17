@@ -12,7 +12,7 @@ Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: Proje3.prj
@@ -108,20 +108,20 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd" in Library work.
-Entity <proje3> compiled.
-Entity <proje3> (Architecture <behavioral>) compiled.
+Entity <Proje3> compiled.
+Entity <Proje3> (Architecture <Behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <Proje3> in library <work> (architecture <behavioral>) with generics.
+Analyzing hierarchy for entity <Proje3> in library <work> (architecture <Behavioral>) with generics.
 	N = 8
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing generic Entity <Proje3> in library <work> (Architecture <behavioral>).
+Analyzing generic Entity <Proje3> in library <work> (Architecture <Behavioral>).
 	N = 8
 Entity <Proje3> analyzed. Unit <Proje3> generated.
 
@@ -135,7 +135,6 @@ Performing bidirectional port resolution...
 Synthesizing Unit <Proje3>.
     Related source file is "/home/jeas/Microeletronica/Lab 2/Proje3/Proje3.vhd".
 WARNING:Xst:653 - Signal <internal<0>> is used but never assigned. This sourceless signal will be automatically connected to value 0000.
-    Found 16x8-bit ROM for signal <saida>.
     Found 4-bit adder for signal <internal_1$addsub0000> created at line 51.
     Found 4-bit adder for signal <internal_2$addsub0000> created at line 51.
     Found 4-bit adder for signal <internal_3$addsub0000> created at line 51.
@@ -144,9 +143,17 @@ WARNING:Xst:653 - Signal <internal<0>> is used but never assigned. This sourcele
     Found 4-bit adder for signal <internal_6$addsub0000> created at line 51.
     Found 4-bit adder for signal <internal_7$addsub0000> created at line 51.
     Found 4-bit adder for signal <internal_8$addsub0000> created at line 51.
+    Found 4-bit comparator greater for signal <reorder_0$cmp_gt0000> created at line 55.
+    Found 4-bit comparator greater for signal <reorder_1$cmp_gt0000> created at line 55.
+    Found 4-bit comparator greater for signal <reorder_2$cmp_gt0000> created at line 55.
+    Found 4-bit comparator greater for signal <reorder_3$cmp_gt0000> created at line 55.
+    Found 4-bit comparator greater for signal <reorder_4$cmp_gt0000> created at line 55.
+    Found 4-bit comparator greater for signal <reorder_5$cmp_gt0000> created at line 55.
+    Found 4-bit comparator greater for signal <reorder_6$cmp_gt0000> created at line 55.
+    Found 4-bit comparator greater for signal <reorder_7$cmp_gt0000> created at line 55.
     Summary:
-	inferred   1 ROM(s).
 	inferred   8 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
 Unit <Proje3> synthesized.
 
 
@@ -154,10 +161,10 @@ Unit <Proje3> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 16x8-bit ROM                                          : 1
 # Adders/Subtractors                                   : 8
  4-bit adder                                           : 8
+# Comparators                                          : 8
+ 4-bit comparator greater                              : 8
 
 =========================================================================
 
@@ -170,10 +177,10 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 16x8-bit ROM                                          : 1
 # Adders/Subtractors                                   : 8
  4-bit adder                                           : 8
+# Comparators                                          : 8
+ 4-bit comparator greater                              : 8
 
 =========================================================================
 
@@ -220,11 +227,10 @@ Design Statistics
 # IOs                              : 16
 
 Cell Usage :
-# BELS                             : 34
-#      LUT2                        : 2
-#      LUT3                        : 7
-#      LUT4                        : 23
-#      MUXF5                       : 2
+# BELS                             : 28
+#      LUT2                        : 1
+#      LUT3                        : 9
+#      LUT4                        : 18
 # IO Buffers                       : 16
 #      IBUF                        : 8
 #      OBUF                        : 8
@@ -235,8 +241,8 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-5 
 
- Number of Slices:                       18  out of   8672     0%  
- Number of 4 input LUTs:                 32  out of  17344     0%  
+ Number of Slices:                       16  out of   8672     0%  
+ Number of 4 input LUTs:                 28  out of  17344     0%  
  Number of IOs:                          16
  Number of bonded IOBs:                  16  out of    250     6%  
 
@@ -271,7 +277,7 @@ Speed Grade: -5
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 13.992ns
+   Maximum combinational path delay: 11.888ns
 
 Timing Detail:
 --------------
@@ -279,40 +285,38 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 2350 / 8
+  Total number of paths / destination ports: 1266 / 8
 -------------------------------------------------------------------------
-Delay:               13.992ns (Levels of Logic = 10)
-  Source:            InputVector<1> (PAD)
+Delay:               11.888ns (Levels of Logic = 8)
+  Source:            entrada<1> (PAD)
   Destination:       saida<4> (PAD)
 
-  Data Path: InputVector<1> to saida<4>
+  Data Path: entrada<1> to saida<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.106   0.651  InputVector_1_IBUF (InputVector_1_IBUF)
-     LUT3:I0->O            2   0.612   0.532  internal_3_mux0000<1>1 (Madd_internal_4_addsub0000_lut<1>)
-     LUT4:I0->O            1   0.612   0.509  internal_5_mux0000<2>1 (Madd_internal_6_addsub0000_lut<2>)
+     IBUF:I->O             4   1.106   0.651  entrada_1_IBUF (entrada_1_IBUF)
+     LUT3:I0->O            4   0.612   0.568  internal_3_mux0000<0>1 (Madd_internal_4_addsub0000_cy<0>)
+     LUT4:I1->O            1   0.612   0.509  internal_5_mux0000<2>1 (Madd_internal_6_addsub0000_lut<2>)
      LUT3:I0->O            2   0.612   0.532  internal_6_mux0000<2>1 (Madd_internal_7_addsub0000_lut<2>)
      LUT3:I0->O            3   0.612   0.603  internal_7_mux0000<2>1 (Madd_internal_8_addsub0000_lut<2>)
-     LUT3:I0->O            8   0.612   0.646  internal_8_mux0000<2>1 (internal<8><2>)
-     LUT4:I3->O            5   0.612   0.607  Mrom_saida211 (N01)
-     LUT3:I1->O            2   0.612   0.383  Mrom_saida31 (saida_3_OBUF)
-     LUT4:I3->O            1   0.612   0.357  Mrom_saida42 (saida_4_OBUF)
+     LUT3:I0->O            6   0.612   0.721  internal_8_mux0000<2>1 (internal<8><2>)
+     LUT4:I0->O            1   0.612   0.357  saida<4>1 (saida_4_OBUF)
      OBUF:I->O                 3.169          saida_4_OBUF (saida<4>)
     ----------------------------------------
-    Total                     13.992ns (9.171ns logic, 4.821ns route)
-                                       (65.5% logic, 34.5% route)
+    Total                     11.888ns (7.947ns logic, 3.941ns route)
+                                       (66.8% logic, 33.2% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.40 secs
+Total CPU time to Xst completion: 3.44 secs
  
 --> 
 
 
-Total memory usage is 497800 kilobytes
+Total memory usage is 497592 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

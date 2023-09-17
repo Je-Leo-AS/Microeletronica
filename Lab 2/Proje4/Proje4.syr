@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: Proje4.prj
@@ -108,21 +108,217 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" in Library work.
-Entity <proje4> compiled.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 46. + can not have such operands in this context.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 47. - can not have such operands in this context.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 48. - can not have such operands in this context.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 49. + can not have such operands in this context.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 50. + can not have such operands in this context.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 51. - can not have such operands in this context.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 52. - can not have such operands in this context.
-ERROR:HDLParsers:808 - "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd" Line 53. + can not have such operands in this context.
+Entity <Proje4> compiled.
+Entity <Proje4> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Proje4> in library <work> (architecture <Behavioral>) with generics.
+	n = 4
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <Proje4> in library <work> (Architecture <Behavioral>).
+	n = 4
+Entity <Proje4> analyzed. Unit <Proje4> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Proje4>.
+    Related source file is "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.vhd".
+    Found 4-bit 8-to-1 multiplexer for signal <y>.
+    Found 1-bit 8-to-1 multiplexer for signal <cout>.
+    Found 5-bit adder for signal <som_Sig1$add0000> created at line 43.
+    Found 5-bit adder for signal <som_Sig2>.
+    Found 5-bit adder for signal <som_Uns1$add0000> created at line 33.
+    Found 5-bit adder for signal <som_Uns2>.
+    Found 5-bit subtractor for signal <sub_Sig1>.
+    Found 5-bit subtractor for signal <sub_Sig2>.
+    Found 5-bit subtractor for signal <sub_Uns1>.
+    Found 5-bit subtractor for signal <sub_Uns2>.
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred   5 Multiplexer(s).
+Unit <Proje4> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 5-bit adder                                           : 4
+ 5-bit subtractor                                      : 4
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 4-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 5-bit adder                                           : 4
+ 5-bit subtractor                                      : 4
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 4-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Proje4> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Proje4, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Proje4.ngr
+Top Level Output File Name         : Proje4
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 67
+#      LUT2                        : 4
+#      LUT3                        : 24
+#      LUT4                        : 23
+#      MUXF5                       : 11
+#      MUXF6                       : 5
+# IO Buffers                       : 17
+#      IBUF                        : 12
+#      OBUF                        : 5
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-5 
+
+ Number of Slices:                       28  out of   8672     0%  
+ Number of 4 input LUTs:                 51  out of  17344     0%  
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of    250     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 11.380ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 395 / 5
+-------------------------------------------------------------------------
+Delay:               11.380ns (Levels of Logic = 9)
+  Source:            a<0> (PAD)
+  Destination:       cout (PAD)
+
+  Data Path: a<0> to cout
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.106   0.905  a_0_IBUF (a_0_IBUF)
+     LUT4:I1->O            5   0.612   0.568  Madd_som_Sig1_add0000_cy<1>1 (Madd_som_Sig1_add0000_cy<1>)
+     LUT3:I2->O            2   0.612   0.532  Madd_som_Sig2_lut<2>1 (Madd_som_Sig2_lut<2>)
+     LUT4:I0->O            4   0.612   0.568  Madd_som_Sig2_cy<2>1 (Madd_som_Sig2_cy<2>)
+     LUT3:I1->O            1   0.612   0.387  Madd_som_Uns2_xor<4>11 (som_Uns2<4>)
+     LUT3:I2->O            1   0.612   0.000  Mmux_cout_51 (Mmux_cout_51)
+     MUXF5:I1->O           1   0.278   0.000  Mmux_cout_4_f5 (Mmux_cout_4_f5)
+     MUXF6:I0->O           1   0.451   0.357  Mmux_cout_2_f6 (cout_OBUF)
+     OBUF:I->O                 3.169          cout_OBUF (cout)
+    ----------------------------------------
+    Total                     11.380ns (8.064ns logic, 3.317ns route)
+                                       (70.9% logic, 29.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.09 secs
+ 
 --> 
 
 
-Total memory usage is 474788 kilobytes
+Total memory usage is 497476 kilobytes
 
-Number of errors   :    8 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

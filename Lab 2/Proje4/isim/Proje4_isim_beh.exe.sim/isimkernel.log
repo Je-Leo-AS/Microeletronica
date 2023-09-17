@@ -1,0 +1,28 @@
+Command line:
+   Proje4_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  39197
+
+Sun Sep 17 13:11:52 2023
+
+
+ Elaboration Time: 0.05 sec
+
+ Current Memory Usage: 186.032 Meg
+
+ Total Signals          : 18
+ Total Nets             : 73
+ Total Signal Drivers   : 14
+ Total Blocks           : 3
+ Total Primitive Blocks : 3
+ Total Processes        : 14
+ Total Traceable Variables  : 14
+ Total Scalar Nets and Variables : 557
+
+ Total Simulation Time: 0.06 sec
+
+ Current Memory Usage: 261.534 Meg
+
+Sun Sep 17 13:11:55 2023
+

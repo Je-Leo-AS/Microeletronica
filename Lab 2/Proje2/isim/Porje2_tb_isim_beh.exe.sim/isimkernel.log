@@ -1,0 +1,28 @@
+Command line:
+   Porje2_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  35543
+
+Sun Sep 17 13:28:34 2023
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 185.946 Meg
+
+ Total Signals          : 7
+ Total Nets             : 28
+ Total Signal Drivers   : 11
+ Total Blocks           : 11
+ Total Primitive Blocks : 9
+ Total Processes        : 11
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 397
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 261.448 Meg
+
+Sun Sep 17 13:30:17 2023
+

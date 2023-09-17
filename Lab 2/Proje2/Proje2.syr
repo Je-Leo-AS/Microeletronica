@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: Proje2.prj
@@ -108,20 +108,20 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "/home/jeas/Microeletronica/Lab 2/Proje2/Proje2.vhd" in Library work.
-Entity <Proje2> compiled.
-Entity <Proje2> (Architecture <Behavioral>) compiled.
+Entity <proje2> compiled.
+Entity <proje2> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <Proje2> in library <work> (architecture <Behavioral>) with generics.
+Analyzing hierarchy for entity <Proje2> in library <work> (architecture <behavioral>) with generics.
 	N = 8
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing generic Entity <Proje2> in library <work> (Architecture <Behavioral>).
+Analyzing generic Entity <Proje2> in library <work> (Architecture <behavioral>).
 	N = 8
 Entity <Proje2> analyzed. Unit <Proje2> generated.
 
@@ -307,13 +307,13 @@ Delay:               12.871ns (Levels of Logic = 9)
 =========================================================================
 
 
-Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.77 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 2.22 secs
  
 --> 
 
 
-Total memory usage is 497300 kilobytes
+Total memory usage is 497192 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

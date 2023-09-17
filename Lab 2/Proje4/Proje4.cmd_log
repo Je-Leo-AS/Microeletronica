@@ -1,3 +1,9 @@
 xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.syr" 
-xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.syr" 
-xst -intstyle ise -ifn "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.xst" -ofn "/home/jeas/Microeletronica/Lab 2/Proje4/Proje4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pins.ucf -p xc3s1200e-fg320-5 "Proje4.ngc" Proje4.ngd  
+map -intstyle ise -p xc3s1200e-fg320-5 -cm area -ir off -pr off -c 100 -o Proje4_map.ncd Proje4.ngd Proje4.pcf 
+par -w -intstyle ise -ol high -t 1 Proje4_map.ncd Proje4.ncd Proje4.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Proje4.twx Proje4.ncd -o Proje4.twr Proje4.pcf -ucf pins.ucf 
+bitgen -intstyle ise -f Proje4.ut Proje4.ncd 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim Proje4.ngc Proje4_synthesis.v 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Proje4_preroute.twx Proje4_map.ncd -o Proje4_preroute.twr Proje4.pcf -ucf pins.ucf 
+netgen -intstyle ise -s 5  -pcf Proje4.pcf -sdf_anno true -sdf_path "netgen/map" -insert_glbl true -w -dir netgen/map -ofmt verilog -sim Proje4_map.ncd Proje4_map.v 

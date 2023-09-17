@@ -1,11 +1,11 @@
-net "InputVector(7)" loc = "R17";
-net "InputVector(6)" loc = "N17";
-net "InputVector(5)" loc = "L13";
-net "InputVector(4)" loc = "L14";
-net "InputVector(3)" loc = "K17";
-net "InputVector(2)" loc = "K18";
-net "InputVector(1)" loc = "H18";
-net "InputVector(0)" loc = "G18";
+net "entrada(7)" loc = "R17";
+net "entrada(6)" loc = "N17";
+net "entrada(5)" loc = "L13";
+net "entrada(4)" loc = "L14";
+net "entrada(3)" loc = "K17";
+net "entrada(2)" loc = "K18";
+net "entrada(1)" loc = "H18";
+net "entrada(0)" loc = "G18";
 
 net "saida(7)" loc = "P4";
 net "saida(6)" loc = "E4";

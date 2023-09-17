@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/jeas/Microeletronica/Lab 2/Proje2/Porje2_tb_isim_beh.exe" -prj "/home/jeas/Microeletronica/Lab 2/Proje2/Porje2_tb_beh.prj" "work.Porje2_tb" 
