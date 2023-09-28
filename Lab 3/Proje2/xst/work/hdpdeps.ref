@@ -1,0 +1,18 @@
+V3 9
+FL "/home/jeas/Microeletronica/Lab 3/Proje2/counter.vhd" 2023/09/22.15:50:01 P.20131013
+EN work/counter 1695408605 \
+      FL "/home/jeas/Microeletronica/Lab 3/Proje2/counter.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/counter/hardware 1695408606 \
+      FL "/home/jeas/Microeletronica/Lab 3/Proje2/counter.vhd" EN work/counter 1695408605
+FL "/home/jeas/Microeletronica/Lab 3/Proje2/display.vhd" 2023/09/22.14:50:53 P.20131013
+EN work/display 1695408607 \
+      FL "/home/jeas/Microeletronica/Lab 3/Proje2/display.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/display/Behavioral 1695408608 \
+      FL "/home/jeas/Microeletronica/Lab 3/Proje2/display.vhd" EN work/display 1695408607
+FL "/home/jeas/Microeletronica/Lab 3/Proje2/Proje2.vhd" 2023/09/22.17:38:41 P.20131013
+EN work/Proje2 1695415127 FL "/home/jeas/Microeletronica/Lab 3/Proje2/Proje2.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/Proje2/hardware 1695415128 \
+      FL "/home/jeas/Microeletronica/Lab 3/Proje2/Proje2.vhd" EN work/Proje2 1695415127

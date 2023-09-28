@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/jeas/Microeletronica/Lab 3/Proje2/Proje2.ncd
+OUTFILE=/home/jeas/Microeletronica/Lab 3/Proje2/Proje2.bit
+FAMILY=Spartan3E
+PART=xc3s500e-5fg320
+WORKINGDIR=/home/jeas/Microeletronica/Lab 3/Proje2
+LICENSE=WebPack
+USER_INFO=__0_0_0

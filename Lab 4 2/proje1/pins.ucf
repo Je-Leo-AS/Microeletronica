@@ -1,0 +1,18 @@
+net "P1(6)" loc = "H14";
+net "P1(5)" loc = "J17";
+net "P1(4)" loc = "G14";
+net "P1(3)" loc = "D16";
+net "P1(2)" loc = "D17";
+net "P1(1)" loc = "F18";
+net "P1(0)" loc = "L18";
+
+net "clk" loc = "B8"; 
+net "rst" loc = "H13";
+net "ena" loc = "R17"; 
+net "vel(0)" loc = "H18";
+net "vel(1)" loc = "G18";
+
+net "anodo(0)" loc = "F17";
+net "anodo(1)" loc = "H17";
+net "anodo(2)" loc = "C18";
+net "anodo(3)" loc = "F15";

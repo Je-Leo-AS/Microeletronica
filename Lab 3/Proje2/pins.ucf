@@ -1,0 +1,18 @@
+net "led(6)" loc = "H14";
+net "led(5)" loc = "J17";
+net "led(4)" loc = "G14";
+net "led(3)" loc = "D16";
+net "led(2)" loc = "D17";
+net "led(1)" loc = "F18";
+net "led(0)" loc = "L18";
+
+net "rst" loc = "H13";
+net "ena" loc = "R17";
+NET "clk" loc = "B8"; 
+net "up" loc = "N17";
+NET "bt" loc = "E18"
+
+net "anodo(0)" loc = "F17";
+net "anodo(1)" loc = "H17";
+net "anodo(2)" loc = "C18";
+net "anodo(3)" loc = "F15";
