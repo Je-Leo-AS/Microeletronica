@@ -1,0 +1,4 @@
+vhdl isim_temp "display.vhd"
+vhdl isim_temp "counter.vhd"
+vhdl isim_temp "proje1.vhd"
+vhdl isim_temp "proje1_tb.vhd"

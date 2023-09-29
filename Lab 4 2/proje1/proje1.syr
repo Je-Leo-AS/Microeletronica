@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: proje1.prj
@@ -71,7 +71,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -121,7 +121,7 @@ Architecture hardware of Entity proje1 is up to date.
 Analyzing hierarchy for entity <proje1> in library <work> (architecture <hardware>).
 
 Analyzing hierarchy for entity <counter> in library <work> (architecture <hardware>) with generics.
-	Fmax = 50000000
+	Fmax = 8
 	J = 6
 	N = 10
 
@@ -135,10 +135,10 @@ Analyzing Entity <proje1> in library <work> (Architecture <hardware>).
 Entity <proje1> analyzed. Unit <proje1> generated.
 
 Analyzing generic Entity <counter> in library <work> (Architecture <hardware>).
-	Fmax = 50000000
+	Fmax = 8
 	J = 6
 	N = 10
-WARNING:Xst:819 - "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd" line 22: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd" line 23: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <vel>
 Entity <counter> analyzed. Unit <counter> generated.
 
@@ -154,21 +154,21 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <counter>.
     Related source file is "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd".
-    Found 1-of-4 decoder for signal <atraso$mux0000> created at line 28.
-    Found 26-bit register for signal <cont_clk>.
-    Found 26-bit adder for signal <cont_clk$addsub0000> created at line 45.
+    Found 1-of-4 decoder for signal <atraso$mux0000> created at line 29.
+    Found 4-bit register for signal <cont_clk>.
+    Found 4-bit adder for signal <cont_clk$addsub0000> created at line 46.
     Found 3-bit register for signal <dezmin>.
-    Found 3-bit adder for signal <dezmin$addsub0000> created at line 59.
+    Found 3-bit adder for signal <dezmin$addsub0000> created at line 60.
     Found 3-bit register for signal <dezseg>.
-    Found 4-bit adder for signal <dezseg$add0000> created at line 48.
-    Found 3-bit adder for signal <dezseg$addsub0000> created at line 51.
+    Found 4-bit adder for signal <dezseg$add0000> created at line 49.
+    Found 3-bit adder for signal <dezseg$addsub0000> created at line 52.
     Found 4-bit register for signal <unimin>.
-    Found 4-bit adder for signal <unimin$addsub0000> created at line 55.
-    Found 26-bit comparator less for signal <unimin$cmp_lt0000> created at line 44.
+    Found 4-bit adder for signal <unimin$addsub0000> created at line 56.
+    Found 4-bit comparator less for signal <unimin$cmp_lt0000> created at line 45.
     Found 4-bit up counter for signal <uniseg>.
     Summary:
 	inferred   1 Counter(s).
-	inferred  36 D-type flip-flop(s).
+	inferred  14 D-type flip-flop(s).
 	inferred   5 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 	inferred   1 Decoder(s).
@@ -187,15 +187,19 @@ Unit <display> synthesized.
 
 Synthesizing Unit <proje1>.
     Related source file is "/home/jeas/Microeletronica/Lab 4 2/proje1/proje1.vhd".
+WARNING:Xst:646 - Signal <uniseg<31:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <unimin<31:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dezseg<31:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dezmin<31:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 4-bit register for signal <anodo>.
     Found 7-bit up counter for signal <cont_clk>.
-    Found 32-bit register for signal <number>.
+    Found 4-bit register for signal <number>.
     Found 3-bit register for signal <sel_led>.
     Found 7-bit adder for signal <sel_led$add0000> created at line 50.
     Found 3-bit adder for signal <sel_led$addsub0000> created at line 53.
     Summary:
 	inferred   1 Counter(s).
-	inferred  39 D-type flip-flop(s).
+	inferred  11 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
 Unit <proje1> synthesized.
 
@@ -207,21 +211,18 @@ Macro Statistics
 # ROMs                                                 : 1
  16x7-bit ROM                                          : 1
 # Adders/Subtractors                                   : 7
- 26-bit adder                                          : 1
  3-bit adder                                           : 3
- 4-bit adder                                           : 2
+ 4-bit adder                                           : 3
  7-bit adder                                           : 1
 # Counters                                             : 2
  4-bit up counter                                      : 1
  7-bit up counter                                      : 1
 # Registers                                            : 8
- 26-bit register                                       : 1
  3-bit register                                        : 3
- 32-bit register                                       : 1
- 4-bit register                                        : 2
+ 4-bit register                                        : 4
  7-bit register                                        : 1
 # Comparators                                          : 1
- 26-bit comparator less                                : 1
+ 4-bit comparator less                                 : 1
 # Decoders                                             : 1
  1-of-4 decoder                                        : 1
 
@@ -231,34 +232,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <number_31> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_30> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_29> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_28> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_27> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_26> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_25> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_24> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_23> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_22> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_21> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_20> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_19> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_18> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_17> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_16> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_15> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_14> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_13> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_12> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_11> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_10> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_9> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_8> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_7> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_6> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_5> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_4> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -267,17 +240,16 @@ Macro Statistics
 # ROMs                                                 : 1
  16x7-bit ROM                                          : 1
 # Adders/Subtractors                                   : 7
- 26-bit adder                                          : 1
  3-bit adder                                           : 3
- 4-bit adder                                           : 2
+ 4-bit adder                                           : 3
  7-bit adder                                           : 1
 # Counters                                             : 2
  4-bit up counter                                      : 1
  7-bit up counter                                      : 1
-# Registers                                            : 82
- Flip-Flops                                            : 82
+# Registers                                            : 32
+ Flip-Flops                                            : 32
 # Comparators                                          : 1
- 26-bit comparator less                                : 1
+ 4-bit comparator less                                 : 1
 # Decoders                                             : 1
  1-of-4 decoder                                        : 1
 
@@ -288,43 +260,16 @@ Macro Statistics
 =========================================================================
 
 Optimizing unit <proje1> ...
-WARNING:Xst:1293 - FF/Latch <sel_led_2> has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <counter> ...
 
 Optimizing unit <display> ...
-WARNING:Xst:1710 - FF/Latch <number_31> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_30> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_29> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_28> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_27> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_26> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_25> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_24> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_23> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_22> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_21> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_20> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_19> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_18> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_17> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_16> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_15> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_14> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_13> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_12> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_11> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_10> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_9> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_8> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_7> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_6> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_5> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <number_4> (without init value) has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sel_led_2> has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sel_led_2> has a constant value of 0 in block <proje1>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block proje1, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block proje1, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -332,8 +277,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 64
- Flip-Flops                                            : 64
+# Registers                                            : 42
+ Flip-Flops                                            : 42
 
 =========================================================================
 
@@ -362,24 +307,22 @@ Design Statistics
 # IOs                              : 16
 
 Cell Usage :
-# BELS                             : 190
-#      GND                         : 1
-#      INV                         : 6
-#      LUT1                        : 26
-#      LUT2                        : 32
-#      LUT3                        : 15
-#      LUT3_D                      : 1
-#      LUT4                        : 41
-#      LUT4_D                      : 1
-#      MUXCY                       : 35
-#      MUXF5                       : 5
-#      VCC                         : 1
-#      XORCY                       : 26
-# FlipFlops/Latches                : 64
-#      FD                          : 10
-#      FDCE                        : 40
-#      FDR                         : 9
-#      FDS                         : 5
+# BELS                             : 90
+#      INV                         : 3
+#      LUT2                        : 16
+#      LUT2_D                      : 1
+#      LUT2_L                      : 4
+#      LUT3                        : 13
+#      LUT3_L                      : 2
+#      LUT4                        : 43
+#      LUT4_D                      : 5
+#      LUT4_L                      : 1
+#      MUXF5                       : 2
+# FlipFlops/Latches                : 42
+#      FD                          : 6
+#      FDCE                        : 18
+#      FDR                         : 11
+#      FDS                         : 7
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 15
@@ -392,9 +335,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                       63  out of   4656     1%  
- Number of Slice Flip Flops:             64  out of   9312     0%  
- Number of 4 input LUTs:                122  out of   9312     1%  
+ Number of Slices:                       46  out of   4656     0%  
+ Number of Slice Flip Flops:             42  out of   9312     0%  
+ Number of 4 input LUTs:                 88  out of   9312     0%  
  Number of IOs:                          16
  Number of bonded IOBs:                  16  out of    232     6%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -420,7 +363,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 64    |
+clk                                | BUFGP                  | 42    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -428,16 +371,16 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-rst                                | IBUF                   | 40    |
+rst                                | IBUF                   | 18    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 5.959ns (Maximum Frequency: 167.814MHz)
-   Minimum input arrival time before clock: 6.014ns
-   Maximum output required time after clock: 4.063ns
+   Minimum period: 5.617ns (Maximum Frequency: 178.031MHz)
+   Minimum input arrival time before clock: 3.675ns
+   Maximum output required time after clock: 4.134ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -446,115 +389,80 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.959ns (frequency: 167.814MHz)
-  Total number of paths / destination ports: 1596 / 92
+  Clock period: 5.617ns (frequency: 178.031MHz)
+  Total number of paths / destination ports: 519 / 74
 -------------------------------------------------------------------------
-Delay:               5.959ns (Levels of Logic = 12)
-  Source:            Contador/cont_clk_7 (FF)
-  Destination:       Contador/uniseg_3 (FF)
+Delay:               5.617ns (Levels of Logic = 3)
+  Source:            cont_clk_0 (FF)
+  Destination:       anodo_1 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: Contador/cont_clk_7 to Contador/uniseg_3
+  Data Path: cont_clk_0 to anodo_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.514   0.532  Contador/cont_clk_7 (Contador/cont_clk_7)
-     LUT1:I0->O            1   0.612   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<0>_rt (Contador/Mcompar_unimin_cmp_lt0000_cy<0>_rt)
-     MUXCY:S->O            1   0.404   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<0> (Contador/Mcompar_unimin_cmp_lt0000_cy<0>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<1> (Contador/Mcompar_unimin_cmp_lt0000_cy<1>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<2> (Contador/Mcompar_unimin_cmp_lt0000_cy<2>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<3> (Contador/Mcompar_unimin_cmp_lt0000_cy<3>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<4> (Contador/Mcompar_unimin_cmp_lt0000_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<5> (Contador/Mcompar_unimin_cmp_lt0000_cy<5>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<6> (Contador/Mcompar_unimin_cmp_lt0000_cy<6>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<7> (Contador/Mcompar_unimin_cmp_lt0000_cy<7>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Mcompar_unimin_cmp_lt0000_cy<8> (Contador/Mcompar_unimin_cmp_lt0000_cy<8>)
-     MUXCY:CI->O          27   0.399   1.141  Contador/Mcompar_unimin_cmp_lt0000_cy<9> (Contador/Mcompar_unimin_cmp_lt0000_cy<9>)
-     LUT2:I1->O           14   0.612   0.850  Contador/unimin_not00011 (Contador/unimin_not0001)
-     FDCE:CE                   0.483          Contador/unimin_0
+     FDR:C->Q              8   0.514   0.646  cont_clk_0 (cont_clk_0)
+     LUT4:I3->O            2   0.612   0.383  cont_clk_cmp_eq0000_SW1 (N63)
+     LUT4:I3->O           19   0.612   0.991  cont_clk_cmp_eq0000 (cont_clk_cmp_eq0000)
+     LUT2:I1->O            3   0.612   0.451  sel_led_mux0000<0>1 (sel_led_mux0000<0>)
+     FDS:S                     0.795          anodo_1
     ----------------------------------------
-    Total                      5.959ns (3.437ns logic, 2.522ns route)
-                                       (57.7% logic, 42.3% route)
+    Total                      5.617ns (3.145ns logic, 2.472ns route)
+                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 236 / 66
+  Total number of paths / destination ports: 28 / 22
 -------------------------------------------------------------------------
-Offset:              6.014ns (Levels of Logic = 29)
-  Source:            vel<1> (PAD)
-  Destination:       Contador/cont_clk_25 (FF)
+Offset:              3.675ns (Levels of Logic = 3)
+  Source:            vel<0> (PAD)
+  Destination:       Contador/cont_clk_3 (FF)
   Destination Clock: clk rising
 
-  Data Path: vel<1> to Contador/cont_clk_25
+  Data Path: vel<0> to Contador/cont_clk_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.106   0.651  vel_1_IBUF (vel_1_IBUF)
-     LUT3:I0->O            1   0.612   0.000  Contador/Madd_cont_clk_addsub0000_lut<0> (Contador/Madd_cont_clk_addsub0000_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  Contador/Madd_cont_clk_addsub0000_cy<0> (Contador/Madd_cont_clk_addsub0000_cy<0>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<1> (Contador/Madd_cont_clk_addsub0000_cy<1>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<2> (Contador/Madd_cont_clk_addsub0000_cy<2>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<3> (Contador/Madd_cont_clk_addsub0000_cy<3>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<4> (Contador/Madd_cont_clk_addsub0000_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<5> (Contador/Madd_cont_clk_addsub0000_cy<5>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<6> (Contador/Madd_cont_clk_addsub0000_cy<6>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<7> (Contador/Madd_cont_clk_addsub0000_cy<7>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<8> (Contador/Madd_cont_clk_addsub0000_cy<8>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<9> (Contador/Madd_cont_clk_addsub0000_cy<9>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<10> (Contador/Madd_cont_clk_addsub0000_cy<10>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<11> (Contador/Madd_cont_clk_addsub0000_cy<11>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<12> (Contador/Madd_cont_clk_addsub0000_cy<12>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<13> (Contador/Madd_cont_clk_addsub0000_cy<13>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<14> (Contador/Madd_cont_clk_addsub0000_cy<14>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<15> (Contador/Madd_cont_clk_addsub0000_cy<15>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<16> (Contador/Madd_cont_clk_addsub0000_cy<16>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<17> (Contador/Madd_cont_clk_addsub0000_cy<17>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<18> (Contador/Madd_cont_clk_addsub0000_cy<18>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<19> (Contador/Madd_cont_clk_addsub0000_cy<19>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<20> (Contador/Madd_cont_clk_addsub0000_cy<20>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<21> (Contador/Madd_cont_clk_addsub0000_cy<21>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<22> (Contador/Madd_cont_clk_addsub0000_cy<22>)
-     MUXCY:CI->O           1   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<23> (Contador/Madd_cont_clk_addsub0000_cy<23>)
-     MUXCY:CI->O           0   0.052   0.000  Contador/Madd_cont_clk_addsub0000_cy<24> (Contador/Madd_cont_clk_addsub0000_cy<24>)
-     XORCY:CI->O           1   0.699   0.426  Contador/Madd_cont_clk_addsub0000_xor<25> (Contador/cont_clk_addsub0000<25>)
-     LUT2:I1->O            1   0.612   0.000  Contador/cont_clk_mux0001<0>1 (Contador/cont_clk_mux0001<0>)
-     FDCE:D                    0.268          Contador/cont_clk_25
+     IBUF:I->O             5   1.106   0.690  vel_0_IBUF (vel_0_IBUF)
+     LUT4:I0->O            1   0.612   0.387  Contador/cont_clk_mux0001<0>2_SW1 (N5)
+     LUT4:I2->O            1   0.612   0.000  Contador/cont_clk_mux0001<0>2 (Contador/cont_clk_mux0001<0>)
+     FDCE:D                    0.268          Contador/cont_clk_3
     ----------------------------------------
-    Total                      6.014ns (4.937ns logic, 1.077ns route)
-                                       (82.1% logic, 17.9% route)
+    Total                      3.675ns (2.598ns logic, 1.077ns route)
+                                       (70.7% logic, 29.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 11 / 11
 -------------------------------------------------------------------------
-Offset:              4.063ns (Levels of Logic = 1)
-  Source:            anodo_3 (FF)
-  Destination:       anodo<3> (PAD)
+Offset:              4.134ns (Levels of Logic = 1)
+  Source:            anodo_2 (FF)
+  Destination:       anodo<2> (PAD)
   Source Clock:      clk rising
 
-  Data Path: anodo_3 to anodo<3>
+  Data Path: anodo_2 to anodo<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.514   0.380  anodo_3 (anodo_3)
-     OBUF:I->O                 3.169          anodo_3_OBUF (anodo<3>)
+     FDS:C->Q              3   0.514   0.451  anodo_2 (anodo_2)
+     OBUF:I->O                 3.169          anodo_2_OBUF (anodo<2>)
     ----------------------------------------
-    Total                      4.063ns (3.683ns logic, 0.380ns route)
-                                       (90.6% logic, 9.4% route)
+    Total                      4.134ns (3.683ns logic, 0.451ns route)
+                                       (89.1% logic, 10.9% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.74 secs
+Total CPU time to Xst completion: 3.79 secs
  
 --> 
 
 
-Total memory usage is 505732 kilobytes
+Total memory usage is 499604 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   58 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

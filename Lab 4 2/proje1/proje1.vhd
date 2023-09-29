@@ -15,7 +15,7 @@ architecture hardware of proje1 is
 
 
 signal uniseg,dezseg,unimin,dezmin : integer;
-signal number : integer; 
+signal number : integer range 0 to 10 := 0; 
  
 component counter is
 port(

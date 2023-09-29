@@ -3,7 +3,8 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity counter is
-GENERIC ( Fmax : integer := 50000000; -- numero de pulsos do clock 
+GENERIC ( --Fmax : integer := 50000000; -- numero de pulsos do clock
+			 Fmax : integer := 8;
 		    N : integer := 10;
 			 J : integer := 6); -- numero maximo a ser contado
 port(
@@ -21,9 +22,9 @@ architecture hardware of counter is
 begin
 process (clk, rst, ena)
 variable cont_clk : integer range 0 to Fmax;
-variable uniseg, unimin: integer range 0 to N;
-variable dezseg, dezmin: integer range 0 to J;
-variable atraso : integer range 1 to 8;
+variable uniseg, unimin: integer range 0 to N :=0 ;
+variable dezseg, dezmin: integer range 0 to J :=0 ;
+variable atraso : integer range 1 to 8 := 1;
 begin
 	case vel is
 		when "00" => atraso := 1;

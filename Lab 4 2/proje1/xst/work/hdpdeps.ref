@@ -1,20 +1,20 @@
 V3 11
-FL "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd" 2023/09/28.10:00:28 P.20131013
-EN work/counter 1695906083 \
+FL "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd" 2023/09/29.14:46:30 P.20131013
+EN work/counter 1696010564 \
       FL "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/counter/hardware 1695906084 \
-      FL "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd" EN work/counter 1695906083
-FL "/home/jeas/Microeletronica/Lab 4 2/proje1/display.vhd" 2023/09/28.09:33:18 P.20131013
-EN work/display 1695906085 \
+AR work/counter/hardware 1696010565 \
+      FL "/home/jeas/Microeletronica/Lab 4 2/proje1/counter.vhd" EN work/counter 1696010564
+FL "/home/jeas/Microeletronica/Lab 4 2/proje1/display.vhd" 2023/09/29.14:10:47 P.20131013
+EN work/display 1696010566 \
       FL "/home/jeas/Microeletronica/Lab 4 2/proje1/display.vhd" \
       PB ieee/std_logic_1164 1381692176
-AR work/display/hardware 1695906086 \
-      FL "/home/jeas/Microeletronica/Lab 4 2/proje1/display.vhd" EN work/display 1695906085
-FL "/home/jeas/Microeletronica/Lab 4 2/proje1/proje1.vhd" 2023/09/28.09:58:09 P.20131013
-EN work/proje1 1695906087 \
+AR work/display/hardware 1696010567 \
+      FL "/home/jeas/Microeletronica/Lab 4 2/proje1/display.vhd" EN work/display 1696010566
+FL "/home/jeas/Microeletronica/Lab 4 2/proje1/proje1.vhd" 2023/09/29.14:26:31 P.20131013
+EN work/proje1 1696010568 \
       FL "/home/jeas/Microeletronica/Lab 4 2/proje1/proje1.vhd" \
       PB ieee/std_logic_1164 1381692176
-AR work/proje1/hardware 1695906088 \
-      FL "/home/jeas/Microeletronica/Lab 4 2/proje1/proje1.vhd" EN work/proje1 1695906087 \
+AR work/proje1/hardware 1696010569 \
+      FL "/home/jeas/Microeletronica/Lab 4 2/proje1/proje1.vhd" EN work/proje1 1696010568 \
       CP counter CP display
