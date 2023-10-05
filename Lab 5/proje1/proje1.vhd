@@ -54,7 +54,7 @@ begin
 process(clk, rst, aberta, fechada)
 begin
 if(rst = '1') then 
-
+rst_counter <= '1';
 if(fechada = '1') then estado <= fchd;
 elsif(aberta = '1') then estado <= abrt;
 else estado <= pausado_para_fechar;

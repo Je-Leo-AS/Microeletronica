@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity debounce is
  Generic(
-    Fmax  : integer := 50; 
+    Fmax  : integer := 250; 
     s_time : integer := 200000);       
  Port ( clk : in  STD_LOGIC;
            entrada : in  STD_LOGIC;

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Reading design: proje1.prj
@@ -128,7 +128,7 @@ Analyzing hierarchy for entity <counter> in library <work> (architecture <hardwa
 	N = 10
 
 Analyzing hierarchy for entity <debounce> in library <work> (architecture <behavioral>) with generics.
-	Fmax = 50
+	Fmax = 250
 	s_time = 200000
 
 Analyzing hierarchy for entity <display> in library <work> (architecture <hardware>).
@@ -151,7 +151,7 @@ Analyzing generic Entity <counter> in library <work> (Architecture <hardware>).
 Entity <counter> analyzed. Unit <counter> generated.
 
 Analyzing generic Entity <debounce> in library <work> (Architecture <behavioral>).
-	Fmax = 50
+	Fmax = 250
 	s_time = 200000
 Entity <debounce> analyzed. Unit <debounce> generated.
 
@@ -183,11 +183,11 @@ Unit <counter> synthesized.
 
 Synthesizing Unit <debounce>.
     Related source file is "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd".
-    Found 24-bit up counter for signal <count>.
-    Found 24-bit comparator greatequal for signal <count$cmp_ge0000> created at line 26.
+    Found 26-bit up counter for signal <count>.
+    Found 26-bit comparator greatequal for signal <count$cmp_ge0000> created at line 26.
     Found 1-bit xor2 for signal <count$xor0000> created at line 23.
     Found 1-bit register for signal <result>.
-    Found 24-bit comparator less for signal <result$cmp_lt0000> created at line 26.
+    Found 26-bit comparator less for signal <result$cmp_lt0000> created at line 26.
     Summary:
 	inferred   1 Counter(s).
 	inferred   1 D-type flip-flop(s).
@@ -206,19 +206,19 @@ Unit <display> synthesized.
 
 Synthesizing Unit <proje1>.
     Related source file is "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd".
-    Register <rst_counter> equivalent to <ena> has been removed
     Using one-hot encoding for signal <estado>.
     Found 4-bit register for signal <anodo>.
     Found 9-bit up counter for signal <cont_clk>.
     Found 1-bit register for signal <ena>.
     Found 6-bit register for signal <estado>.
     Found 4-bit register for signal <number>.
+    Found 1-bit register for signal <rst_counter>.
     Found 3-bit register for signal <sel_led>.
     Found 9-bit adder for signal <sel_led$add0000> created at line 135.
     Found 3-bit adder for signal <sel_led$addsub0000> created at line 138.
     Summary:
 	inferred   1 Counter(s).
-	inferred  18 D-type flip-flop(s).
+	inferred  19 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
 Unit <proje1> synthesized.
 
@@ -234,18 +234,16 @@ Macro Statistics
  4-bit adder                                           : 1
  9-bit adder                                           : 1
 # Counters                                             : 4
- 24-bit up counter                                     : 1
- 26-bit up counter                                     : 1
+ 26-bit up counter                                     : 2
  4-bit up counter                                      : 1
  9-bit up counter                                      : 1
-# Registers                                            : 12
- 1-bit register                                        : 8
+# Registers                                            : 13
+ 1-bit register                                        : 9
  3-bit register                                        : 2
  4-bit register                                        : 2
 # Comparators                                          : 3
- 24-bit comparator greatequal                          : 1
- 24-bit comparator less                                : 1
- 26-bit comparator less                                : 1
+ 26-bit comparator greatequal                          : 1
+ 26-bit comparator less                                : 2
 # Xors                                                 : 1
  1-bit xor2                                            : 1
 
@@ -267,16 +265,14 @@ Macro Statistics
  4-bit adder                                           : 1
  9-bit adder                                           : 1
 # Counters                                             : 4
- 24-bit up counter                                     : 1
- 26-bit up counter                                     : 1
+ 26-bit up counter                                     : 2
  4-bit up counter                                      : 1
  9-bit up counter                                      : 1
-# Registers                                            : 22
- Flip-Flops                                            : 22
+# Registers                                            : 23
+ Flip-Flops                                            : 23
 # Comparators                                          : 3
- 24-bit comparator greatequal                          : 1
- 24-bit comparator less                                : 1
- 26-bit comparator less                                : 1
+ 26-bit comparator greatequal                          : 1
+ 26-bit comparator less                                : 2
 # Xors                                                 : 1
  1-bit xor2                                            : 1
 
@@ -304,8 +300,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 82
- Flip-Flops                                            : 82
+# Registers                                            : 85
+ Flip-Flops                                            : 85
 
 =========================================================================
 
@@ -334,25 +330,26 @@ Design Statistics
 # IOs                              : 20
 
 Cell Usage :
-# BELS                             : 319
+# BELS                             : 325
 #      GND                         : 1
-#      INV                         : 11
-#      LUT1                        : 46
-#      LUT2                        : 15
-#      LUT3                        : 47
-#      LUT4                        : 38
+#      INV                         : 14
+#      LUT1                        : 48
+#      LUT2                        : 10
+#      LUT3                        : 46
+#      LUT4                        : 41
 #      LUT4_D                      : 2
 #      LUT4_L                      : 1
-#      MUXCY                       : 86
+#      MUXCY                       : 88
 #      MUXF5                       : 3
 #      VCC                         : 1
-#      XORCY                       : 68
-# FlipFlops/Latches                : 82
+#      XORCY                       : 70
+# FlipFlops/Latches                : 85
 #      FD                          : 7
 #      FDCE                        : 32
 #      FDCP                        : 6
 #      FDE                         : 2
-#      FDR                         : 33
+#      FDP                         : 1
+#      FDR                         : 35
 #      FDS                         : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -366,9 +363,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                       82  out of   4656     1%  
- Number of Slice Flip Flops:             82  out of   9312     0%  
- Number of 4 input LUTs:                160  out of   9312     1%  
+ Number of Slices:                       83  out of   4656     1%  
+ Number of Slice Flip Flops:             85  out of   9312     0%  
+ Number of 4 input LUTs:                162  out of   9312     1%  
  Number of IOs:                          20
  Number of bonded IOBs:                  20  out of    232     8%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -394,7 +391,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 82    |
+clk                                | BUFGP                  | 85    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -402,9 +399,9 @@ Asynchronous Control Signals Information:
 --------------------------------------+--------------------------+-------+
 Control Signal                        | Buffer(FF name)          | Load  |
 --------------------------------------+--------------------------+-------+
-ena(ena:Q)                            | NONE(Contador/cont_clk_0)| 32    |
+rst_counter(rst_counter:Q)            | NONE(Contador/cont_clk_0)| 32    |
+rst                                   | IBUF                     | 4     |
 N0(XST_GND:G)                         | NONE(estado_0)           | 3     |
-rst                                   | IBUF                     | 3     |
 estado_2_and0000(estado_2_and00001:O) | NONE(estado_2)           | 1     |
 estado_2_and0001(estado_2_and00011:O) | NONE(estado_2)           | 1     |
 estado_3_and0000(estado_2_and000111:O)| NONE(estado_3)           | 1     |
@@ -418,7 +415,7 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 7.588ns (Maximum Frequency: 131.781MHz)
-   Minimum input arrival time before clock: 4.098ns
+   Minimum input arrival time before clock: 4.105ns
    Maximum output required time after clock: 5.447ns
    Maximum combinational path delay: 4.972ns
 
@@ -429,7 +426,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 7.588ns (frequency: 131.781MHz)
-  Total number of paths / destination ports: 9987 / 149
+  Total number of paths / destination ports: 10145 / 154
 -------------------------------------------------------------------------
 Delay:               7.588ns (Levels of Logic = 11)
   Source:            cont_clk_1 (FF)
@@ -460,9 +457,9 @@ Delay:               7.588ns (Levels of Logic = 11)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 32 / 31
+  Total number of paths / destination ports: 34 / 33
 -------------------------------------------------------------------------
-Offset:              4.098ns (Levels of Logic = 2)
+Offset:              4.105ns (Levels of Logic = 2)
   Source:            remoto (PAD)
   Destination:       button/count_0 (FF)
   Destination Clock: clk rising
@@ -472,11 +469,11 @@ Offset:              4.098ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             3   1.106   0.520  remoto_IBUF (remoto_IBUF)
-     LUT3:I1->O           24   0.612   1.064  button/count_or00001 (button/count_or0000)
+     LUT3:I1->O           26   0.612   1.071  button/count_or00001 (button/count_or0000)
      FDR:R                     0.795          button/count_0
     ----------------------------------------
-    Total                      4.098ns (2.513ns logic, 1.585ns route)
-                                       (61.3% logic, 38.7% route)
+    Total                      4.105ns (2.513ns logic, 1.592ns route)
+                                       (61.2% logic, 38.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -519,13 +516,13 @@ Delay:               4.972ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.51 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.42 secs
  
 --> 
 
 
-Total memory usage is 501672 kilobytes
+Total memory usage is 501828 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    8 (   0 filtered)

@@ -44,10 +44,10 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-aberta      |    1.890(R)|   -0.294(R)|clk_BUFGP         |   0.000|
-fechada     |    2.987(R)|   -0.735(R)|clk_BUFGP         |   0.000|
-remoto      |    2.953(R)|    0.588(R)|clk_BUFGP         |   0.000|
-rst         |    0.899(R)|    0.591(R)|clk_BUFGP         |   0.000|
+aberta      |    1.970(R)|   -0.170(R)|clk_BUFGP         |   0.000|
+fechada     |    3.167(R)|   -0.783(R)|clk_BUFGP         |   0.000|
+remoto      |    2.798(R)|    0.583(R)|clk_BUFGP         |   0.000|
+rst         |    0.603(R)|    0.817(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -55,17 +55,17 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-P1<0>       |    9.576(R)|clk_BUFGP         |   0.000|
-P1<1>       |    8.231(R)|clk_BUFGP         |   0.000|
-P1<2>       |    8.766(R)|clk_BUFGP         |   0.000|
-P1<3>       |    9.335(R)|clk_BUFGP         |   0.000|
-P1<4>       |    8.666(R)|clk_BUFGP         |   0.000|
-P1<5>       |    8.886(R)|clk_BUFGP         |   0.000|
-P1<6>       |    8.367(R)|clk_BUFGP         |   0.000|
-anodo<0>    |    6.976(R)|clk_BUFGP         |   0.000|
-anodo<1>    |    7.203(R)|clk_BUFGP         |   0.000|
-direcao     |    8.640(R)|clk_BUFGP         |   0.000|
-ligar       |    8.053(R)|clk_BUFGP         |   0.000|
+P1<0>       |    9.259(R)|clk_BUFGP         |   0.000|
+P1<1>       |    7.996(R)|clk_BUFGP         |   0.000|
+P1<2>       |    8.835(R)|clk_BUFGP         |   0.000|
+P1<3>       |    9.214(R)|clk_BUFGP         |   0.000|
+P1<4>       |    9.059(R)|clk_BUFGP         |   0.000|
+P1<5>       |    9.065(R)|clk_BUFGP         |   0.000|
+P1<6>       |    8.492(R)|clk_BUFGP         |   0.000|
+anodo<0>    |    7.004(R)|clk_BUFGP         |   0.000|
+anodo<1>    |    7.252(R)|clk_BUFGP         |   0.000|
+direcao     |    7.835(R)|clk_BUFGP         |   0.000|
+ligar       |    7.871(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -73,7 +73,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.264|         |         |         |
+clk            |    7.420|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
@@ -81,11 +81,11 @@ Pad to Pad
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
 aberta         |aberta_led     |    6.473|
-fechada        |fechada_led    |    7.931|
+fechada        |fechada_led    |    7.932|
 ---------------+---------------+---------+
 
 
-Analysis completed Thu Oct  5 11:38:50 2023 
+Analysis completed Thu Oct  5 12:14:44 2023 
 --------------------------------------------------------------------------------
 
 Trace Settings:
