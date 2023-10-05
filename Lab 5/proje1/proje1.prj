@@ -1,0 +1,4 @@
+vhdl work "display.vhd"
+vhdl work "debounce.vhd"
+vhdl work "counter.vhd"
+vhdl work "proje1.vhd"

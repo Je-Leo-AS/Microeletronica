@@ -1,0 +1,25 @@
+V3 15
+FL "/home/jeas/Microeletronica/Lab 5/proje1/counter.vhd" 2023/10/03.11:33:25 P.20131013
+EN work/counter 1696516699 \
+      FL "/home/jeas/Microeletronica/Lab 5/proje1/counter.vhd" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/counter/hardware 1696516700 \
+      FL "/home/jeas/Microeletronica/Lab 5/proje1/counter.vhd" EN work/counter 1696516699
+FL "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd" 2023/10/05.11:38:09 P.20131013
+EN work/debounce 1696516701 \
+      FL "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/debounce/Behavioral 1696516702 \
+      FL "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd" EN work/debounce 1696516701
+FL "/home/jeas/Microeletronica/Lab 5/proje1/display.vhd" 2023/10/03.11:44:49 P.20131013
+EN work/display 1696516703 \
+      FL "/home/jeas/Microeletronica/Lab 5/proje1/display.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/display/hardware 1696516704 \
+      FL "/home/jeas/Microeletronica/Lab 5/proje1/display.vhd" EN work/display 1696516703
+FL "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" 2023/10/05.11:30:24 P.20131013
+EN work/proje1 1696516705 FL "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/proje1/Behavioral 1696516706 \
+      FL "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" EN work/proje1 1696516705 \
+      CP counter CP debounce CP display
