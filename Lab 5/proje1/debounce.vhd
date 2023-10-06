@@ -34,6 +34,5 @@ architecture Behavioral of debounce is
                      end if;
                  end if;
 end process;
-saida <= result;
 end Behavioral;
 
