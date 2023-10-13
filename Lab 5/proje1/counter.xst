@@ -1,0 +1,5 @@
+set -tmpdir "/home/jeas/Microeletronica/Lab 5/proje1/xst/projnav.tmp"
+set -xsthdpdir "/home/jeas/Microeletronica/Lab 5/proje1/xst"
+elaborate
+-ifn counter.prj
+-ifmt mixed

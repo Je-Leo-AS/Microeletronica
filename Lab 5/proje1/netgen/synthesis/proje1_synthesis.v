@@ -7,7 +7,7 @@
 // \   \   \/     Version: P.20131013
 //  \   \         Application: netgen
 //  /   /         Filename: proje1_synthesis.v
-// /___/   /\     Timestamp: Thu Oct  5 09:56:19 2023
+// /___/   /\     Timestamp: Sat Oct  7 19:44:03 2023
 // \   \  /  \ 
 //  \___\/\___\
 //             
@@ -34,12 +34,16 @@
 `timescale 1 ns/1 ps
 
 module proje1 (
-  aberta, clk, direcao, rst, fechada, ligar, remoto, P1, anodo
+  fechada_led, aberta, clk, direcao, rst, aberta_led, flag_led, b_led, fechada, ligar, remoto, P1, anodo
 );
+  output fechada_led;
   input aberta;
   input clk;
   output direcao;
   input rst;
+  output aberta_led;
+  output flag_led;
+  output b_led;
   input fechada;
   output ligar;
   input remoto;
@@ -88,78 +92,148 @@ module proje1 (
   wire \Contador/cont_clk_not0001_inv ;
   wire \Contador/dezseg_mux0002<1>_bdd0 ;
   wire \Contador/dezseg_not0001 ;
-  wire \Contador/ena_inv ;
-  wire \Madd_sel_led_add0000_cy<1>_rt_141 ;
-  wire \Madd_sel_led_add0000_cy<2>_rt_143 ;
-  wire \Madd_sel_led_add0000_cy<3>_rt_145 ;
-  wire \Madd_sel_led_add0000_cy<4>_rt_147 ;
-  wire \Madd_sel_led_add0000_cy<5>_rt_149 ;
-  wire \Madd_sel_led_add0000_cy<6>_rt_151 ;
-  wire \Madd_sel_led_add0000_cy<7>_rt_153 ;
-  wire \Madd_sel_led_add0000_xor<8>_rt_155 ;
-  wire \Mcount_cont_clk_cy<1>_rt_158 ;
-  wire \Mcount_cont_clk_cy<2>_rt_160 ;
-  wire \Mcount_cont_clk_cy<3>_rt_162 ;
-  wire \Mcount_cont_clk_cy<4>_rt_164 ;
-  wire \Mcount_cont_clk_cy<5>_rt_166 ;
-  wire \Mcount_cont_clk_cy<6>_rt_168 ;
-  wire \Mcount_cont_clk_cy<7>_rt_170 ;
-  wire \Mcount_cont_clk_xor<8>_rt_172 ;
+  wire \Contador/rst_inv ;
+  wire \Madd_sel_led_add0000_cy<10>_rt_141 ;
+  wire \Madd_sel_led_add0000_cy<11>_rt_143 ;
+  wire \Madd_sel_led_add0000_cy<12>_rt_145 ;
+  wire \Madd_sel_led_add0000_cy<13>_rt_147 ;
+  wire \Madd_sel_led_add0000_cy<14>_rt_149 ;
+  wire \Madd_sel_led_add0000_cy<15>_rt_151 ;
+  wire \Madd_sel_led_add0000_cy<16>_rt_153 ;
+  wire \Madd_sel_led_add0000_cy<17>_rt_155 ;
+  wire \Madd_sel_led_add0000_cy<18>_rt_157 ;
+  wire \Madd_sel_led_add0000_cy<1>_rt_159 ;
+  wire \Madd_sel_led_add0000_cy<2>_rt_161 ;
+  wire \Madd_sel_led_add0000_cy<3>_rt_163 ;
+  wire \Madd_sel_led_add0000_cy<4>_rt_165 ;
+  wire \Madd_sel_led_add0000_cy<5>_rt_167 ;
+  wire \Madd_sel_led_add0000_cy<6>_rt_169 ;
+  wire \Madd_sel_led_add0000_cy<7>_rt_171 ;
+  wire \Madd_sel_led_add0000_cy<8>_rt_173 ;
+  wire \Madd_sel_led_add0000_cy<9>_rt_175 ;
+  wire \Madd_sel_led_add0000_xor<19>_rt_177 ;
+  wire \Mcount_cont_clk_cy<10>_rt_180 ;
+  wire \Mcount_cont_clk_cy<11>_rt_182 ;
+  wire \Mcount_cont_clk_cy<12>_rt_184 ;
+  wire \Mcount_cont_clk_cy<13>_rt_186 ;
+  wire \Mcount_cont_clk_cy<14>_rt_188 ;
+  wire \Mcount_cont_clk_cy<15>_rt_190 ;
+  wire \Mcount_cont_clk_cy<16>_rt_192 ;
+  wire \Mcount_cont_clk_cy<17>_rt_194 ;
+  wire \Mcount_cont_clk_cy<18>_rt_196 ;
+  wire \Mcount_cont_clk_cy<1>_rt_198 ;
+  wire \Mcount_cont_clk_cy<2>_rt_200 ;
+  wire \Mcount_cont_clk_cy<3>_rt_202 ;
+  wire \Mcount_cont_clk_cy<4>_rt_204 ;
+  wire \Mcount_cont_clk_cy<5>_rt_206 ;
+  wire \Mcount_cont_clk_cy<6>_rt_208 ;
+  wire \Mcount_cont_clk_cy<7>_rt_210 ;
+  wire \Mcount_cont_clk_cy<8>_rt_212 ;
+  wire \Mcount_cont_clk_cy<9>_rt_214 ;
+  wire \Mcount_cont_clk_xor<19>_rt_216 ;
   wire N0;
   wire N01;
   wire N1;
   wire N10;
-  wire N111;
-  wire N13;
+  wire N12;
   wire N14;
+  wire N15;
   wire N16;
+  wire N17;
   wire N18;
   wire N2;
-  wire N20;
-  wire N22;
-  wire N23;
-  wire N24;
-  wire N25;
-  wire N26;
-  wire N27;
-  wire N28;
-  wire N29;
+  wire N21;
   wire N3;
-  wire N30;
-  wire N31;
-  wire N5;
-  wire N7;
+  wire N4;
+  wire N6;
   wire N8;
-  wire P1_0_OBUF_205;
-  wire P1_1_OBUF_206;
-  wire P1_2_OBUF_207;
-  wire P1_3_OBUF_208;
-  wire P1_4_OBUF_209;
-  wire P1_5_OBUF_210;
-  wire P1_6_OBUF_211;
-  wire anodo_0_225;
-  wire anodo_1_226;
-  wire \button/debounced_button_229 ;
-  wire \button/debounced_button_not0001 ;
-  wire \button/prev_debounced_button_231 ;
-  wire clk_BUFGP_233;
+  wire P1_0_OBUF_240;
+  wire P1_1_OBUF_241;
+  wire P1_2_OBUF_242;
+  wire P1_3_OBUF_243;
+  wire P1_4_OBUF_244;
+  wire P1_5_OBUF_245;
+  wire P1_6_OBUF_246;
+  wire aberta_led_OBUF_269;
+  wire anodo_0_274;
+  wire anodo_1_275;
+  wire \button/Madd_count_add0000_cy<10>_rt_281 ;
+  wire \button/Madd_count_add0000_cy<11>_rt_283 ;
+  wire \button/Madd_count_add0000_cy<12>_rt_285 ;
+  wire \button/Madd_count_add0000_cy<13>_rt_287 ;
+  wire \button/Madd_count_add0000_cy<14>_rt_289 ;
+  wire \button/Madd_count_add0000_cy<15>_rt_291 ;
+  wire \button/Madd_count_add0000_cy<16>_rt_293 ;
+  wire \button/Madd_count_add0000_cy<17>_rt_295 ;
+  wire \button/Madd_count_add0000_cy<18>_rt_297 ;
+  wire \button/Madd_count_add0000_cy<1>_rt_299 ;
+  wire \button/Madd_count_add0000_cy<2>_rt_301 ;
+  wire \button/Madd_count_add0000_cy<3>_rt_303 ;
+  wire \button/Madd_count_add0000_cy<4>_rt_305 ;
+  wire \button/Madd_count_add0000_cy<5>_rt_307 ;
+  wire \button/Madd_count_add0000_cy<6>_rt_309 ;
+  wire \button/Madd_count_add0000_cy<7>_rt_311 ;
+  wire \button/Madd_count_add0000_cy<8>_rt_313 ;
+  wire \button/Madd_count_add0000_cy<9>_rt_315 ;
+  wire \button/Madd_count_add0000_xor<19>_rt_317 ;
+  wire \button/Madd_count_add0001_cy<10>_rt_320 ;
+  wire \button/Madd_count_add0001_cy<11>_rt_322 ;
+  wire \button/Madd_count_add0001_cy<12>_rt_324 ;
+  wire \button/Madd_count_add0001_cy<13>_rt_326 ;
+  wire \button/Madd_count_add0001_cy<14>_rt_328 ;
+  wire \button/Madd_count_add0001_cy<15>_rt_330 ;
+  wire \button/Madd_count_add0001_cy<16>_rt_332 ;
+  wire \button/Madd_count_add0001_cy<17>_rt_334 ;
+  wire \button/Madd_count_add0001_cy<18>_rt_336 ;
+  wire \button/Madd_count_add0001_cy<1>_rt_338 ;
+  wire \button/Madd_count_add0001_cy<2>_rt_340 ;
+  wire \button/Madd_count_add0001_cy<3>_rt_342 ;
+  wire \button/Madd_count_add0001_cy<4>_rt_344 ;
+  wire \button/Madd_count_add0001_cy<5>_rt_346 ;
+  wire \button/Madd_count_add0001_cy<6>_rt_348 ;
+  wire \button/Madd_count_add0001_cy<7>_rt_350 ;
+  wire \button/Madd_count_add0001_cy<8>_rt_352 ;
+  wire \button/Madd_count_add0001_cy<9>_rt_354 ;
+  wire \button/Mcompar_count_cmp_ge0000_cy<0>_rt_357 ;
+  wire \button/Mcompar_count_cmp_ge0000_cy<3>_rt_361 ;
+  wire \button/Mcompar_count_cmp_ge0000_cy<7>_rt_366 ;
+  wire \button/Mcompar_count_cmp_ge0000_cy<9>_rt_368 ;
+  wire \button/Mcompar_count_cmp_ge0000_lut[1] ;
+  wire \button/Mcompar_count_cmp_ge0000_lut[2] ;
+  wire \button/Mcompar_count_cmp_ge0000_lut[4] ;
+  wire \button/Mcompar_count_cmp_ge0000_lut[5] ;
+  wire \button/Mcompar_count_cmp_ge0000_lut[6] ;
+  wire \button/Mcompar_count_cmp_ge0000_lut[8] ;
+  wire \button/count_cmp_ge0000 ;
+  wire \button/count_or0000 ;
+  wire \button/result_437 ;
+  wire \button/result_not0001 ;
+  wire clk_BUFGP_440;
   wire cont_clk_cmp_eq0000;
-  wire cont_clk_cmp_eq000020_244;
-  wire cont_clk_cmp_eq00007_245;
-  wire direcao_OBUF_247;
-  wire ena_248;
-  wire ena_mux0000;
-  wire estado_FSM_FFd1_250;
-  wire \estado_FSM_FFd1-In_251 ;
-  wire estado_FSM_FFd2_252;
-  wire estado_FSM_FFd3_253;
-  wire \estado_FSM_FFd3-In ;
-  wire ligar_OBUF_256;
-  wire \number_mux0000<0>1_261 ;
-  wire \number_mux0000<1>1_262 ;
-  wire remoto_IBUF_266;
-  wire rst_IBUF_268;
-  wire rst_inv;
+  wire direcao_OBUF_472;
+  wire direcao_mux0000;
+  wire ena;
+  wire estado_ClkEn_inv;
+  wire estado_ClkEn_inv32_482;
+  wire estado_ClkEn_inv93_483;
+  wire \estado_futuro<1>4_486 ;
+  wire fechada_led_OBUF_493;
+  wire flag_494;
+  wire flag_1_495;
+  wire flag_and0000;
+  wire flag_cmp_eq0000;
+  wire flag_mux0003_499;
+  wire flag_mux0004;
+  wire flag_mux000411_501;
+  wire flag_mux000418_502;
+  wire flag_mux0005;
+  wire flag_not0002;
+  wire flag_not0003;
+  wire ligar_OBUF_507;
+  wire \number_mux0000<0>1_512 ;
+  wire \number_mux0000<1>1_513 ;
+  wire remoto_IBUF_517;
+  wire rst_IBUF_519;
   wire \sel_led_mux0000[0] ;
   wire \sel_led_mux0000[2] ;
   wire [9 : 0] \Contador/Mcompar_dezseg_cmp_lt0000_cy ;
@@ -169,17 +243,29 @@ module proje1 (
   wire [1 : 0] \Contador/dezseg ;
   wire [2 : 1] \Contador/dezseg_mux0002 ;
   wire [3 : 0] \Contador/uniseg ;
-  wire [7 : 0] Madd_sel_led_add0000_cy;
+  wire [18 : 0] Madd_sel_led_add0000_cy;
   wire [0 : 0] Madd_sel_led_add0000_lut;
-  wire [7 : 0] Mcount_cont_clk_cy;
+  wire [18 : 0] Mcount_cont_clk_cy;
   wire [0 : 0] Mcount_cont_clk_lut;
-  wire [8 : 0] Result;
+  wire [19 : 0] Result;
   wire [3 : 2] anodo_mux0000;
-  wire [8 : 0] cont_clk;
+  wire [18 : 0] \button/Madd_count_add0000_cy ;
+  wire [0 : 0] \button/Madd_count_add0000_lut ;
+  wire [18 : 0] \button/Madd_count_add0001_cy ;
+  wire [0 : 0] \button/Madd_count_add0001_lut ;
+  wire [8 : 0] \button/Mcompar_count_cmp_ge0000_cy ;
+  wire [19 : 0] \button/count ;
+  wire [19 : 0] \button/count_add0000 ;
+  wire [19 : 0] \button/count_add0001 ;
+  wire [19 : 0] cont_clk;
+  wire [3 : 0] cont_clk_cmp_eq0000_wg_cy;
+  wire [4 : 0] cont_clk_cmp_eq0000_wg_lut;
+  wire [5 : 0] estado;
+  wire [5 : 0] estado_futuro;
   wire [3 : 0] number;
   wire [3 : 2] number_mux0000;
   wire [2 : 0] sel_led;
-  wire [8 : 0] sel_led_add0000;
+  wire [19 : 0] sel_led_add0000;
   wire [1 : 1] sel_led_mux0003;
   GND   XST_GND (
     .G(N0)
@@ -187,74 +273,131 @@ module proje1 (
   VCC   XST_VCC (
     .P(N1)
   );
-  FDE   ena (
-    .C(clk_BUFGP_233),
-    .CE(rst_inv),
-    .D(ena_mux0000),
-    .Q(ena_248)
-  );
-  FD #(
-    .INIT ( 1'b0 ))
-  sel_led_0 (
-    .C(clk_BUFGP_233),
-    .D(\sel_led_mux0000[0] ),
-    .Q(sel_led[0])
-  );
-  FD #(
-    .INIT ( 1'b0 ))
-  sel_led_1 (
-    .C(clk_BUFGP_233),
-    .D(sel_led_mux0003[1]),
-    .Q(sel_led[1])
-  );
-  FD #(
-    .INIT ( 1'b0 ))
-  sel_led_2 (
-    .C(clk_BUFGP_233),
-    .D(\sel_led_mux0000[2] ),
-    .Q(sel_led[2])
-  );
   FD #(
     .INIT ( 1'b0 ))
   number_2 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(number_mux0000[2]),
     .Q(number[2])
   );
   FD #(
     .INIT ( 1'b0 ))
   number_3 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(number_mux0000[3]),
     .Q(number[3])
   );
   FD   anodo_0 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(anodo_mux0000[3]),
-    .Q(anodo_0_225)
+    .Q(anodo_0_274)
   );
   FD   anodo_1 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(anodo_mux0000[2]),
-    .Q(anodo_1_226)
+    .Q(anodo_1_275)
   );
   FD #(
     .INIT ( 1'b0 ))
-  \button/prev_debounced_button  (
-    .C(clk_BUFGP_233),
-    .D(\button/debounced_button_229 ),
-    .Q(\button/prev_debounced_button_231 )
+  sel_led_0 (
+    .C(clk_BUFGP_440),
+    .D(\sel_led_mux0000[0] ),
+    .Q(sel_led[0])
   );
-  FDR   \button/debounced_button  (
-    .C(clk_BUFGP_233),
-    .D(N1),
-    .R(\button/debounced_button_not0001 ),
-    .Q(\button/debounced_button_229 )
+  FD #(
+    .INIT ( 1'b0 ))
+  sel_led_1 (
+    .C(clk_BUFGP_440),
+    .D(sel_led_mux0003[1]),
+    .Q(sel_led[1])
+  );
+  FD #(
+    .INIT ( 1'b0 ))
+  sel_led_2 (
+    .C(clk_BUFGP_440),
+    .D(\sel_led_mux0000[2] ),
+    .Q(sel_led[2])
+  );
+  LD   flag_mux0003 (
+    .D(flag_mux0005),
+    .G(flag_not0003),
+    .Q(flag_mux0003_499)
+  );
+  LD_1   direcao_11 (
+    .D(direcao_mux0000),
+    .G(estado[1]),
+    .Q(direcao_OBUF_472)
+  );
+  LD_1   ligar_12 (
+    .D(estado[0]),
+    .G(estado[1]),
+    .Q(ligar_OBUF_507)
+  );
+  LD #(
+    .INIT ( 1'b1 ))
+  flag (
+    .D(flag_mux0004),
+    .G(flag_not0002),
+    .Q(flag_494)
+  );
+  FDCE #(
+    .INIT ( 1'b0 ))
+  estado_4 (
+    .C(clk_BUFGP_440),
+    .CE(estado_ClkEn_inv),
+    .CLR(rst_IBUF_519),
+    .D(estado_futuro[4]),
+    .Q(estado[4])
+  );
+  FDCE #(
+    .INIT ( 1'b0 ))
+  estado_3 (
+    .C(clk_BUFGP_440),
+    .CE(estado_ClkEn_inv),
+    .CLR(rst_IBUF_519),
+    .D(estado_futuro[3]),
+    .Q(estado[3])
+  );
+  FDPE #(
+    .INIT ( 1'b0 ))
+  estado_5 (
+    .C(clk_BUFGP_440),
+    .CE(estado_ClkEn_inv),
+    .D(estado_futuro[5]),
+    .PRE(rst_IBUF_519),
+    .Q(estado[5])
+  );
+  FDCE #(
+    .INIT ( 1'b0 ))
+  estado_1 (
+    .C(clk_BUFGP_440),
+    .CE(estado_ClkEn_inv),
+    .CLR(rst_IBUF_519),
+    .D(estado_futuro[1]),
+    .Q(estado[1])
+  );
+  FDCE #(
+    .INIT ( 1'b1 ))
+  estado_0 (
+    .C(clk_BUFGP_440),
+    .CE(estado_ClkEn_inv),
+    .CLR(rst_IBUF_519),
+    .D(estado_futuro[0]),
+    .Q(estado[0])
+  );
+  FDCE #(
+    .INIT ( 1'b0 ))
+  estado_2 (
+    .C(clk_BUFGP_440),
+    .CE(estado_ClkEn_inv),
+    .CLR(rst_IBUF_519),
+    .D(estado_futuro[2]),
+    .Q(estado[2])
   );
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_0 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[0]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[0])
@@ -262,7 +405,7 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_1 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[1]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[1])
@@ -270,7 +413,7 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_2 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[2]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[2])
@@ -278,7 +421,7 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_3 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[3]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[3])
@@ -286,7 +429,7 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_4 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[4]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[4])
@@ -294,7 +437,7 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_5 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[5]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[5])
@@ -302,7 +445,7 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_6 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[6]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[6])
@@ -310,7 +453,7 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_7 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[7]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[7])
@@ -318,103 +461,98 @@ module proje1 (
   FDR #(
     .INIT ( 1'b0 ))
   cont_clk_8 (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .D(Result[8]),
     .R(cont_clk_cmp_eq0000),
     .Q(cont_clk[8])
   );
-  MUXCY   \Mcount_cont_clk_cy<0>  (
-    .CI(N0),
-    .DI(N1),
-    .S(Mcount_cont_clk_lut[0]),
-    .O(Mcount_cont_clk_cy[0])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_9 (
+    .C(clk_BUFGP_440),
+    .D(Result[9]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[9])
   );
-  XORCY   \Mcount_cont_clk_xor<0>  (
-    .CI(N0),
-    .LI(Mcount_cont_clk_lut[0]),
-    .O(Result[0])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_10 (
+    .C(clk_BUFGP_440),
+    .D(Result[10]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[10])
   );
-  MUXCY   \Mcount_cont_clk_cy<1>  (
-    .CI(Mcount_cont_clk_cy[0]),
-    .DI(N0),
-    .S(\Mcount_cont_clk_cy<1>_rt_158 ),
-    .O(Mcount_cont_clk_cy[1])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_11 (
+    .C(clk_BUFGP_440),
+    .D(Result[11]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[11])
   );
-  XORCY   \Mcount_cont_clk_xor<1>  (
-    .CI(Mcount_cont_clk_cy[0]),
-    .LI(\Mcount_cont_clk_cy<1>_rt_158 ),
-    .O(Result[1])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_12 (
+    .C(clk_BUFGP_440),
+    .D(Result[12]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[12])
   );
-  MUXCY   \Mcount_cont_clk_cy<2>  (
-    .CI(Mcount_cont_clk_cy[1]),
-    .DI(N0),
-    .S(\Mcount_cont_clk_cy<2>_rt_160 ),
-    .O(Mcount_cont_clk_cy[2])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_13 (
+    .C(clk_BUFGP_440),
+    .D(Result[13]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[13])
   );
-  XORCY   \Mcount_cont_clk_xor<2>  (
-    .CI(Mcount_cont_clk_cy[1]),
-    .LI(\Mcount_cont_clk_cy<2>_rt_160 ),
-    .O(Result[2])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_14 (
+    .C(clk_BUFGP_440),
+    .D(Result[14]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[14])
   );
-  MUXCY   \Mcount_cont_clk_cy<3>  (
-    .CI(Mcount_cont_clk_cy[2]),
-    .DI(N0),
-    .S(\Mcount_cont_clk_cy<3>_rt_162 ),
-    .O(Mcount_cont_clk_cy[3])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_15 (
+    .C(clk_BUFGP_440),
+    .D(Result[15]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[15])
   );
-  XORCY   \Mcount_cont_clk_xor<3>  (
-    .CI(Mcount_cont_clk_cy[2]),
-    .LI(\Mcount_cont_clk_cy<3>_rt_162 ),
-    .O(Result[3])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_16 (
+    .C(clk_BUFGP_440),
+    .D(Result[16]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[16])
   );
-  MUXCY   \Mcount_cont_clk_cy<4>  (
-    .CI(Mcount_cont_clk_cy[3]),
-    .DI(N0),
-    .S(\Mcount_cont_clk_cy<4>_rt_164 ),
-    .O(Mcount_cont_clk_cy[4])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_17 (
+    .C(clk_BUFGP_440),
+    .D(Result[17]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[17])
   );
-  XORCY   \Mcount_cont_clk_xor<4>  (
-    .CI(Mcount_cont_clk_cy[3]),
-    .LI(\Mcount_cont_clk_cy<4>_rt_164 ),
-    .O(Result[4])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_18 (
+    .C(clk_BUFGP_440),
+    .D(Result[18]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[18])
   );
-  MUXCY   \Mcount_cont_clk_cy<5>  (
-    .CI(Mcount_cont_clk_cy[4]),
-    .DI(N0),
-    .S(\Mcount_cont_clk_cy<5>_rt_166 ),
-    .O(Mcount_cont_clk_cy[5])
-  );
-  XORCY   \Mcount_cont_clk_xor<5>  (
-    .CI(Mcount_cont_clk_cy[4]),
-    .LI(\Mcount_cont_clk_cy<5>_rt_166 ),
-    .O(Result[5])
-  );
-  MUXCY   \Mcount_cont_clk_cy<6>  (
-    .CI(Mcount_cont_clk_cy[5]),
-    .DI(N0),
-    .S(\Mcount_cont_clk_cy<6>_rt_168 ),
-    .O(Mcount_cont_clk_cy[6])
-  );
-  XORCY   \Mcount_cont_clk_xor<6>  (
-    .CI(Mcount_cont_clk_cy[5]),
-    .LI(\Mcount_cont_clk_cy<6>_rt_168 ),
-    .O(Result[6])
-  );
-  MUXCY   \Mcount_cont_clk_cy<7>  (
-    .CI(Mcount_cont_clk_cy[6]),
-    .DI(N0),
-    .S(\Mcount_cont_clk_cy<7>_rt_170 ),
-    .O(Mcount_cont_clk_cy[7])
-  );
-  XORCY   \Mcount_cont_clk_xor<7>  (
-    .CI(Mcount_cont_clk_cy[6]),
-    .LI(\Mcount_cont_clk_cy<7>_rt_170 ),
-    .O(Result[7])
-  );
-  XORCY   \Mcount_cont_clk_xor<8>  (
-    .CI(Mcount_cont_clk_cy[7]),
-    .LI(\Mcount_cont_clk_xor<8>_rt_172 ),
-    .O(Result[8])
+  FDR #(
+    .INIT ( 1'b0 ))
+  cont_clk_19 (
+    .C(clk_BUFGP_440),
+    .D(Result[19]),
+    .R(cont_clk_cmp_eq0000),
+    .Q(cont_clk[19])
   );
   MUXCY   \Madd_sel_led_add0000_cy<0>  (
     .CI(N0),
@@ -430,100 +568,419 @@ module proje1 (
   MUXCY   \Madd_sel_led_add0000_cy<1>  (
     .CI(Madd_sel_led_add0000_cy[0]),
     .DI(N0),
-    .S(\Madd_sel_led_add0000_cy<1>_rt_141 ),
+    .S(\Madd_sel_led_add0000_cy<1>_rt_159 ),
     .O(Madd_sel_led_add0000_cy[1])
   );
   XORCY   \Madd_sel_led_add0000_xor<1>  (
     .CI(Madd_sel_led_add0000_cy[0]),
-    .LI(\Madd_sel_led_add0000_cy<1>_rt_141 ),
+    .LI(\Madd_sel_led_add0000_cy<1>_rt_159 ),
     .O(sel_led_add0000[1])
   );
   MUXCY   \Madd_sel_led_add0000_cy<2>  (
     .CI(Madd_sel_led_add0000_cy[1]),
     .DI(N0),
-    .S(\Madd_sel_led_add0000_cy<2>_rt_143 ),
+    .S(\Madd_sel_led_add0000_cy<2>_rt_161 ),
     .O(Madd_sel_led_add0000_cy[2])
   );
   XORCY   \Madd_sel_led_add0000_xor<2>  (
     .CI(Madd_sel_led_add0000_cy[1]),
-    .LI(\Madd_sel_led_add0000_cy<2>_rt_143 ),
+    .LI(\Madd_sel_led_add0000_cy<2>_rt_161 ),
     .O(sel_led_add0000[2])
   );
   MUXCY   \Madd_sel_led_add0000_cy<3>  (
     .CI(Madd_sel_led_add0000_cy[2]),
     .DI(N0),
-    .S(\Madd_sel_led_add0000_cy<3>_rt_145 ),
+    .S(\Madd_sel_led_add0000_cy<3>_rt_163 ),
     .O(Madd_sel_led_add0000_cy[3])
   );
   XORCY   \Madd_sel_led_add0000_xor<3>  (
     .CI(Madd_sel_led_add0000_cy[2]),
-    .LI(\Madd_sel_led_add0000_cy<3>_rt_145 ),
+    .LI(\Madd_sel_led_add0000_cy<3>_rt_163 ),
     .O(sel_led_add0000[3])
   );
   MUXCY   \Madd_sel_led_add0000_cy<4>  (
     .CI(Madd_sel_led_add0000_cy[3]),
     .DI(N0),
-    .S(\Madd_sel_led_add0000_cy<4>_rt_147 ),
+    .S(\Madd_sel_led_add0000_cy<4>_rt_165 ),
     .O(Madd_sel_led_add0000_cy[4])
   );
   XORCY   \Madd_sel_led_add0000_xor<4>  (
     .CI(Madd_sel_led_add0000_cy[3]),
-    .LI(\Madd_sel_led_add0000_cy<4>_rt_147 ),
+    .LI(\Madd_sel_led_add0000_cy<4>_rt_165 ),
     .O(sel_led_add0000[4])
   );
   MUXCY   \Madd_sel_led_add0000_cy<5>  (
     .CI(Madd_sel_led_add0000_cy[4]),
     .DI(N0),
-    .S(\Madd_sel_led_add0000_cy<5>_rt_149 ),
+    .S(\Madd_sel_led_add0000_cy<5>_rt_167 ),
     .O(Madd_sel_led_add0000_cy[5])
   );
   XORCY   \Madd_sel_led_add0000_xor<5>  (
     .CI(Madd_sel_led_add0000_cy[4]),
-    .LI(\Madd_sel_led_add0000_cy<5>_rt_149 ),
+    .LI(\Madd_sel_led_add0000_cy<5>_rt_167 ),
     .O(sel_led_add0000[5])
   );
   MUXCY   \Madd_sel_led_add0000_cy<6>  (
     .CI(Madd_sel_led_add0000_cy[5]),
     .DI(N0),
-    .S(\Madd_sel_led_add0000_cy<6>_rt_151 ),
+    .S(\Madd_sel_led_add0000_cy<6>_rt_169 ),
     .O(Madd_sel_led_add0000_cy[6])
   );
   XORCY   \Madd_sel_led_add0000_xor<6>  (
     .CI(Madd_sel_led_add0000_cy[5]),
-    .LI(\Madd_sel_led_add0000_cy<6>_rt_151 ),
+    .LI(\Madd_sel_led_add0000_cy<6>_rt_169 ),
     .O(sel_led_add0000[6])
   );
   MUXCY   \Madd_sel_led_add0000_cy<7>  (
     .CI(Madd_sel_led_add0000_cy[6]),
     .DI(N0),
-    .S(\Madd_sel_led_add0000_cy<7>_rt_153 ),
+    .S(\Madd_sel_led_add0000_cy<7>_rt_171 ),
     .O(Madd_sel_led_add0000_cy[7])
   );
   XORCY   \Madd_sel_led_add0000_xor<7>  (
     .CI(Madd_sel_led_add0000_cy[6]),
-    .LI(\Madd_sel_led_add0000_cy<7>_rt_153 ),
+    .LI(\Madd_sel_led_add0000_cy<7>_rt_171 ),
     .O(sel_led_add0000[7])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<8>  (
+    .CI(Madd_sel_led_add0000_cy[7]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<8>_rt_173 ),
+    .O(Madd_sel_led_add0000_cy[8])
   );
   XORCY   \Madd_sel_led_add0000_xor<8>  (
     .CI(Madd_sel_led_add0000_cy[7]),
-    .LI(\Madd_sel_led_add0000_xor<8>_rt_155 ),
+    .LI(\Madd_sel_led_add0000_cy<8>_rt_173 ),
     .O(sel_led_add0000[8])
   );
-  FDP #(
-    .INIT ( 1'b0 ))
-  estado_FSM_FFd3 (
-    .C(clk_BUFGP_233),
-    .D(\estado_FSM_FFd3-In ),
-    .PRE(rst_IBUF_268),
-    .Q(estado_FSM_FFd3_253)
+  MUXCY   \Madd_sel_led_add0000_cy<9>  (
+    .CI(Madd_sel_led_add0000_cy[8]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<9>_rt_175 ),
+    .O(Madd_sel_led_add0000_cy[9])
   );
-  FDC #(
-    .INIT ( 1'b0 ))
-  estado_FSM_FFd1 (
-    .C(clk_BUFGP_233),
-    .CLR(rst_IBUF_268),
-    .D(\estado_FSM_FFd1-In_251 ),
-    .Q(estado_FSM_FFd1_250)
+  XORCY   \Madd_sel_led_add0000_xor<9>  (
+    .CI(Madd_sel_led_add0000_cy[8]),
+    .LI(\Madd_sel_led_add0000_cy<9>_rt_175 ),
+    .O(sel_led_add0000[9])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<10>  (
+    .CI(Madd_sel_led_add0000_cy[9]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<10>_rt_141 ),
+    .O(Madd_sel_led_add0000_cy[10])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<10>  (
+    .CI(Madd_sel_led_add0000_cy[9]),
+    .LI(\Madd_sel_led_add0000_cy<10>_rt_141 ),
+    .O(sel_led_add0000[10])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<11>  (
+    .CI(Madd_sel_led_add0000_cy[10]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<11>_rt_143 ),
+    .O(Madd_sel_led_add0000_cy[11])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<11>  (
+    .CI(Madd_sel_led_add0000_cy[10]),
+    .LI(\Madd_sel_led_add0000_cy<11>_rt_143 ),
+    .O(sel_led_add0000[11])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<12>  (
+    .CI(Madd_sel_led_add0000_cy[11]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<12>_rt_145 ),
+    .O(Madd_sel_led_add0000_cy[12])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<12>  (
+    .CI(Madd_sel_led_add0000_cy[11]),
+    .LI(\Madd_sel_led_add0000_cy<12>_rt_145 ),
+    .O(sel_led_add0000[12])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<13>  (
+    .CI(Madd_sel_led_add0000_cy[12]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<13>_rt_147 ),
+    .O(Madd_sel_led_add0000_cy[13])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<13>  (
+    .CI(Madd_sel_led_add0000_cy[12]),
+    .LI(\Madd_sel_led_add0000_cy<13>_rt_147 ),
+    .O(sel_led_add0000[13])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<14>  (
+    .CI(Madd_sel_led_add0000_cy[13]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<14>_rt_149 ),
+    .O(Madd_sel_led_add0000_cy[14])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<14>  (
+    .CI(Madd_sel_led_add0000_cy[13]),
+    .LI(\Madd_sel_led_add0000_cy<14>_rt_149 ),
+    .O(sel_led_add0000[14])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<15>  (
+    .CI(Madd_sel_led_add0000_cy[14]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<15>_rt_151 ),
+    .O(Madd_sel_led_add0000_cy[15])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<15>  (
+    .CI(Madd_sel_led_add0000_cy[14]),
+    .LI(\Madd_sel_led_add0000_cy<15>_rt_151 ),
+    .O(sel_led_add0000[15])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<16>  (
+    .CI(Madd_sel_led_add0000_cy[15]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<16>_rt_153 ),
+    .O(Madd_sel_led_add0000_cy[16])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<16>  (
+    .CI(Madd_sel_led_add0000_cy[15]),
+    .LI(\Madd_sel_led_add0000_cy<16>_rt_153 ),
+    .O(sel_led_add0000[16])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<17>  (
+    .CI(Madd_sel_led_add0000_cy[16]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<17>_rt_155 ),
+    .O(Madd_sel_led_add0000_cy[17])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<17>  (
+    .CI(Madd_sel_led_add0000_cy[16]),
+    .LI(\Madd_sel_led_add0000_cy<17>_rt_155 ),
+    .O(sel_led_add0000[17])
+  );
+  MUXCY   \Madd_sel_led_add0000_cy<18>  (
+    .CI(Madd_sel_led_add0000_cy[17]),
+    .DI(N0),
+    .S(\Madd_sel_led_add0000_cy<18>_rt_157 ),
+    .O(Madd_sel_led_add0000_cy[18])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<18>  (
+    .CI(Madd_sel_led_add0000_cy[17]),
+    .LI(\Madd_sel_led_add0000_cy<18>_rt_157 ),
+    .O(sel_led_add0000[18])
+  );
+  XORCY   \Madd_sel_led_add0000_xor<19>  (
+    .CI(Madd_sel_led_add0000_cy[18]),
+    .LI(\Madd_sel_led_add0000_xor<19>_rt_177 ),
+    .O(sel_led_add0000[19])
+  );
+  MUXCY   \Mcount_cont_clk_cy<0>  (
+    .CI(N0),
+    .DI(N1),
+    .S(Mcount_cont_clk_lut[0]),
+    .O(Mcount_cont_clk_cy[0])
+  );
+  XORCY   \Mcount_cont_clk_xor<0>  (
+    .CI(N0),
+    .LI(Mcount_cont_clk_lut[0]),
+    .O(Result[0])
+  );
+  MUXCY   \Mcount_cont_clk_cy<1>  (
+    .CI(Mcount_cont_clk_cy[0]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<1>_rt_198 ),
+    .O(Mcount_cont_clk_cy[1])
+  );
+  XORCY   \Mcount_cont_clk_xor<1>  (
+    .CI(Mcount_cont_clk_cy[0]),
+    .LI(\Mcount_cont_clk_cy<1>_rt_198 ),
+    .O(Result[1])
+  );
+  MUXCY   \Mcount_cont_clk_cy<2>  (
+    .CI(Mcount_cont_clk_cy[1]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<2>_rt_200 ),
+    .O(Mcount_cont_clk_cy[2])
+  );
+  XORCY   \Mcount_cont_clk_xor<2>  (
+    .CI(Mcount_cont_clk_cy[1]),
+    .LI(\Mcount_cont_clk_cy<2>_rt_200 ),
+    .O(Result[2])
+  );
+  MUXCY   \Mcount_cont_clk_cy<3>  (
+    .CI(Mcount_cont_clk_cy[2]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<3>_rt_202 ),
+    .O(Mcount_cont_clk_cy[3])
+  );
+  XORCY   \Mcount_cont_clk_xor<3>  (
+    .CI(Mcount_cont_clk_cy[2]),
+    .LI(\Mcount_cont_clk_cy<3>_rt_202 ),
+    .O(Result[3])
+  );
+  MUXCY   \Mcount_cont_clk_cy<4>  (
+    .CI(Mcount_cont_clk_cy[3]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<4>_rt_204 ),
+    .O(Mcount_cont_clk_cy[4])
+  );
+  XORCY   \Mcount_cont_clk_xor<4>  (
+    .CI(Mcount_cont_clk_cy[3]),
+    .LI(\Mcount_cont_clk_cy<4>_rt_204 ),
+    .O(Result[4])
+  );
+  MUXCY   \Mcount_cont_clk_cy<5>  (
+    .CI(Mcount_cont_clk_cy[4]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<5>_rt_206 ),
+    .O(Mcount_cont_clk_cy[5])
+  );
+  XORCY   \Mcount_cont_clk_xor<5>  (
+    .CI(Mcount_cont_clk_cy[4]),
+    .LI(\Mcount_cont_clk_cy<5>_rt_206 ),
+    .O(Result[5])
+  );
+  MUXCY   \Mcount_cont_clk_cy<6>  (
+    .CI(Mcount_cont_clk_cy[5]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<6>_rt_208 ),
+    .O(Mcount_cont_clk_cy[6])
+  );
+  XORCY   \Mcount_cont_clk_xor<6>  (
+    .CI(Mcount_cont_clk_cy[5]),
+    .LI(\Mcount_cont_clk_cy<6>_rt_208 ),
+    .O(Result[6])
+  );
+  MUXCY   \Mcount_cont_clk_cy<7>  (
+    .CI(Mcount_cont_clk_cy[6]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<7>_rt_210 ),
+    .O(Mcount_cont_clk_cy[7])
+  );
+  XORCY   \Mcount_cont_clk_xor<7>  (
+    .CI(Mcount_cont_clk_cy[6]),
+    .LI(\Mcount_cont_clk_cy<7>_rt_210 ),
+    .O(Result[7])
+  );
+  MUXCY   \Mcount_cont_clk_cy<8>  (
+    .CI(Mcount_cont_clk_cy[7]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<8>_rt_212 ),
+    .O(Mcount_cont_clk_cy[8])
+  );
+  XORCY   \Mcount_cont_clk_xor<8>  (
+    .CI(Mcount_cont_clk_cy[7]),
+    .LI(\Mcount_cont_clk_cy<8>_rt_212 ),
+    .O(Result[8])
+  );
+  MUXCY   \Mcount_cont_clk_cy<9>  (
+    .CI(Mcount_cont_clk_cy[8]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<9>_rt_214 ),
+    .O(Mcount_cont_clk_cy[9])
+  );
+  XORCY   \Mcount_cont_clk_xor<9>  (
+    .CI(Mcount_cont_clk_cy[8]),
+    .LI(\Mcount_cont_clk_cy<9>_rt_214 ),
+    .O(Result[9])
+  );
+  MUXCY   \Mcount_cont_clk_cy<10>  (
+    .CI(Mcount_cont_clk_cy[9]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<10>_rt_180 ),
+    .O(Mcount_cont_clk_cy[10])
+  );
+  XORCY   \Mcount_cont_clk_xor<10>  (
+    .CI(Mcount_cont_clk_cy[9]),
+    .LI(\Mcount_cont_clk_cy<10>_rt_180 ),
+    .O(Result[10])
+  );
+  MUXCY   \Mcount_cont_clk_cy<11>  (
+    .CI(Mcount_cont_clk_cy[10]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<11>_rt_182 ),
+    .O(Mcount_cont_clk_cy[11])
+  );
+  XORCY   \Mcount_cont_clk_xor<11>  (
+    .CI(Mcount_cont_clk_cy[10]),
+    .LI(\Mcount_cont_clk_cy<11>_rt_182 ),
+    .O(Result[11])
+  );
+  MUXCY   \Mcount_cont_clk_cy<12>  (
+    .CI(Mcount_cont_clk_cy[11]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<12>_rt_184 ),
+    .O(Mcount_cont_clk_cy[12])
+  );
+  XORCY   \Mcount_cont_clk_xor<12>  (
+    .CI(Mcount_cont_clk_cy[11]),
+    .LI(\Mcount_cont_clk_cy<12>_rt_184 ),
+    .O(Result[12])
+  );
+  MUXCY   \Mcount_cont_clk_cy<13>  (
+    .CI(Mcount_cont_clk_cy[12]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<13>_rt_186 ),
+    .O(Mcount_cont_clk_cy[13])
+  );
+  XORCY   \Mcount_cont_clk_xor<13>  (
+    .CI(Mcount_cont_clk_cy[12]),
+    .LI(\Mcount_cont_clk_cy<13>_rt_186 ),
+    .O(Result[13])
+  );
+  MUXCY   \Mcount_cont_clk_cy<14>  (
+    .CI(Mcount_cont_clk_cy[13]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<14>_rt_188 ),
+    .O(Mcount_cont_clk_cy[14])
+  );
+  XORCY   \Mcount_cont_clk_xor<14>  (
+    .CI(Mcount_cont_clk_cy[13]),
+    .LI(\Mcount_cont_clk_cy<14>_rt_188 ),
+    .O(Result[14])
+  );
+  MUXCY   \Mcount_cont_clk_cy<15>  (
+    .CI(Mcount_cont_clk_cy[14]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<15>_rt_190 ),
+    .O(Mcount_cont_clk_cy[15])
+  );
+  XORCY   \Mcount_cont_clk_xor<15>  (
+    .CI(Mcount_cont_clk_cy[14]),
+    .LI(\Mcount_cont_clk_cy<15>_rt_190 ),
+    .O(Result[15])
+  );
+  MUXCY   \Mcount_cont_clk_cy<16>  (
+    .CI(Mcount_cont_clk_cy[15]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<16>_rt_192 ),
+    .O(Mcount_cont_clk_cy[16])
+  );
+  XORCY   \Mcount_cont_clk_xor<16>  (
+    .CI(Mcount_cont_clk_cy[15]),
+    .LI(\Mcount_cont_clk_cy<16>_rt_192 ),
+    .O(Result[16])
+  );
+  MUXCY   \Mcount_cont_clk_cy<17>  (
+    .CI(Mcount_cont_clk_cy[16]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<17>_rt_194 ),
+    .O(Mcount_cont_clk_cy[17])
+  );
+  XORCY   \Mcount_cont_clk_xor<17>  (
+    .CI(Mcount_cont_clk_cy[16]),
+    .LI(\Mcount_cont_clk_cy<17>_rt_194 ),
+    .O(Result[17])
+  );
+  MUXCY   \Mcount_cont_clk_cy<18>  (
+    .CI(Mcount_cont_clk_cy[17]),
+    .DI(N0),
+    .S(\Mcount_cont_clk_cy<18>_rt_196 ),
+    .O(Mcount_cont_clk_cy[18])
+  );
+  XORCY   \Mcount_cont_clk_xor<18>  (
+    .CI(Mcount_cont_clk_cy[17]),
+    .LI(\Mcount_cont_clk_cy<18>_rt_196 ),
+    .O(Result[18])
+  );
+  XORCY   \Mcount_cont_clk_xor<19>  (
+    .CI(Mcount_cont_clk_cy[18]),
+    .LI(\Mcount_cont_clk_xor<19>_rt_216 ),
+    .O(Result[19])
   );
   MUXCY   \Contador/Mcompar_dezseg_cmp_lt0000_cy<9>  (
     .CI(\Contador/Mcompar_dezseg_cmp_lt0000_cy [8]),
@@ -615,270 +1072,270 @@ module proje1 (
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/uniseg_3  (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .CE(\Contador/dezseg_not0001 ),
-    .CLR(rst_IBUF_268),
+    .CLR(ena),
     .D(\Contador/Mcount_uniseg3 ),
     .Q(\Contador/uniseg [3])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/uniseg_2  (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .CE(\Contador/dezseg_not0001 ),
-    .CLR(rst_IBUF_268),
+    .CLR(ena),
     .D(\Contador/Mcount_uniseg2 ),
     .Q(\Contador/uniseg [2])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/uniseg_1  (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .CE(\Contador/dezseg_not0001 ),
-    .CLR(rst_IBUF_268),
+    .CLR(ena),
     .D(\Contador/Mcount_uniseg1 ),
     .Q(\Contador/uniseg [1])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/uniseg_0  (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .CE(\Contador/dezseg_not0001 ),
-    .CLR(rst_IBUF_268),
+    .CLR(ena),
     .D(\Contador/Mcount_uniseg ),
     .Q(\Contador/uniseg [0])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_25  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk25 ),
     .Q(\Contador/cont_clk [25])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_24  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk24 ),
     .Q(\Contador/cont_clk [24])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_23  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk23 ),
     .Q(\Contador/cont_clk [23])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_22  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk22 ),
     .Q(\Contador/cont_clk [22])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_21  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk21 ),
     .Q(\Contador/cont_clk [21])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_20  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk20 ),
     .Q(\Contador/cont_clk [20])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_19  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk19 ),
     .Q(\Contador/cont_clk [19])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_18  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk18 ),
     .Q(\Contador/cont_clk [18])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_17  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk17 ),
     .Q(\Contador/cont_clk [17])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_16  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk16 ),
     .Q(\Contador/cont_clk [16])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_15  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk15 ),
     .Q(\Contador/cont_clk [15])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_14  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk14 ),
     .Q(\Contador/cont_clk [14])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_13  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk13 ),
     .Q(\Contador/cont_clk [13])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_12  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk12 ),
     .Q(\Contador/cont_clk [12])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_11  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk11 ),
     .Q(\Contador/cont_clk [11])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_10  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk10 ),
     .Q(\Contador/cont_clk [10])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_9  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk9 ),
     .Q(\Contador/cont_clk [9])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_8  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk8 ),
     .Q(\Contador/cont_clk [8])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_7  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk7 ),
     .Q(\Contador/cont_clk [7])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_6  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk6 ),
     .Q(\Contador/cont_clk [6])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_5  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk5 ),
     .Q(\Contador/cont_clk [5])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_4  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk4 ),
     .Q(\Contador/cont_clk [4])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_3  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk3 ),
     .Q(\Contador/cont_clk [3])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_2  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk2 ),
     .Q(\Contador/cont_clk [2])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_1  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk1 ),
     .Q(\Contador/cont_clk [1])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/cont_clk_0  (
-    .C(clk_BUFGP_233),
-    .CE(\Contador/ena_inv ),
-    .CLR(rst_IBUF_268),
+    .C(clk_BUFGP_440),
+    .CE(\Contador/rst_inv ),
+    .CLR(ena),
     .D(\Contador/Mcount_cont_clk ),
     .Q(\Contador/cont_clk [0])
   );
@@ -1154,11 +1611,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [11])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<11>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [11]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [11])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<10>  (
@@ -1173,11 +1630,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [10])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<10>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [10]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [10])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<9>  (
@@ -1192,11 +1649,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [9])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<9>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [9]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [9])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<8>  (
@@ -1211,11 +1668,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [8])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<8>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [8]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [8])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<7>  (
@@ -1230,11 +1687,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [7])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<7>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [7]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [7])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<6>  (
@@ -1249,11 +1706,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [6])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<6>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [6]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [6])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<5>  (
@@ -1268,11 +1725,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [5])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<5>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [5]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [5])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<4>  (
@@ -1287,11 +1744,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [4])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<4>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [4]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [4])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<3>  (
@@ -1306,11 +1763,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [3])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<3>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [3]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [3])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<2>  (
@@ -1325,11 +1782,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [2])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<2>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [2]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [2])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<1>  (
@@ -1344,11 +1801,11 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [1])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<1>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [1]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [1])
   );
   XORCY   \Contador/Mcount_cont_clk_xor<0>  (
@@ -1363,45 +1820,836 @@ module proje1 (
     .O(\Contador/Mcount_cont_clk_cy [0])
   );
   LUT3 #(
-    .INIT ( 8'hAC ))
+    .INIT ( 8'hE4 ))
   \Contador/Mcount_cont_clk_lut<0>  (
-    .I0(N0),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
     .I1(\Contador/cont_clk [0]),
-    .I2(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I2(N0),
     .O(\Contador/Mcount_cont_clk_lut [0])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/dezseg_1  (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .CE(\Contador/dezseg_not0001 ),
-    .CLR(rst_IBUF_268),
+    .CLR(ena),
     .D(\Contador/dezseg_mux0002 [1]),
     .Q(\Contador/dezseg [1])
   );
   FDCE #(
     .INIT ( 1'b0 ))
   \Contador/dezseg_0  (
-    .C(clk_BUFGP_233),
+    .C(clk_BUFGP_440),
     .CE(\Contador/dezseg_not0001 ),
-    .CLR(rst_IBUF_268),
+    .CLR(ena),
     .D(\Contador/dezseg_mux0002 [2]),
     .Q(\Contador/dezseg [0])
   );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<9>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [8]),
+    .DI(N0),
+    .S(\button/Mcompar_count_cmp_ge0000_cy<9>_rt_368 ),
+    .O(\button/count_cmp_ge0000 )
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<8>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [7]),
+    .DI(N1),
+    .S(\button/Mcompar_count_cmp_ge0000_lut[8] ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [8])
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<7>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [6]),
+    .DI(N0),
+    .S(\button/Mcompar_count_cmp_ge0000_cy<7>_rt_366 ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [7])
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<6>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [5]),
+    .DI(N1),
+    .S(\button/Mcompar_count_cmp_ge0000_lut[6] ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [6])
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<5>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [4]),
+    .DI(N0),
+    .S(\button/Mcompar_count_cmp_ge0000_lut[5] ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [5])
+  );
+  LUT2 #(
+    .INIT ( 4'h8 ))
+  \button/Mcompar_count_cmp_ge0000_lut<5>  (
+    .I0(\button/count_add0001 [14]),
+    .I1(\button/count_add0001 [15]),
+    .O(\button/Mcompar_count_cmp_ge0000_lut[5] )
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<4>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [3]),
+    .DI(N1),
+    .S(\button/Mcompar_count_cmp_ge0000_lut[4] ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [4])
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  \button/Mcompar_count_cmp_ge0000_lut<4>  (
+    .I0(\button/count_add0001 [10]),
+    .I1(\button/count_add0001 [11]),
+    .I2(\button/count_add0001 [12]),
+    .I3(\button/count_add0001 [13]),
+    .O(\button/Mcompar_count_cmp_ge0000_lut[4] )
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<3>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [2]),
+    .DI(N0),
+    .S(\button/Mcompar_count_cmp_ge0000_cy<3>_rt_361 ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [3])
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<2>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [1]),
+    .DI(N1),
+    .S(\button/Mcompar_count_cmp_ge0000_lut[2] ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [2])
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<1>  (
+    .CI(\button/Mcompar_count_cmp_ge0000_cy [0]),
+    .DI(N1),
+    .S(\button/Mcompar_count_cmp_ge0000_lut[1] ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [1])
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  \button/Mcompar_count_cmp_ge0000_lut<1>  (
+    .I0(\button/count_add0001 [4]),
+    .I1(\button/count_add0001 [5]),
+    .I2(\button/count_add0001 [6]),
+    .I3(\button/count_add0001 [7]),
+    .O(\button/Mcompar_count_cmp_ge0000_lut[1] )
+  );
+  MUXCY   \button/Mcompar_count_cmp_ge0000_cy<0>  (
+    .CI(N1),
+    .DI(N0),
+    .S(\button/Mcompar_count_cmp_ge0000_cy<0>_rt_357 ),
+    .O(\button/Mcompar_count_cmp_ge0000_cy [0])
+  );
+  XORCY   \button/Madd_count_add0000_xor<19>  (
+    .CI(\button/Madd_count_add0000_cy [18]),
+    .LI(\button/Madd_count_add0000_xor<19>_rt_317 ),
+    .O(\button/count_add0000 [19])
+  );
+  XORCY   \button/Madd_count_add0000_xor<18>  (
+    .CI(\button/Madd_count_add0000_cy [17]),
+    .LI(\button/Madd_count_add0000_cy<18>_rt_297 ),
+    .O(\button/count_add0000 [18])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<18>  (
+    .CI(\button/Madd_count_add0000_cy [17]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<18>_rt_297 ),
+    .O(\button/Madd_count_add0000_cy [18])
+  );
+  XORCY   \button/Madd_count_add0000_xor<17>  (
+    .CI(\button/Madd_count_add0000_cy [16]),
+    .LI(\button/Madd_count_add0000_cy<17>_rt_295 ),
+    .O(\button/count_add0000 [17])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<17>  (
+    .CI(\button/Madd_count_add0000_cy [16]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<17>_rt_295 ),
+    .O(\button/Madd_count_add0000_cy [17])
+  );
+  XORCY   \button/Madd_count_add0000_xor<16>  (
+    .CI(\button/Madd_count_add0000_cy [15]),
+    .LI(\button/Madd_count_add0000_cy<16>_rt_293 ),
+    .O(\button/count_add0000 [16])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<16>  (
+    .CI(\button/Madd_count_add0000_cy [15]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<16>_rt_293 ),
+    .O(\button/Madd_count_add0000_cy [16])
+  );
+  XORCY   \button/Madd_count_add0000_xor<15>  (
+    .CI(\button/Madd_count_add0000_cy [14]),
+    .LI(\button/Madd_count_add0000_cy<15>_rt_291 ),
+    .O(\button/count_add0000 [15])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<15>  (
+    .CI(\button/Madd_count_add0000_cy [14]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<15>_rt_291 ),
+    .O(\button/Madd_count_add0000_cy [15])
+  );
+  XORCY   \button/Madd_count_add0000_xor<14>  (
+    .CI(\button/Madd_count_add0000_cy [13]),
+    .LI(\button/Madd_count_add0000_cy<14>_rt_289 ),
+    .O(\button/count_add0000 [14])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<14>  (
+    .CI(\button/Madd_count_add0000_cy [13]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<14>_rt_289 ),
+    .O(\button/Madd_count_add0000_cy [14])
+  );
+  XORCY   \button/Madd_count_add0000_xor<13>  (
+    .CI(\button/Madd_count_add0000_cy [12]),
+    .LI(\button/Madd_count_add0000_cy<13>_rt_287 ),
+    .O(\button/count_add0000 [13])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<13>  (
+    .CI(\button/Madd_count_add0000_cy [12]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<13>_rt_287 ),
+    .O(\button/Madd_count_add0000_cy [13])
+  );
+  XORCY   \button/Madd_count_add0000_xor<12>  (
+    .CI(\button/Madd_count_add0000_cy [11]),
+    .LI(\button/Madd_count_add0000_cy<12>_rt_285 ),
+    .O(\button/count_add0000 [12])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<12>  (
+    .CI(\button/Madd_count_add0000_cy [11]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<12>_rt_285 ),
+    .O(\button/Madd_count_add0000_cy [12])
+  );
+  XORCY   \button/Madd_count_add0000_xor<11>  (
+    .CI(\button/Madd_count_add0000_cy [10]),
+    .LI(\button/Madd_count_add0000_cy<11>_rt_283 ),
+    .O(\button/count_add0000 [11])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<11>  (
+    .CI(\button/Madd_count_add0000_cy [10]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<11>_rt_283 ),
+    .O(\button/Madd_count_add0000_cy [11])
+  );
+  XORCY   \button/Madd_count_add0000_xor<10>  (
+    .CI(\button/Madd_count_add0000_cy [9]),
+    .LI(\button/Madd_count_add0000_cy<10>_rt_281 ),
+    .O(\button/count_add0000 [10])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<10>  (
+    .CI(\button/Madd_count_add0000_cy [9]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<10>_rt_281 ),
+    .O(\button/Madd_count_add0000_cy [10])
+  );
+  XORCY   \button/Madd_count_add0000_xor<9>  (
+    .CI(\button/Madd_count_add0000_cy [8]),
+    .LI(\button/Madd_count_add0000_cy<9>_rt_315 ),
+    .O(\button/count_add0000 [9])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<9>  (
+    .CI(\button/Madd_count_add0000_cy [8]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<9>_rt_315 ),
+    .O(\button/Madd_count_add0000_cy [9])
+  );
+  XORCY   \button/Madd_count_add0000_xor<8>  (
+    .CI(\button/Madd_count_add0000_cy [7]),
+    .LI(\button/Madd_count_add0000_cy<8>_rt_313 ),
+    .O(\button/count_add0000 [8])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<8>  (
+    .CI(\button/Madd_count_add0000_cy [7]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<8>_rt_313 ),
+    .O(\button/Madd_count_add0000_cy [8])
+  );
+  XORCY   \button/Madd_count_add0000_xor<7>  (
+    .CI(\button/Madd_count_add0000_cy [6]),
+    .LI(\button/Madd_count_add0000_cy<7>_rt_311 ),
+    .O(\button/count_add0000 [7])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<7>  (
+    .CI(\button/Madd_count_add0000_cy [6]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<7>_rt_311 ),
+    .O(\button/Madd_count_add0000_cy [7])
+  );
+  XORCY   \button/Madd_count_add0000_xor<6>  (
+    .CI(\button/Madd_count_add0000_cy [5]),
+    .LI(\button/Madd_count_add0000_cy<6>_rt_309 ),
+    .O(\button/count_add0000 [6])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<6>  (
+    .CI(\button/Madd_count_add0000_cy [5]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<6>_rt_309 ),
+    .O(\button/Madd_count_add0000_cy [6])
+  );
+  XORCY   \button/Madd_count_add0000_xor<5>  (
+    .CI(\button/Madd_count_add0000_cy [4]),
+    .LI(\button/Madd_count_add0000_cy<5>_rt_307 ),
+    .O(\button/count_add0000 [5])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<5>  (
+    .CI(\button/Madd_count_add0000_cy [4]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<5>_rt_307 ),
+    .O(\button/Madd_count_add0000_cy [5])
+  );
+  XORCY   \button/Madd_count_add0000_xor<4>  (
+    .CI(\button/Madd_count_add0000_cy [3]),
+    .LI(\button/Madd_count_add0000_cy<4>_rt_305 ),
+    .O(\button/count_add0000 [4])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<4>  (
+    .CI(\button/Madd_count_add0000_cy [3]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<4>_rt_305 ),
+    .O(\button/Madd_count_add0000_cy [4])
+  );
+  XORCY   \button/Madd_count_add0000_xor<3>  (
+    .CI(\button/Madd_count_add0000_cy [2]),
+    .LI(\button/Madd_count_add0000_cy<3>_rt_303 ),
+    .O(\button/count_add0000 [3])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<3>  (
+    .CI(\button/Madd_count_add0000_cy [2]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<3>_rt_303 ),
+    .O(\button/Madd_count_add0000_cy [3])
+  );
+  XORCY   \button/Madd_count_add0000_xor<2>  (
+    .CI(\button/Madd_count_add0000_cy [1]),
+    .LI(\button/Madd_count_add0000_cy<2>_rt_301 ),
+    .O(\button/count_add0000 [2])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<2>  (
+    .CI(\button/Madd_count_add0000_cy [1]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<2>_rt_301 ),
+    .O(\button/Madd_count_add0000_cy [2])
+  );
+  XORCY   \button/Madd_count_add0000_xor<1>  (
+    .CI(\button/Madd_count_add0000_cy [0]),
+    .LI(\button/Madd_count_add0000_cy<1>_rt_299 ),
+    .O(\button/count_add0000 [1])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<1>  (
+    .CI(\button/Madd_count_add0000_cy [0]),
+    .DI(N0),
+    .S(\button/Madd_count_add0000_cy<1>_rt_299 ),
+    .O(\button/Madd_count_add0000_cy [1])
+  );
+  XORCY   \button/Madd_count_add0000_xor<0>  (
+    .CI(N0),
+    .LI(\button/Madd_count_add0000_lut [0]),
+    .O(\button/count_add0000 [0])
+  );
+  MUXCY   \button/Madd_count_add0000_cy<0>  (
+    .CI(N0),
+    .DI(N1),
+    .S(\button/Madd_count_add0000_lut [0]),
+    .O(\button/Madd_count_add0000_cy [0])
+  );
+  XORCY   \button/Madd_count_add0001_xor<19>  (
+    .CI(\button/Madd_count_add0001_cy [18]),
+    .LI(\button/count [19]),
+    .O(\button/count_add0001 [19])
+  );
+  XORCY   \button/Madd_count_add0001_xor<18>  (
+    .CI(\button/Madd_count_add0001_cy [17]),
+    .LI(\button/Madd_count_add0001_cy<18>_rt_336 ),
+    .O(\button/count_add0001 [18])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<18>  (
+    .CI(\button/Madd_count_add0001_cy [17]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<18>_rt_336 ),
+    .O(\button/Madd_count_add0001_cy [18])
+  );
+  XORCY   \button/Madd_count_add0001_xor<17>  (
+    .CI(\button/Madd_count_add0001_cy [16]),
+    .LI(\button/Madd_count_add0001_cy<17>_rt_334 ),
+    .O(\button/count_add0001 [17])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<17>  (
+    .CI(\button/Madd_count_add0001_cy [16]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<17>_rt_334 ),
+    .O(\button/Madd_count_add0001_cy [17])
+  );
+  XORCY   \button/Madd_count_add0001_xor<16>  (
+    .CI(\button/Madd_count_add0001_cy [15]),
+    .LI(\button/Madd_count_add0001_cy<16>_rt_332 ),
+    .O(\button/count_add0001 [16])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<16>  (
+    .CI(\button/Madd_count_add0001_cy [15]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<16>_rt_332 ),
+    .O(\button/Madd_count_add0001_cy [16])
+  );
+  XORCY   \button/Madd_count_add0001_xor<15>  (
+    .CI(\button/Madd_count_add0001_cy [14]),
+    .LI(\button/Madd_count_add0001_cy<15>_rt_330 ),
+    .O(\button/count_add0001 [15])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<15>  (
+    .CI(\button/Madd_count_add0001_cy [14]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<15>_rt_330 ),
+    .O(\button/Madd_count_add0001_cy [15])
+  );
+  XORCY   \button/Madd_count_add0001_xor<14>  (
+    .CI(\button/Madd_count_add0001_cy [13]),
+    .LI(\button/Madd_count_add0001_cy<14>_rt_328 ),
+    .O(\button/count_add0001 [14])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<14>  (
+    .CI(\button/Madd_count_add0001_cy [13]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<14>_rt_328 ),
+    .O(\button/Madd_count_add0001_cy [14])
+  );
+  XORCY   \button/Madd_count_add0001_xor<13>  (
+    .CI(\button/Madd_count_add0001_cy [12]),
+    .LI(\button/Madd_count_add0001_cy<13>_rt_326 ),
+    .O(\button/count_add0001 [13])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<13>  (
+    .CI(\button/Madd_count_add0001_cy [12]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<13>_rt_326 ),
+    .O(\button/Madd_count_add0001_cy [13])
+  );
+  XORCY   \button/Madd_count_add0001_xor<12>  (
+    .CI(\button/Madd_count_add0001_cy [11]),
+    .LI(\button/Madd_count_add0001_cy<12>_rt_324 ),
+    .O(\button/count_add0001 [12])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<12>  (
+    .CI(\button/Madd_count_add0001_cy [11]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<12>_rt_324 ),
+    .O(\button/Madd_count_add0001_cy [12])
+  );
+  XORCY   \button/Madd_count_add0001_xor<11>  (
+    .CI(\button/Madd_count_add0001_cy [10]),
+    .LI(\button/Madd_count_add0001_cy<11>_rt_322 ),
+    .O(\button/count_add0001 [11])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<11>  (
+    .CI(\button/Madd_count_add0001_cy [10]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<11>_rt_322 ),
+    .O(\button/Madd_count_add0001_cy [11])
+  );
+  XORCY   \button/Madd_count_add0001_xor<10>  (
+    .CI(\button/Madd_count_add0001_cy [9]),
+    .LI(\button/Madd_count_add0001_cy<10>_rt_320 ),
+    .O(\button/count_add0001 [10])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<10>  (
+    .CI(\button/Madd_count_add0001_cy [9]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<10>_rt_320 ),
+    .O(\button/Madd_count_add0001_cy [10])
+  );
+  XORCY   \button/Madd_count_add0001_xor<9>  (
+    .CI(\button/Madd_count_add0001_cy [8]),
+    .LI(\button/Madd_count_add0001_cy<9>_rt_354 ),
+    .O(\button/count_add0001 [9])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<9>  (
+    .CI(\button/Madd_count_add0001_cy [8]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<9>_rt_354 ),
+    .O(\button/Madd_count_add0001_cy [9])
+  );
+  XORCY   \button/Madd_count_add0001_xor<8>  (
+    .CI(\button/Madd_count_add0001_cy [7]),
+    .LI(\button/Madd_count_add0001_cy<8>_rt_352 ),
+    .O(\button/count_add0001 [8])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<8>  (
+    .CI(\button/Madd_count_add0001_cy [7]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<8>_rt_352 ),
+    .O(\button/Madd_count_add0001_cy [8])
+  );
+  XORCY   \button/Madd_count_add0001_xor<7>  (
+    .CI(\button/Madd_count_add0001_cy [6]),
+    .LI(\button/Madd_count_add0001_cy<7>_rt_350 ),
+    .O(\button/count_add0001 [7])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<7>  (
+    .CI(\button/Madd_count_add0001_cy [6]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<7>_rt_350 ),
+    .O(\button/Madd_count_add0001_cy [7])
+  );
+  XORCY   \button/Madd_count_add0001_xor<6>  (
+    .CI(\button/Madd_count_add0001_cy [5]),
+    .LI(\button/Madd_count_add0001_cy<6>_rt_348 ),
+    .O(\button/count_add0001 [6])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<6>  (
+    .CI(\button/Madd_count_add0001_cy [5]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<6>_rt_348 ),
+    .O(\button/Madd_count_add0001_cy [6])
+  );
+  XORCY   \button/Madd_count_add0001_xor<5>  (
+    .CI(\button/Madd_count_add0001_cy [4]),
+    .LI(\button/Madd_count_add0001_cy<5>_rt_346 ),
+    .O(\button/count_add0001 [5])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<5>  (
+    .CI(\button/Madd_count_add0001_cy [4]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<5>_rt_346 ),
+    .O(\button/Madd_count_add0001_cy [5])
+  );
+  XORCY   \button/Madd_count_add0001_xor<4>  (
+    .CI(\button/Madd_count_add0001_cy [3]),
+    .LI(\button/Madd_count_add0001_cy<4>_rt_344 ),
+    .O(\button/count_add0001 [4])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<4>  (
+    .CI(\button/Madd_count_add0001_cy [3]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<4>_rt_344 ),
+    .O(\button/Madd_count_add0001_cy [4])
+  );
+  XORCY   \button/Madd_count_add0001_xor<3>  (
+    .CI(\button/Madd_count_add0001_cy [2]),
+    .LI(\button/Madd_count_add0001_cy<3>_rt_342 ),
+    .O(\button/count_add0001 [3])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<3>  (
+    .CI(\button/Madd_count_add0001_cy [2]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<3>_rt_342 ),
+    .O(\button/Madd_count_add0001_cy [3])
+  );
+  XORCY   \button/Madd_count_add0001_xor<2>  (
+    .CI(\button/Madd_count_add0001_cy [1]),
+    .LI(\button/Madd_count_add0001_cy<2>_rt_340 ),
+    .O(\button/count_add0001 [2])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<2>  (
+    .CI(\button/Madd_count_add0001_cy [1]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<2>_rt_340 ),
+    .O(\button/Madd_count_add0001_cy [2])
+  );
+  XORCY   \button/Madd_count_add0001_xor<1>  (
+    .CI(\button/Madd_count_add0001_cy [0]),
+    .LI(\button/Madd_count_add0001_cy<1>_rt_338 ),
+    .O(\button/count_add0001 [1])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<1>  (
+    .CI(\button/Madd_count_add0001_cy [0]),
+    .DI(N0),
+    .S(\button/Madd_count_add0001_cy<1>_rt_338 ),
+    .O(\button/Madd_count_add0001_cy [1])
+  );
+  XORCY   \button/Madd_count_add0001_xor<0>  (
+    .CI(N0),
+    .LI(\button/Madd_count_add0001_lut [0]),
+    .O(\button/count_add0001 [0])
+  );
+  MUXCY   \button/Madd_count_add0001_cy<0>  (
+    .CI(N0),
+    .DI(N1),
+    .S(\button/Madd_count_add0001_lut [0]),
+    .O(\button/Madd_count_add0001_cy [0])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_19  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [19]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [19])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_18  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [18]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [18])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_17  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [17]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [17])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_16  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [16]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [16])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_15  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [15]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [15])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_14  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [14]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [14])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_13  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [13]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [13])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_12  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [12]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [12])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_11  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [11]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [11])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_10  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [10]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [10])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_9  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [9]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [9])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_8  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [8]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [8])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_7  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [7]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [7])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_6  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [6]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [6])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_5  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [5]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [5])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_4  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [4]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [4])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_3  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [3]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [3])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_2  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [2]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [2])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_1  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [1]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [1])
+  );
+  FDR #(
+    .INIT ( 1'b0 ))
+  \button/count_0  (
+    .C(clk_BUFGP_440),
+    .D(\button/count_add0000 [0]),
+    .R(\button/count_or0000 ),
+    .Q(\button/count [0])
+  );
+  FDE #(
+    .INIT ( 1'b0 ))
+  \button/result  (
+    .C(clk_BUFGP_440),
+    .CE(\button/result_not0001 ),
+    .D(remoto_IBUF_517),
+    .Q(\button/result_437 )
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  \cont_clk_cmp_eq0000_wg_lut<0>  (
+    .I0(sel_led_add0000[12]),
+    .I1(sel_led_add0000[13]),
+    .I2(sel_led_add0000[14]),
+    .I3(sel_led_add0000[15]),
+    .O(cont_clk_cmp_eq0000_wg_lut[0])
+  );
+  MUXCY   \cont_clk_cmp_eq0000_wg_cy<0>  (
+    .CI(N1),
+    .DI(N0),
+    .S(cont_clk_cmp_eq0000_wg_lut[0]),
+    .O(cont_clk_cmp_eq0000_wg_cy[0])
+  );
+  LUT4 #(
+    .INIT ( 16'h0001 ))
+  \cont_clk_cmp_eq0000_wg_lut<1>  (
+    .I0(sel_led_add0000[9]),
+    .I1(sel_led_add0000[10]),
+    .I2(sel_led_add0000[11]),
+    .I3(sel_led_add0000[16]),
+    .O(cont_clk_cmp_eq0000_wg_lut[1])
+  );
+  MUXCY   \cont_clk_cmp_eq0000_wg_cy<1>  (
+    .CI(cont_clk_cmp_eq0000_wg_cy[0]),
+    .DI(N0),
+    .S(cont_clk_cmp_eq0000_wg_lut[1]),
+    .O(cont_clk_cmp_eq0000_wg_cy[1])
+  );
+  LUT4 #(
+    .INIT ( 16'h0080 ))
+  \cont_clk_cmp_eq0000_wg_lut<2>  (
+    .I0(sel_led_add0000[6]),
+    .I1(sel_led_add0000[7]),
+    .I2(sel_led_add0000[8]),
+    .I3(sel_led_add0000[17]),
+    .O(cont_clk_cmp_eq0000_wg_lut[2])
+  );
+  MUXCY   \cont_clk_cmp_eq0000_wg_cy<2>  (
+    .CI(cont_clk_cmp_eq0000_wg_cy[1]),
+    .DI(N0),
+    .S(cont_clk_cmp_eq0000_wg_lut[2]),
+    .O(cont_clk_cmp_eq0000_wg_cy[2])
+  );
+  LUT4 #(
+    .INIT ( 16'h0040 ))
+  \cont_clk_cmp_eq0000_wg_lut<3>  (
+    .I0(sel_led_add0000[3]),
+    .I1(sel_led_add0000[4]),
+    .I2(sel_led_add0000[5]),
+    .I3(sel_led_add0000[18]),
+    .O(cont_clk_cmp_eq0000_wg_lut[3])
+  );
+  MUXCY   \cont_clk_cmp_eq0000_wg_cy<3>  (
+    .CI(cont_clk_cmp_eq0000_wg_cy[2]),
+    .DI(N0),
+    .S(cont_clk_cmp_eq0000_wg_lut[3]),
+    .O(cont_clk_cmp_eq0000_wg_cy[3])
+  );
+  LUT4 #(
+    .INIT ( 16'h0010 ))
+  \cont_clk_cmp_eq0000_wg_lut<4>  (
+    .I0(sel_led_add0000[0]),
+    .I1(sel_led_add0000[1]),
+    .I2(sel_led_add0000[2]),
+    .I3(sel_led_add0000[19]),
+    .O(cont_clk_cmp_eq0000_wg_lut[4])
+  );
+  MUXCY   \cont_clk_cmp_eq0000_wg_cy<4>  (
+    .CI(cont_clk_cmp_eq0000_wg_cy[3]),
+    .DI(N0),
+    .S(cont_clk_cmp_eq0000_wg_lut[4]),
+    .O(cont_clk_cmp_eq0000)
+  );
   LUT2 #(
     .INIT ( 4'hB ))
-  direcao1 (
-    .I0(estado_FSM_FFd2_252),
-    .I1(estado_FSM_FFd3_253),
-    .O(direcao_OBUF_247)
+  flag_not00031 (
+    .I0(flag_494),
+    .I1(\button/result_437 ),
+    .O(flag_not0003)
   );
   LUT3 #(
-    .INIT ( 8'h15 ))
-  ligar1 (
-    .I0(estado_FSM_FFd1_250),
-    .I1(estado_FSM_FFd2_252),
-    .I2(estado_FSM_FFd3_253),
-    .O(ligar_OBUF_256)
+    .INIT ( 8'hFE ))
+  direcao_mux00001 (
+    .I0(estado[3]),
+    .I1(estado[4]),
+    .I2(estado[0]),
+    .O(direcao_mux0000)
+  );
+  LUT4 #(
+    .INIT ( 16'hFFBF ))
+  flag_not00021 (
+    .I0(flag_cmp_eq0000),
+    .I1(estado[4]),
+    .I2(\button/result_437 ),
+    .I3(flag_494),
+    .O(flag_not0002)
+  );
+  LUT3 #(
+    .INIT ( 8'hFE ))
+  flag_mux000411 (
+    .I0(estado[1]),
+    .I1(estado[0]),
+    .I2(estado[5]),
+    .O(flag_mux000411_501)
+  );
+  LUT4 #(
+    .INIT ( 16'hAAA8 ))
+  flag_mux000418 (
+    .I0(flag_mux0003_499),
+    .I1(estado[3]),
+    .I2(estado[2]),
+    .I3(flag_mux000411_501),
+    .O(flag_mux000418_502)
+  );
+  LUT4 #(
+    .INIT ( 16'hFF02 ))
+  flag_mux000425 (
+    .I0(estado[4]),
+    .I1(flag_cmp_eq0000),
+    .I2(\button/result_437 ),
+    .I3(flag_mux000418_502),
+    .O(flag_mux0004)
   );
   LUT4 #(
     .INIT ( 16'h4101 ))
@@ -1410,7 +2658,7 @@ module proje1 (
     .I1(number[1]),
     .I2(number[2]),
     .I3(number[0]),
-    .O(P1_6_OBUF_211)
+    .O(P1_6_OBUF_246)
   );
   LUT4 #(
     .INIT ( 16'h5110 ))
@@ -1419,7 +2667,7 @@ module proje1 (
     .I1(number[2]),
     .I2(number[1]),
     .I3(number[0]),
-    .O(P1_5_OBUF_210)
+    .O(P1_5_OBUF_245)
   );
   LUT4 #(
     .INIT ( 16'hA8AC ))
@@ -1428,7 +2676,7 @@ module proje1 (
     .I1(number[1]),
     .I2(number[2]),
     .I3(number[0]),
-    .O(P1_2_OBUF_207)
+    .O(P1_2_OBUF_242)
   );
   LUT4 #(
     .INIT ( 16'h0006 ))
@@ -1437,7 +2685,7 @@ module proje1 (
     .I1(number[2]),
     .I2(number[3]),
     .I3(number[1]),
-    .O(P1_0_OBUF_205)
+    .O(P1_0_OBUF_240)
   );
   LUT4 #(
     .INIT ( 16'h445C ))
@@ -1446,7 +2694,7 @@ module proje1 (
     .I1(number[0]),
     .I2(number[2]),
     .I3(number[1]),
-    .O(P1_4_OBUF_209)
+    .O(P1_4_OBUF_244)
   );
   LUT4 #(
     .INIT ( 16'hEE48 ))
@@ -1455,7 +2703,7 @@ module proje1 (
     .I1(number[2]),
     .I2(number[0]),
     .I3(number[3]),
-    .O(P1_1_OBUF_206)
+    .O(P1_1_OBUF_241)
   );
   LUT4 #(
     .INIT ( 16'h4110 ))
@@ -1464,14 +2712,7 @@ module proje1 (
     .I1(number[1]),
     .I2(number[2]),
     .I3(number[0]),
-    .O(P1_3_OBUF_208)
-  );
-  LUT2 #(
-    .INIT ( 4'hB ))
-  ena_mux00001 (
-    .I0(estado_FSM_FFd2_252),
-    .I1(estado_FSM_FFd1_250),
-    .O(ena_mux0000)
+    .O(P1_3_OBUF_243)
   );
   LUT3 #(
     .INIT ( 8'h6A ))
@@ -1491,15 +2732,6 @@ module proje1 (
     .O(\Contador/Mcount_uniseg1 )
   );
   LUT4 #(
-    .INIT ( 16'hD7C6 ))
-  \estado_FSM_FFd3-In1  (
-    .I0(\button/debounced_button_229 ),
-    .I1(estado_FSM_FFd3_253),
-    .I2(estado_FSM_FFd1_250),
-    .I3(estado_FSM_FFd2_252),
-    .O(\estado_FSM_FFd3-In )
-  );
-  LUT4 #(
     .INIT ( 16'h68CC ))
   \Contador/Mcount_uniseg_xor<3>11  (
     .I0(\Contador/uniseg [2]),
@@ -1507,13 +2739,6 @@ module proje1 (
     .I2(\Contador/uniseg [1]),
     .I3(\Contador/uniseg [0]),
     .O(\Contador/Mcount_uniseg3 )
-  );
-  LUT2 #(
-    .INIT ( 4'hB ))
-  \button/debounced_button_not00011  (
-    .I0(\button/prev_debounced_button_231 ),
-    .I1(remoto_IBUF_266),
-    .O(\button/debounced_button_not0001 )
   );
   LUT2 #(
     .INIT ( 4'h6 ))
@@ -1531,133 +2756,233 @@ module proje1 (
     .O(\Contador/dezseg_mux0002 [1])
   );
   LUT4 #(
-    .INIT ( 16'h0200 ))
+    .INIT ( 16'h0008 ))
   \Contador/dezseg_mux0002<1>21  (
-    .I0(\Contador/uniseg [0]),
-    .I1(\Contador/uniseg [1]),
-    .I2(\Contador/uniseg [2]),
-    .I3(\Contador/uniseg [3]),
+    .I0(\Contador/uniseg [3]),
+    .I1(\Contador/uniseg [0]),
+    .I2(\Contador/uniseg [1]),
+    .I3(\Contador/uniseg [2]),
     .O(\Contador/dezseg_mux0002<1>_bdd0 )
+  );
+  LUT3 #(
+    .INIT ( 8'hFE ))
+  ena1 (
+    .I0(estado[3]),
+    .I1(estado[0]),
+    .I2(estado[1]),
+    .O(ena)
+  );
+  LUT4 #(
+    .INIT ( 16'h5540 ))
+  \estado_futuro<3>1  (
+    .I0(flag_and0000),
+    .I1(estado[1]),
+    .I2(fechada_led_OBUF_493),
+    .I3(estado[3]),
+    .O(estado_futuro[3])
+  );
+  LUT4 #(
+    .INIT ( 16'hCC0A ))
+  \estado_futuro<5>1  (
+    .I0(estado[5]),
+    .I1(estado[0]),
+    .I2(N15),
+    .I3(flag_and0000),
+    .O(estado_futuro[5])
+  );
+  LUT4 #(
+    .INIT ( 16'h8D88 ))
+  \estado_futuro<4>1  (
+    .I0(flag_and0000),
+    .I1(estado[1]),
+    .I2(flag_cmp_eq0000),
+    .I3(estado[4]),
+    .O(estado_futuro[4])
+  );
+  LUT2 #(
+    .INIT ( 4'h2 ))
+  \estado_futuro<0>_SW0  (
+    .I0(estado[0]),
+    .I1(aberta_led_OBUF_269),
+    .O(N21)
+  );
+  LUT4 #(
+    .INIT ( 16'hEEF0 ))
+  \estado_futuro<0>  (
+    .I0(estado[4]),
+    .I1(estado[3]),
+    .I2(N21),
+    .I3(N14),
+    .O(estado_futuro[0])
+  );
+  LUT4 #(
+    .INIT ( 16'hFAC8 ))
+  \estado_futuro<1>4  (
+    .I0(estado[5]),
+    .I1(flag_cmp_eq0000),
+    .I2(estado[2]),
+    .I3(flag_and0000),
+    .O(\estado_futuro<1>4_486 )
+  );
+  LUT4 #(
+    .INIT ( 16'h6FF6 ))
+  estado_ClkEn_inv32 (
+    .I0(estado[3]),
+    .I1(estado_futuro[3]),
+    .I2(estado[4]),
+    .I3(estado_futuro[4]),
+    .O(estado_ClkEn_inv32_482)
   );
   LUT2 #(
     .INIT ( 4'h6 ))
   \sel_led_mux0000<0>1  (
-    .I0(sel_led[0]),
-    .I1(cont_clk_cmp_eq0000),
+    .I0(cont_clk_cmp_eq0000),
+    .I1(sel_led[0]),
     .O(\sel_led_mux0000[0] )
+  );
+  LUT3 #(
+    .INIT ( 8'h28 ))
+  \button/result_not00011  (
+    .I0(\button/count_cmp_ge0000 ),
+    .I1(remoto_IBUF_517),
+    .I2(\button/result_437 ),
+    .O(\button/result_not0001 )
+  );
+  LUT3 #(
+    .INIT ( 8'hF9 ))
+  \button/count_or00001  (
+    .I0(remoto_IBUF_517),
+    .I1(\button/result_437 ),
+    .I2(\button/count_cmp_ge0000 ),
+    .O(\button/count_or0000 )
+  );
+  LUT3 #(
+    .INIT ( 8'hB3 ))
+  \anodo_mux0000<3>1  (
+    .I0(anodo_0_274),
+    .I1(N18),
+    .I2(N2),
+    .O(anodo_mux0000[3])
   );
   LUT3 #(
     .INIT ( 8'h8F ))
   \anodo_mux0000<2>1  (
-    .I0(anodo_1_226),
-    .I1(N2),
-    .I2(N28),
+    .I0(anodo_1_275),
+    .I1(N3),
+    .I2(N2),
     .O(anodo_mux0000[2])
   );
   LUT4 #(
-    .INIT ( 16'h88F8 ))
+    .INIT ( 16'hC0EA ))
   \number_mux0000<3>1  (
-    .I0(number[3]),
-    .I1(N01),
-    .I2(\Contador/uniseg [3]),
-    .I3(N3),
+    .I0(\Contador/uniseg [3]),
+    .I1(number[3]),
+    .I2(N01),
+    .I3(N2),
     .O(number_mux0000[3])
   );
   LUT4 #(
-    .INIT ( 16'h88F8 ))
+    .INIT ( 16'hC0EA ))
   \number_mux0000<2>1  (
-    .I0(number[2]),
-    .I1(N01),
-    .I2(\Contador/uniseg [2]),
-    .I3(N3),
+    .I0(\Contador/uniseg [2]),
+    .I1(number[2]),
+    .I2(N01),
+    .I3(N2),
     .O(number_mux0000[2])
   );
   LUT4 #(
     .INIT ( 16'h6CCC ))
   \sel_led_mux0000<2>1  (
-    .I0(sel_led[1]),
+    .I0(cont_clk_cmp_eq0000),
     .I1(sel_led[2]),
-    .I2(sel_led[0]),
-    .I3(cont_clk_cmp_eq0000),
+    .I2(sel_led[1]),
+    .I3(sel_led[0]),
     .O(\sel_led_mux0000[2] )
   );
   LUT4 #(
-    .INIT ( 16'hCE0A ))
+    .INIT ( 16'hC0EA ))
   \number_mux0000<1>_SW0  (
-    .I0(\Contador/dezseg [1]),
+    .I0(\Contador/uniseg [1]),
     .I1(number[1]),
-    .I2(N29),
-    .I3(N01),
-    .O(N31)
+    .I2(N01),
+    .I3(N16),
+    .O(N4)
   );
   LUT4 #(
-    .INIT ( 16'hCE0A ))
+    .INIT ( 16'hC0EA ))
   \number_mux0000<0>_SW0  (
-    .I0(\Contador/dezseg [0]),
+    .I0(\Contador/uniseg [0]),
     .I1(number[0]),
-    .I2(N2),
-    .I3(N30),
-    .O(N5)
+    .I2(N17),
+    .I3(N2),
+    .O(N6)
   );
-  LUT3 #(
-    .INIT ( 8'h10 ))
-  cont_clk_cmp_eq00007 (
-    .I0(sel_led_add0000[0]),
-    .I1(sel_led_add0000[1]),
-    .I2(sel_led_add0000[8]),
-    .O(cont_clk_cmp_eq00007_245)
-  );
-  LUT4 #(
-    .INIT ( 16'h2000 ))
-  cont_clk_cmp_eq000020 (
-    .I0(sel_led_add0000[2]),
-    .I1(sel_led_add0000[3]),
-    .I2(sel_led_add0000[4]),
-    .I3(sel_led_add0000[5]),
-    .O(cont_clk_cmp_eq000020_244)
+  IBUF   aberta_IBUF (
+    .I(aberta),
+    .O(aberta_led_OBUF_269)
   );
   IBUF   rst_IBUF (
     .I(rst),
-    .O(rst_IBUF_268)
+    .O(rst_IBUF_519)
+  );
+  IBUF   fechada_IBUF (
+    .I(fechada),
+    .O(fechada_led_OBUF_493)
   );
   IBUF   remoto_IBUF (
     .I(remoto),
-    .O(remoto_IBUF_266)
+    .O(remoto_IBUF_517)
+  );
+  OBUF   fechada_led_OBUF (
+    .I(fechada_led_OBUF_493),
+    .O(fechada_led)
   );
   OBUF   direcao_OBUF (
-    .I(direcao_OBUF_247),
+    .I(direcao_OBUF_472),
     .O(direcao)
   );
+  OBUF   aberta_led_OBUF (
+    .I(aberta_led_OBUF_269),
+    .O(aberta_led)
+  );
+  OBUF   flag_led_OBUF (
+    .I(flag_1_495),
+    .O(flag_led)
+  );
+  OBUF   b_led_OBUF (
+    .I(\button/result_437 ),
+    .O(b_led)
+  );
   OBUF   ligar_OBUF (
-    .I(ligar_OBUF_256),
+    .I(ligar_OBUF_507),
     .O(ligar)
   );
   OBUF   P1_6_OBUF (
-    .I(P1_6_OBUF_211),
+    .I(P1_6_OBUF_246),
     .O(P1[6])
   );
   OBUF   P1_5_OBUF (
-    .I(P1_5_OBUF_210),
+    .I(P1_5_OBUF_245),
     .O(P1[5])
   );
   OBUF   P1_4_OBUF (
-    .I(P1_4_OBUF_209),
+    .I(P1_4_OBUF_244),
     .O(P1[4])
   );
   OBUF   P1_3_OBUF (
-    .I(P1_3_OBUF_208),
+    .I(P1_3_OBUF_243),
     .O(P1[3])
   );
   OBUF   P1_2_OBUF (
-    .I(P1_2_OBUF_207),
+    .I(P1_2_OBUF_242),
     .O(P1[2])
   );
   OBUF   P1_1_OBUF (
-    .I(P1_1_OBUF_206),
+    .I(P1_1_OBUF_241),
     .O(P1[1])
   );
   OBUF   P1_0_OBUF (
-    .I(P1_0_OBUF_205),
+    .I(P1_0_OBUF_240),
     .O(P1[0])
   );
   OBUF   anodo_3_OBUF (
@@ -1669,121 +2994,258 @@ module proje1 (
     .O(anodo[2])
   );
   OBUF   anodo_1_OBUF (
-    .I(anodo_1_226),
+    .I(anodo_1_275),
     .O(anodo[1])
   );
   OBUF   anodo_0_OBUF (
-    .I(anodo_0_225),
+    .I(anodo_0_274),
     .O(anodo[0])
   );
   FDS #(
     .INIT ( 1'b0 ))
   number_0 (
-    .C(clk_BUFGP_233),
-    .D(\number_mux0000<0>1_261 ),
-    .S(N5),
+    .C(clk_BUFGP_440),
+    .D(\number_mux0000<0>1_512 ),
+    .S(N6),
     .Q(number[0])
+  );
+  LUT2 #(
+    .INIT ( 4'h2 ))
+  \number_mux0000<0>1  (
+    .I0(\Contador/dezseg [0]),
+    .I1(N3),
+    .O(\number_mux0000<0>1_512 )
   );
   FDS #(
     .INIT ( 1'b0 ))
   number_1 (
-    .C(clk_BUFGP_233),
-    .D(\number_mux0000<1>1_262 ),
-    .S(N31),
+    .C(clk_BUFGP_440),
+    .D(\number_mux0000<1>1_513 ),
+    .S(N4),
     .Q(number[1])
   );
-  FDPE #(
-    .INIT ( 1'b0 ))
-  estado_FSM_FFd2 (
-    .C(clk_BUFGP_233),
-    .CE(\button/debounced_button_229 ),
-    .D(N0),
-    .PRE(rst_IBUF_268),
-    .Q(estado_FSM_FFd2_252)
-  );
-  LUT1 #(
-    .INIT ( 2'h2 ))
-  \Mcount_cont_clk_cy<1>_rt  (
-    .I0(cont_clk[1]),
-    .O(\Mcount_cont_clk_cy<1>_rt_158 )
-  );
-  LUT1 #(
-    .INIT ( 2'h2 ))
-  \Mcount_cont_clk_cy<2>_rt  (
-    .I0(cont_clk[2]),
-    .O(\Mcount_cont_clk_cy<2>_rt_160 )
-  );
-  LUT1 #(
-    .INIT ( 2'h2 ))
-  \Mcount_cont_clk_cy<3>_rt  (
-    .I0(cont_clk[3]),
-    .O(\Mcount_cont_clk_cy<3>_rt_162 )
-  );
-  LUT1 #(
-    .INIT ( 2'h2 ))
-  \Mcount_cont_clk_cy<4>_rt  (
-    .I0(cont_clk[4]),
-    .O(\Mcount_cont_clk_cy<4>_rt_164 )
-  );
-  LUT1 #(
-    .INIT ( 2'h2 ))
-  \Mcount_cont_clk_cy<5>_rt  (
-    .I0(cont_clk[5]),
-    .O(\Mcount_cont_clk_cy<5>_rt_166 )
-  );
-  LUT1 #(
-    .INIT ( 2'h2 ))
-  \Mcount_cont_clk_cy<6>_rt  (
-    .I0(cont_clk[6]),
-    .O(\Mcount_cont_clk_cy<6>_rt_168 )
-  );
-  LUT1 #(
-    .INIT ( 2'h2 ))
-  \Mcount_cont_clk_cy<7>_rt  (
-    .I0(cont_clk[7]),
-    .O(\Mcount_cont_clk_cy<7>_rt_170 )
+  LUT2 #(
+    .INIT ( 4'h2 ))
+  \number_mux0000<1>1  (
+    .I0(\Contador/dezseg [1]),
+    .I1(N3),
+    .O(\number_mux0000<1>1_513 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \Madd_sel_led_add0000_cy<1>_rt  (
     .I0(cont_clk[1]),
-    .O(\Madd_sel_led_add0000_cy<1>_rt_141 )
+    .O(\Madd_sel_led_add0000_cy<1>_rt_159 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \Madd_sel_led_add0000_cy<2>_rt  (
     .I0(cont_clk[2]),
-    .O(\Madd_sel_led_add0000_cy<2>_rt_143 )
+    .O(\Madd_sel_led_add0000_cy<2>_rt_161 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \Madd_sel_led_add0000_cy<3>_rt  (
     .I0(cont_clk[3]),
-    .O(\Madd_sel_led_add0000_cy<3>_rt_145 )
+    .O(\Madd_sel_led_add0000_cy<3>_rt_163 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \Madd_sel_led_add0000_cy<4>_rt  (
     .I0(cont_clk[4]),
-    .O(\Madd_sel_led_add0000_cy<4>_rt_147 )
+    .O(\Madd_sel_led_add0000_cy<4>_rt_165 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \Madd_sel_led_add0000_cy<5>_rt  (
     .I0(cont_clk[5]),
-    .O(\Madd_sel_led_add0000_cy<5>_rt_149 )
+    .O(\Madd_sel_led_add0000_cy<5>_rt_167 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \Madd_sel_led_add0000_cy<6>_rt  (
     .I0(cont_clk[6]),
-    .O(\Madd_sel_led_add0000_cy<6>_rt_151 )
+    .O(\Madd_sel_led_add0000_cy<6>_rt_169 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
   \Madd_sel_led_add0000_cy<7>_rt  (
     .I0(cont_clk[7]),
-    .O(\Madd_sel_led_add0000_cy<7>_rt_153 )
+    .O(\Madd_sel_led_add0000_cy<7>_rt_171 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<8>_rt  (
+    .I0(cont_clk[8]),
+    .O(\Madd_sel_led_add0000_cy<8>_rt_173 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<9>_rt  (
+    .I0(cont_clk[9]),
+    .O(\Madd_sel_led_add0000_cy<9>_rt_175 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<10>_rt  (
+    .I0(cont_clk[10]),
+    .O(\Madd_sel_led_add0000_cy<10>_rt_141 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<11>_rt  (
+    .I0(cont_clk[11]),
+    .O(\Madd_sel_led_add0000_cy<11>_rt_143 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<12>_rt  (
+    .I0(cont_clk[12]),
+    .O(\Madd_sel_led_add0000_cy<12>_rt_145 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<13>_rt  (
+    .I0(cont_clk[13]),
+    .O(\Madd_sel_led_add0000_cy<13>_rt_147 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<14>_rt  (
+    .I0(cont_clk[14]),
+    .O(\Madd_sel_led_add0000_cy<14>_rt_149 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<15>_rt  (
+    .I0(cont_clk[15]),
+    .O(\Madd_sel_led_add0000_cy<15>_rt_151 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<16>_rt  (
+    .I0(cont_clk[16]),
+    .O(\Madd_sel_led_add0000_cy<16>_rt_153 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<17>_rt  (
+    .I0(cont_clk[17]),
+    .O(\Madd_sel_led_add0000_cy<17>_rt_155 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_cy<18>_rt  (
+    .I0(cont_clk[18]),
+    .O(\Madd_sel_led_add0000_cy<18>_rt_157 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<1>_rt  (
+    .I0(cont_clk[1]),
+    .O(\Mcount_cont_clk_cy<1>_rt_198 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<2>_rt  (
+    .I0(cont_clk[2]),
+    .O(\Mcount_cont_clk_cy<2>_rt_200 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<3>_rt  (
+    .I0(cont_clk[3]),
+    .O(\Mcount_cont_clk_cy<3>_rt_202 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<4>_rt  (
+    .I0(cont_clk[4]),
+    .O(\Mcount_cont_clk_cy<4>_rt_204 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<5>_rt  (
+    .I0(cont_clk[5]),
+    .O(\Mcount_cont_clk_cy<5>_rt_206 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<6>_rt  (
+    .I0(cont_clk[6]),
+    .O(\Mcount_cont_clk_cy<6>_rt_208 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<7>_rt  (
+    .I0(cont_clk[7]),
+    .O(\Mcount_cont_clk_cy<7>_rt_210 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<8>_rt  (
+    .I0(cont_clk[8]),
+    .O(\Mcount_cont_clk_cy<8>_rt_212 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<9>_rt  (
+    .I0(cont_clk[9]),
+    .O(\Mcount_cont_clk_cy<9>_rt_214 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<10>_rt  (
+    .I0(cont_clk[10]),
+    .O(\Mcount_cont_clk_cy<10>_rt_180 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<11>_rt  (
+    .I0(cont_clk[11]),
+    .O(\Mcount_cont_clk_cy<11>_rt_182 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<12>_rt  (
+    .I0(cont_clk[12]),
+    .O(\Mcount_cont_clk_cy<12>_rt_184 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<13>_rt  (
+    .I0(cont_clk[13]),
+    .O(\Mcount_cont_clk_cy<13>_rt_186 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<14>_rt  (
+    .I0(cont_clk[14]),
+    .O(\Mcount_cont_clk_cy<14>_rt_188 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<15>_rt  (
+    .I0(cont_clk[15]),
+    .O(\Mcount_cont_clk_cy<15>_rt_190 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<16>_rt  (
+    .I0(cont_clk[16]),
+    .O(\Mcount_cont_clk_cy<16>_rt_192 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<17>_rt  (
+    .I0(cont_clk[17]),
+    .O(\Mcount_cont_clk_cy<17>_rt_194 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_cy<18>_rt  (
+    .I0(cont_clk[18]),
+    .O(\Mcount_cont_clk_cy<18>_rt_196 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
@@ -1811,173 +3273,343 @@ module proje1 (
   );
   LUT1 #(
     .INIT ( 2'h2 ))
-  \Mcount_cont_clk_xor<8>_rt  (
-    .I0(cont_clk[8]),
-    .O(\Mcount_cont_clk_xor<8>_rt_172 )
+  \button/Mcompar_count_cmp_ge0000_cy<9>_rt  (
+    .I0(\button/count_add0001 [19]),
+    .O(\button/Mcompar_count_cmp_ge0000_cy<9>_rt_368 )
   );
   LUT1 #(
     .INIT ( 2'h2 ))
-  \Madd_sel_led_add0000_xor<8>_rt  (
-    .I0(cont_clk[8]),
-    .O(\Madd_sel_led_add0000_xor<8>_rt_155 )
+  \button/Mcompar_count_cmp_ge0000_cy<7>_rt  (
+    .I0(\button/count_add0001 [17]),
+    .O(\button/Mcompar_count_cmp_ge0000_cy<7>_rt_366 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Mcompar_count_cmp_ge0000_cy<3>_rt  (
+    .I0(\button/count_add0001 [9]),
+    .O(\button/Mcompar_count_cmp_ge0000_cy<3>_rt_361 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Mcompar_count_cmp_ge0000_cy<0>_rt  (
+    .I0(\button/count_add0001 [3]),
+    .O(\button/Mcompar_count_cmp_ge0000_cy<0>_rt_357 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<18>_rt  (
+    .I0(\button/count_add0001 [18]),
+    .O(\button/Madd_count_add0000_cy<18>_rt_297 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<17>_rt  (
+    .I0(\button/count_add0001 [17]),
+    .O(\button/Madd_count_add0000_cy<17>_rt_295 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<16>_rt  (
+    .I0(\button/count_add0001 [16]),
+    .O(\button/Madd_count_add0000_cy<16>_rt_293 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<15>_rt  (
+    .I0(\button/count_add0001 [15]),
+    .O(\button/Madd_count_add0000_cy<15>_rt_291 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<14>_rt  (
+    .I0(\button/count_add0001 [14]),
+    .O(\button/Madd_count_add0000_cy<14>_rt_289 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<13>_rt  (
+    .I0(\button/count_add0001 [13]),
+    .O(\button/Madd_count_add0000_cy<13>_rt_287 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<12>_rt  (
+    .I0(\button/count_add0001 [12]),
+    .O(\button/Madd_count_add0000_cy<12>_rt_285 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<11>_rt  (
+    .I0(\button/count_add0001 [11]),
+    .O(\button/Madd_count_add0000_cy<11>_rt_283 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<10>_rt  (
+    .I0(\button/count_add0001 [10]),
+    .O(\button/Madd_count_add0000_cy<10>_rt_281 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<9>_rt  (
+    .I0(\button/count_add0001 [9]),
+    .O(\button/Madd_count_add0000_cy<9>_rt_315 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<8>_rt  (
+    .I0(\button/count_add0001 [8]),
+    .O(\button/Madd_count_add0000_cy<8>_rt_313 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<7>_rt  (
+    .I0(\button/count_add0001 [7]),
+    .O(\button/Madd_count_add0000_cy<7>_rt_311 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<6>_rt  (
+    .I0(\button/count_add0001 [6]),
+    .O(\button/Madd_count_add0000_cy<6>_rt_309 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<5>_rt  (
+    .I0(\button/count_add0001 [5]),
+    .O(\button/Madd_count_add0000_cy<5>_rt_307 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<4>_rt  (
+    .I0(\button/count_add0001 [4]),
+    .O(\button/Madd_count_add0000_cy<4>_rt_305 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<3>_rt  (
+    .I0(\button/count_add0001 [3]),
+    .O(\button/Madd_count_add0000_cy<3>_rt_303 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<2>_rt  (
+    .I0(\button/count_add0001 [2]),
+    .O(\button/Madd_count_add0000_cy<2>_rt_301 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_cy<1>_rt  (
+    .I0(\button/count_add0001 [1]),
+    .O(\button/Madd_count_add0000_cy<1>_rt_299 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<18>_rt  (
+    .I0(\button/count [18]),
+    .O(\button/Madd_count_add0001_cy<18>_rt_336 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<17>_rt  (
+    .I0(\button/count [17]),
+    .O(\button/Madd_count_add0001_cy<17>_rt_334 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<16>_rt  (
+    .I0(\button/count [16]),
+    .O(\button/Madd_count_add0001_cy<16>_rt_332 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<15>_rt  (
+    .I0(\button/count [15]),
+    .O(\button/Madd_count_add0001_cy<15>_rt_330 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<14>_rt  (
+    .I0(\button/count [14]),
+    .O(\button/Madd_count_add0001_cy<14>_rt_328 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<13>_rt  (
+    .I0(\button/count [13]),
+    .O(\button/Madd_count_add0001_cy<13>_rt_326 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<12>_rt  (
+    .I0(\button/count [12]),
+    .O(\button/Madd_count_add0001_cy<12>_rt_324 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<11>_rt  (
+    .I0(\button/count [11]),
+    .O(\button/Madd_count_add0001_cy<11>_rt_322 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<10>_rt  (
+    .I0(\button/count [10]),
+    .O(\button/Madd_count_add0001_cy<10>_rt_320 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<9>_rt  (
+    .I0(\button/count [9]),
+    .O(\button/Madd_count_add0001_cy<9>_rt_354 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<8>_rt  (
+    .I0(\button/count [8]),
+    .O(\button/Madd_count_add0001_cy<8>_rt_352 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<7>_rt  (
+    .I0(\button/count [7]),
+    .O(\button/Madd_count_add0001_cy<7>_rt_350 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<6>_rt  (
+    .I0(\button/count [6]),
+    .O(\button/Madd_count_add0001_cy<6>_rt_348 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<5>_rt  (
+    .I0(\button/count [5]),
+    .O(\button/Madd_count_add0001_cy<5>_rt_346 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<4>_rt  (
+    .I0(\button/count [4]),
+    .O(\button/Madd_count_add0001_cy<4>_rt_344 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<3>_rt  (
+    .I0(\button/count [3]),
+    .O(\button/Madd_count_add0001_cy<3>_rt_342 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<2>_rt  (
+    .I0(\button/count [2]),
+    .O(\button/Madd_count_add0001_cy<2>_rt_340 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0001_cy<1>_rt  (
+    .I0(\button/count [1]),
+    .O(\button/Madd_count_add0001_cy<1>_rt_338 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Madd_sel_led_add0000_xor<19>_rt  (
+    .I0(cont_clk[19]),
+    .O(\Madd_sel_led_add0000_xor<19>_rt_177 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \Mcount_cont_clk_xor<19>_rt  (
+    .I0(cont_clk[19]),
+    .O(\Mcount_cont_clk_xor<19>_rt_216 )
+  );
+  LUT1 #(
+    .INIT ( 2'h2 ))
+  \button/Madd_count_add0000_xor<19>_rt  (
+    .I0(\button/count_add0001 [19]),
+    .O(\button/Madd_count_add0000_xor<19>_rt_317 )
   );
   LUT4 #(
-    .INIT ( 16'h2CC8 ))
+    .INIT ( 16'h64C8 ))
   \sel_led_mux0003<1>1  (
-    .I0(sel_led[2]),
-    .I1(sel_led[1]),
-    .I2(sel_led[0]),
-    .I3(cont_clk_cmp_eq0000),
-    .O(sel_led_mux0003[1])
-  );
-  LUT3 #(
-    .INIT ( 8'hFD ))
-  cont_clk_cmp_eq000022_SW0 (
-    .I0(sel_led[1]),
-    .I1(sel_led[2]),
-    .I2(sel_led[0]),
-    .O(N7)
-  );
-  LUT3 #(
-    .INIT ( 8'hF9 ))
-  cont_clk_cmp_eq000022_SW2 (
-    .I0(sel_led[1]),
-    .I1(sel_led[0]),
-    .I2(sel_led[2]),
-    .O(N10)
-  );
-  LUT4 #(
-    .INIT ( 16'hAA8A ))
-  \number_mux0000<0>31_SW0  (
-    .I0(anodo_0_225),
-    .I1(sel_led[2]),
-    .I2(sel_led[0]),
-    .I3(sel_led[1]),
-    .O(N13)
-  );
-  LUT4 #(
-    .INIT ( 16'hAAA8 ))
-  \number_mux0000<0>31_SW1  (
-    .I0(anodo_0_225),
+    .I0(cont_clk_cmp_eq0000),
     .I1(sel_led[1]),
     .I2(sel_led[2]),
     .I3(sel_led[0]),
-    .O(N14)
+    .O(sel_led_mux0003[1])
   );
-  LUT4 #(
-    .INIT ( 16'hCFAF ))
-  \anodo_mux0000<3>1  (
-    .I0(N13),
-    .I1(N14),
-    .I2(N2),
-    .I3(cont_clk_cmp_eq0000),
-    .O(anodo_mux0000[3])
-  );
-  LUT2 #(
-    .INIT ( 4'hB ))
-  \number_mux0000<0>31_SW2  (
-    .I0(sel_led[2]),
-    .I1(\Contador/uniseg [0]),
-    .O(N16)
-  );
-  LUT4 #(
-    .INIT ( 16'h0104 ))
-  \number_mux0000<0>1  (
-    .I0(sel_led[1]),
-    .I1(sel_led[0]),
-    .I2(N16),
-    .I3(cont_clk_cmp_eq0000),
-    .O(\number_mux0000<0>1_261 )
-  );
-  LUT2 #(
-    .INIT ( 4'hB ))
-  \number_mux0000<0>31_SW3  (
-    .I0(sel_led[2]),
-    .I1(\Contador/uniseg [1]),
-    .O(N18)
-  );
-  LUT4 #(
-    .INIT ( 16'h0104 ))
-  \number_mux0000<1>1  (
-    .I0(sel_led[1]),
-    .I1(sel_led[0]),
-    .I2(N18),
-    .I3(cont_clk_cmp_eq0000),
-    .O(\number_mux0000<1>1_262 )
-  );
-  LUT4 #(
-    .INIT ( 16'h0080 ))
-  cont_clk_cmp_eq000022 (
-    .I0(sel_led_add0000[8]),
-    .I1(sel_led_add0000[7]),
-    .I2(cont_clk_cmp_eq000020_244),
-    .I3(N20),
-    .O(cont_clk_cmp_eq0000)
-  );
-  MUXF5   cont_clk_cmp_eq000022_SW1 (
-    .I0(N22),
-    .I1(N23),
-    .S(sel_led_add0000[7]),
+  LUT3 #(
+    .INIT ( 8'hF6 ))
+  estado_ClkEn_inv124_SW0 (
+    .I0(estado[2]),
+    .I1(estado_futuro[2]),
+    .I2(estado_ClkEn_inv93_483),
     .O(N8)
   );
-  LUT3 #(
-    .INIT ( 8'hFD ))
-  cont_clk_cmp_eq000022_SW1_F (
-    .I0(sel_led[1]),
-    .I1(sel_led[2]),
-    .I2(sel_led[0]),
-    .O(N22)
+  LUT4 #(
+    .INIT ( 16'hFFF6 ))
+  estado_ClkEn_inv124 (
+    .I0(estado[1]),
+    .I1(estado_futuro[1]),
+    .I2(estado_ClkEn_inv32_482),
+    .I3(N8),
+    .O(estado_ClkEn_inv)
   );
   LUT4 #(
-    .INIT ( 16'hEFFB ))
-  cont_clk_cmp_eq000022_SW1_G (
-    .I0(sel_led[2]),
-    .I1(sel_led[1]),
-    .I2(sel_led[0]),
-    .I3(sel_led_add0000[6]),
-    .O(N23)
-  );
-  MUXF5   cont_clk_cmp_eq000022_SW3 (
-    .I0(N24),
-    .I1(N25),
-    .S(sel_led_add0000[7]),
-    .O(N111)
-  );
-  LUT3 #(
-    .INIT ( 8'hF9 ))
-  cont_clk_cmp_eq000022_SW3_F (
-    .I0(sel_led[1]),
-    .I1(sel_led[0]),
-    .I2(sel_led[2]),
-    .O(N24)
-  );
-  LUT4 #(
-    .INIT ( 16'hEEEB ))
-  cont_clk_cmp_eq000022_SW3_G (
-    .I0(sel_led[2]),
-    .I1(sel_led[1]),
-    .I2(sel_led[0]),
-    .I3(sel_led_add0000[6]),
-    .O(N25)
-  );
-  LUT2 #(
-    .INIT ( 4'h4 ))
+    .INIT ( 16'h0002 ))
   \Contador/dezseg_not00011  (
-    .I0(ena_248),
-    .I1(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I0(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
+    .I1(estado[0]),
+    .I2(estado[1]),
+    .I3(estado[3]),
     .O(\Contador/dezseg_not0001 )
+  );
+  LUT3 #(
+    .INIT ( 8'h01 ))
+  \Contador/rst_inv1  (
+    .I0(estado[3]),
+    .I1(estado[0]),
+    .I2(estado[1]),
+    .O(\Contador/rst_inv )
+  );
+  LUT4 #(
+    .INIT ( 16'hF222 ))
+  \estado_futuro<1>22_SW0  (
+    .I0(estado[1]),
+    .I1(fechada_led_OBUF_493),
+    .I2(estado[4]),
+    .I3(flag_cmp_eq0000),
+    .O(N10)
+  );
+  LUT4 #(
+    .INIT ( 16'hF2FA ))
+  \estado_futuro<1>22  (
+    .I0(N10),
+    .I1(\button/result_437 ),
+    .I2(\estado_futuro<1>4_486 ),
+    .I3(flag_494),
+    .O(estado_futuro[1])
+  );
+  LUT4 #(
+    .INIT ( 16'h5540 ))
+  \estado_futuro<2>  (
+    .I0(flag_and0000),
+    .I1(aberta_led_OBUF_269),
+    .I2(estado[0]),
+    .I3(N12),
+    .O(estado_futuro[2])
   );
   BUFGP   clk_BUFGP (
     .I(clk),
-    .O(clk_BUFGP_233)
-  );
-  INV   \Mcount_cont_clk_lut<0>_INV_0  (
-    .I(cont_clk[0]),
-    .O(Mcount_cont_clk_lut[0])
+    .O(clk_BUFGP_440)
   );
   INV   \Madd_sel_led_add0000_lut<0>_INV_0  (
     .I(cont_clk[0]),
     .O(Madd_sel_led_add0000_lut[0])
+  );
+  INV   \Mcount_cont_clk_lut<0>_INV_0  (
+    .I(cont_clk[0]),
+    .O(Mcount_cont_clk_lut[0])
   );
   INV   \Contador/Mcompar_dezseg_cmp_lt0000_cy<9>_inv_INV_0  (
     .I(\Contador/Mcompar_dezseg_cmp_lt0000_cy [9]),
@@ -1995,77 +3627,103 @@ module proje1 (
     .I(\Contador/cont_clk [16]),
     .O(\Contador/Mcompar_dezseg_cmp_lt0000_lut[3] )
   );
-  INV   rst_inv1_INV_0 (
-    .I(rst_IBUF_268),
-    .O(rst_inv)
+  INV   \button/Mcompar_count_cmp_ge0000_lut<8>_INV_0  (
+    .I(\button/count_add0001 [18]),
+    .O(\button/Mcompar_count_cmp_ge0000_lut[8] )
+  );
+  INV   \button/Mcompar_count_cmp_ge0000_lut<6>_INV_0  (
+    .I(\button/count_add0001 [16]),
+    .O(\button/Mcompar_count_cmp_ge0000_lut[6] )
+  );
+  INV   \button/Mcompar_count_cmp_ge0000_lut<2>_INV_0  (
+    .I(\button/count_add0001 [8]),
+    .O(\button/Mcompar_count_cmp_ge0000_lut[2] )
+  );
+  INV   \button/Madd_count_add0000_lut<0>_INV_0  (
+    .I(\button/count_add0001 [0]),
+    .O(\button/Madd_count_add0000_lut [0])
+  );
+  INV   \button/Madd_count_add0001_lut<0>_INV_0  (
+    .I(\button/count [0]),
+    .O(\button/Madd_count_add0001_lut [0])
+  );
+  INV   flag_mux00051_INV_0 (
+    .I(\button/result_437 ),
+    .O(flag_mux0005)
   );
   INV   \Contador/Mcount_uniseg_xor<0>11_INV_0  (
     .I(\Contador/uniseg [0]),
     .O(\Contador/Mcount_uniseg )
   );
-  INV   \Contador/ena_inv1_INV_0  (
-    .I(ena_248),
-    .O(\Contador/ena_inv )
+  LUT2_D #(
+    .INIT ( 4'h8 ))
+  flag_and00001 (
+    .I0(flag_494),
+    .I1(\button/result_437 ),
+    .LO(N14),
+    .O(flag_and0000)
   );
-  MUXF5   \estado_FSM_FFd1-In  (
-    .I0(N26),
-    .I1(N27),
-    .S(\button/debounced_button_229 ),
-    .O(\estado_FSM_FFd1-In_251 )
-  );
-  LUT3 #(
-    .INIT ( 8'h4C ))
-  \estado_FSM_FFd1-In_F  (
+  LUT2_D #(
+    .INIT ( 4'h8 ))
+  flag_cmp_eq00001 (
     .I0(\Contador/dezseg [0]),
-    .I1(estado_FSM_FFd1_250),
-    .I2(\Contador/dezseg [1]),
-    .O(N26)
+    .I1(\Contador/dezseg [1]),
+    .LO(N15),
+    .O(flag_cmp_eq0000)
   );
-  LUT3 #(
-    .INIT ( 8'h15 ))
-  \estado_FSM_FFd1-In_G  (
-    .I0(estado_FSM_FFd1_250),
-    .I1(estado_FSM_FFd3_253),
-    .I2(estado_FSM_FFd2_252),
-    .O(N27)
+  LUT4_L #(
+    .INIT ( 16'h7DBE ))
+  estado_ClkEn_inv93 (
+    .I0(estado[5]),
+    .I1(estado[0]),
+    .I2(estado_futuro[0]),
+    .I3(estado_futuro[5]),
+    .LO(estado_ClkEn_inv93_483)
   );
   LUT4_D #(
     .INIT ( 16'hFEEF ))
+  \number_mux0000<0>21  (
+    .I0(sel_led[2]),
+    .I1(sel_led[1]),
+    .I2(sel_led[0]),
+    .I3(cont_clk_cmp_eq0000),
+    .LO(N16),
+    .O(N2)
+  );
+  LUT4_D #(
+    .INIT ( 16'hEEEB ))
+  \number_mux0000<0>11  (
+    .I0(sel_led[2]),
+    .I1(sel_led[1]),
+    .I2(sel_led[0]),
+    .I3(cont_clk_cmp_eq0000),
+    .LO(N17),
+    .O(N01)
+  );
+  LUT4_D #(
+    .INIT ( 16'hEFFB ))
   \number_mux0000<0>31  (
     .I0(sel_led[2]),
     .I1(sel_led[1]),
     .I2(sel_led[0]),
     .I3(cont_clk_cmp_eq0000),
-    .LO(N28),
+    .LO(N18),
     .O(N3)
   );
-  LUT4_D #(
-    .INIT ( 16'hEC4C ))
-  \number_mux0000<0>21  (
-    .I0(cont_clk_cmp_eq00007_245),
-    .I1(N7),
-    .I2(cont_clk_cmp_eq000020_244),
-    .I3(N8),
-    .LO(N29),
-    .O(N2)
-  );
-  LUT4_D #(
-    .INIT ( 16'hEC4C ))
-  \number_mux0000<0>11  (
-    .I0(cont_clk_cmp_eq00007_245),
-    .I1(N10),
-    .I2(cont_clk_cmp_eq000020_244),
-    .I3(N111),
-    .LO(N30),
-    .O(N01)
-  );
   LUT3_L #(
-    .INIT ( 8'hEF ))
-  cont_clk_cmp_eq00007_SW0 (
-    .I0(sel_led_add0000[0]),
-    .I1(sel_led_add0000[1]),
-    .I2(sel_led_add0000[6]),
-    .LO(N20)
+    .INIT ( 8'h4C ))
+  \estado_futuro<2>_SW1  (
+    .I0(\Contador/dezseg [0]),
+    .I1(estado[2]),
+    .I2(\Contador/dezseg [1]),
+    .LO(N12)
+  );
+  LD #(
+    .INIT ( 1'b1 ))
+  flag_1 (
+    .D(flag_mux0004),
+    .G(flag_not0002),
+    .Q(flag_1_495)
   );
 endmodule
 

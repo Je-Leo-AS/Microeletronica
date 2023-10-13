@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Oct  5 12:56:07 2023
+Wed Oct 11 20:00:45 2023
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -108,7 +108,7 @@ Pinout by Pin Number:
 |E14       |           |         |VCCINT                   |         |           |              |          |         |           |         |1.2      |          |           |                |
 |E15       |           |         |NC                       |         |           |              |          |         |           |         |         |          |           |                |
 |E16       |           |         |NC                       |         |           |              |          |         |           |         |         |          |           |                |
-|E17       |           |IOB      |IO                       |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
+|E17       |b_led      |IOB      |IO                       |OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |E18       |remoto     |IBUF     |IP                       |INPUT    |LVCMOS25*  |1             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |F1        |           |DIFFM    |IO_L05P_3                |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |F2        |           |DIFFS    |IO_L05N_3                |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
@@ -191,7 +191,7 @@ Pinout by Pin Number:
 |K11       |           |         |GND                      |         |           |              |          |         |           |         |         |          |           |                |
 |K12       |           |DIFFS    |IO_L11N_1/A9/RHCLK1      |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |K13       |           |DIFFM    |IO_L11P_1/A10/RHCLK0     |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
-|K14       |           |DIFFS    |IO_L12N_1/A7/RHCLK3/TRDY1|UNUSED   |           |1             |          |         |           |         |         |          |           |                |
+|K14       |flag_led   |IOB      |IO_L12N_1/A7/RHCLK3/TRDY1|OUTPUT   |LVCMOS25*  |1             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |K15       |           |DIFFM    |IO_L12P_1/A8/RHCLK2      |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |K16       |           |         |GND                      |         |           |              |          |         |           |         |         |          |           |                |
 |K17       |           |IBUF     |IP                       |UNUSED   |           |1             |          |         |           |         |         |          |           |                |

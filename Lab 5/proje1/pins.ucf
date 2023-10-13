@@ -20,8 +20,11 @@ net "clk"   loc = "B8";
 net "remoto"  loc = "E18";
 net "aberta"  loc = "R17";
 net "fechada" loc = "N17";
+net "flag_led" loc = "K14";
+net "b_led" loc = "E17";
 
 net "direcao" loc = "J14";
 net "ligar" loc = "J15";
+
 
   

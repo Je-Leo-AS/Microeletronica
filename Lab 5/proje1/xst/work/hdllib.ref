@@ -1,8 +1,8 @@
-EN display NULL "/home/jeas/Microeletronica/Lab 5/proje1/display.vhd" sub00/vhpl04 1696521355
-EN proje1 NULL "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" sub00/vhpl06 1696521357
-AR counter hardware "/home/jeas/Microeletronica/Lab 5/proje1/counter.vhd" sub00/vhpl01 1696521352
-EN debounce NULL "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd" sub00/vhpl02 1696521353
-EN counter NULL "/home/jeas/Microeletronica/Lab 5/proje1/counter.vhd" sub00/vhpl00 1696521351
-AR debounce behavioral "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd" sub00/vhpl03 1696521354
-AR proje1 behavioral "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" sub00/vhpl07 1696521358
-AR display hardware "/home/jeas/Microeletronica/Lab 5/proje1/display.vhd" sub00/vhpl05 1696521356
+EN display NULL "/home/jeas/Microeletronica/Lab 5/proje1/display.vhd" sub00/vhpl04 1697065228
+EN proje1 NULL "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" sub00/vhpl06 1697065230
+AR counter hardware "/home/jeas/Microeletronica/Lab 5/proje1/counter.vhd" sub00/vhpl01 1697065259
+EN debounce NULL "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd" sub00/vhpl02 1697065226
+EN counter NULL "/home/jeas/Microeletronica/Lab 5/proje1/counter.vhd" sub00/vhpl00 1697065258
+AR debounce behavioral "/home/jeas/Microeletronica/Lab 5/proje1/debounce.vhd" sub00/vhpl03 1697065227
+AR proje1 behavioral "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" sub00/vhpl07 1697065231
+AR display hardware "/home/jeas/Microeletronica/Lab 5/proje1/display.vhd" sub00/vhpl05 1697065229

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Oct 05 12:55:59 2023
+// Written by: Map P.20131013 on Wed Oct 11 20:00:35 2023
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -7,6 +7,7 @@ COMP "aberta" LOCATE = SITE "R17" LEVEL 1;
 COMP "clk" LOCATE = SITE "B8" LEVEL 1;
 COMP "fechada_led" LOCATE = SITE "F4" LEVEL 1;
 COMP "aberta_led" LOCATE = SITE "R4" LEVEL 1;
+COMP "b_led" LOCATE = SITE "E17" LEVEL 1;
 COMP "fechada" LOCATE = SITE "N17" LEVEL 1;
 COMP "anodo<0>" LOCATE = SITE "F17" LEVEL 1;
 COMP "anodo<1>" LOCATE = SITE "H17" LEVEL 1;
@@ -16,6 +17,7 @@ COMP "P1<0>" LOCATE = SITE "L18" LEVEL 1;
 COMP "P1<1>" LOCATE = SITE "F18" LEVEL 1;
 COMP "P1<2>" LOCATE = SITE "D17" LEVEL 1;
 COMP "remoto" LOCATE = SITE "E18" LEVEL 1;
+COMP "flag_led" LOCATE = SITE "K14" LEVEL 1;
 COMP "ligar" LOCATE = SITE "J15" LEVEL 1;
 COMP "P1<3>" LOCATE = SITE "D16" LEVEL 1;
 COMP "P1<4>" LOCATE = SITE "G14" LEVEL 1;

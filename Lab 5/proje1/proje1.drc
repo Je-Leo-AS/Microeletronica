@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Oct  5 11:32:49 2023
+Wed Oct 11 17:49:14 2023
 
 drc -z proje1.ncd proje1.pcf
 
