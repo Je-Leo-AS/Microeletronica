@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador_completo/somador_completo_isim_beh.exe" -prj "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador_completo/somador_completo_beh.prj" "work.somador_completo" 

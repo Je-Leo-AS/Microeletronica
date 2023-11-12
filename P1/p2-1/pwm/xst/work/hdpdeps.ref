@@ -1,0 +1,7 @@
+V3 3
+FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-1/pwm/pwm.vhd" 2023/11/10.14:38:46 P.20131013
+EN work/pwm 1699637984 \
+      FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-1/pwm/pwm.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/pwm/Behavioral 1699637985 \
+      FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-1/pwm/pwm.vhd" EN work/pwm 1699637984

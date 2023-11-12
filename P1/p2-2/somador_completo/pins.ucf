@@ -1,0 +1,14 @@
+NET "a_com(0)" LOC = "R17";
+NET "a_com(1)" LOC = "N17";
+NET "a_com(2)" LOC = "L13";
+
+NET "b_com(0)" LOC = "K18";
+NET "b_com(1)" LOC = "H18";
+NET "b_com(2)" LOC = "G18";
+
+NET "s_com(0)" LOC = "R4";
+NET "s_com(1)" LOC = "F4";
+NET "s_com(2)" LOC = "P15";
+
+NET "cout_com" LOC = "E17";
+NET "cin_com" LOC = "L14";

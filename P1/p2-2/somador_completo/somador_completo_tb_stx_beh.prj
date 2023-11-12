@@ -1,0 +1,3 @@
+vhdl isim_temp "../somador/somador.vhd"
+vhdl isim_temp "somador_completo.vhd"
+vhdl isim_temp "somador_completo_tb.vhd"

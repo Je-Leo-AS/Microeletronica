@@ -1,0 +1,29 @@
+Command line:
+   somador_completo_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  56119
+
+Fri Nov 10 16:14:05 2023
+
+
+ Elaboration Time: 0.09375 sec
+
+ Current Memory Usage: 5803.98 Meg
+
+ Total Signals          : 24
+ Total Nets             : 16
+ Total Signal Drivers   : 6
+ Total Blocks           : 6
+ Total Primitive Blocks : 4
+ Total Processes        : 6
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 378
+Total Line Count : 6
+
+ Total Simulation Time: 0.09375 sec
+
+ Current Memory Usage: 5803.98 Meg
+
+Fri Nov 10 16:14:07 2023
+

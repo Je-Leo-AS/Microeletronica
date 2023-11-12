@@ -1,0 +1,2 @@
+vhdl work "../somador/somador.vhd"
+vhdl work "somador_completo.vhd"

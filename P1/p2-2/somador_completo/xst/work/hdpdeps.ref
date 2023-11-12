@@ -1,0 +1,15 @@
+V3 7
+FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador/somador.vhd" 2023/11/10.15:14:59 P.20131013
+EN work/somador 1699644107 \
+      FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador/somador.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/somador/Behavioral 1699644108 \
+      FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador/somador.vhd" \
+      EN work/somador 1699644107
+FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador_completo/somador_completo.vhd" 2023/11/10.16:07:17 P.20131013
+EN work/somador_completo 1699644109 \
+      FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador_completo/somador_completo.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/somador_completo/Behavioral 1699644110 \
+      FL "C:/Users/Aluno/Desktop/Leonardo Santos/p2-2/somador_completo/somador_completo.vhd" \
+      EN work/somador_completo 1699644109 CP somador

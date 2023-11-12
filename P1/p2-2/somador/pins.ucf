@@ -1,0 +1,5 @@
+NET "a" LOC = "R17";
+NET "b" LOC = "N17";
+NET "cin" LOC = "L13";
+NET "cout" LOC = "R4";
+NET "s" LOC = "F4";

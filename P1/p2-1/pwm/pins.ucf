@@ -1,0 +1,5 @@
+NET "duty(0)" LOC = "R17";
+NET "duty(1)" LOC = "N17";
+NET "duty(2)" LOC = "L13";
+NET "y" LOC = "R4";
+NET "clk" LOC = "B8";
