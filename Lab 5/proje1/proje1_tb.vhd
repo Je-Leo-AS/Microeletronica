@@ -47,6 +47,7 @@ ARCHITECTURE behavior OF proje1_tb IS
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
+	constant push_time : time := 50 ns;
  
 BEGIN
  
@@ -95,7 +96,7 @@ BEGIN
 
 	  -- Configurar remoto=1
 	  remoto <= '1';
-	  wait for clk_period;
+	  wait for 10*clk_period;
 	  remoto <= '0';
 	  fechada <= '0';
 	  
@@ -109,35 +110,32 @@ BEGIN
 
 	  -- Configurar remoto=1
 	  remoto <= '1';
-	  wait for 2*clk_period;
+	  wait for push_time;
 	  remoto <= '0';
+	  aberta <= '0';
 
 	  wait for 50 ns; -- Fechando
 	  
 	  aberta <= '0';
 	  fechada <= '1';
 
-	  wait for 50 ns; -- Fechado
+	  wait for 50 ns; 
 
 	  remoto <= '1';
-	  wait for 10 ns;
+	  wait for push_time;
 	  remoto <= '0';
+	  fechada <= '0';
 
 	  wait for 50 ns; -- Abrindo
 	  
-	  fechada <= '0';
-	  aberta <= '0';
-	  
-	  wait for 20 ns;
-	  
 	  remoto <= '1';
 	  wait for 10 ns;
 	  remoto <= '0';
 
-	  wait for 50 ns; -- Parado abrindo
+	  wait for 50 ns; -- Pausado para fechar
 	  
 	  remoto <= '1';
-	  wait for 10 ns;
+	  wait for push_time;
 	  remoto <= '0';
 
 	  wait for 50 ns; -- Fechando
@@ -146,18 +144,13 @@ BEGIN
 	  wait for 10 ns;
 	  remoto <= '0';
 	  
-	  wait for 50 ns; -- Parado fechando
+	  wait for 10 ns; -- Pausado para abrir
 	  
 	  remoto <= '1';
 	  wait for 10 ns;
 	  remoto <= '0';
-	  
-	  wait for 50 ns; -- Abrindo
-	  
-	  aberta <= '1';
-	  fechada <= '0';
-	  
-	  wait for 30000 ms;
+	    
+	  wait for 30000 ms; -- Pausado para abrir
 
 	  wait for 100 ns;
 

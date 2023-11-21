@@ -2,12 +2,12 @@ Command line:
    proje1_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  1
-     -socket  58801
+     -socket  44767
 
-Wed Oct 11 20:01:15 2023
+Fri Oct 27 13:58:21 2023
 
 
- Elaboration Time: 0.07 sec
+ Elaboration Time: 0.03 sec
 
  Current Memory Usage: 186.04 Meg
 
@@ -17,12 +17,12 @@ Wed Oct 11 20:01:15 2023
  Total Blocks           : 7
  Total Primitive Blocks : 5
  Total Processes        : 13
- Total Traceable Variables  : 20
- Total Scalar Nets and Variables : 524
+ Total Traceable Variables  : 21
+ Total Scalar Nets and Variables : 525
 
- Total Simulation Time: 0.4 sec
+ Total Simulation Time: 0.21 sec
 
  Current Memory Usage: 261.542 Meg
 
-Wed Oct 11 20:04:01 2023
+Fri Oct 27 14:13:00 2023
 

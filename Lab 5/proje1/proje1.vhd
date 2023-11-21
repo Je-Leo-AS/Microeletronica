@@ -17,7 +17,7 @@ end proje1;
 
 architecture Behavioral of proje1 is
 
-type st is (abrindo, fechando, abrt,fchd, pausado_para_abrir,pausado_para_fechar, fechando_pelo_timer, intermediario);
+type st is (abrindo, fechando, abrt,fchd, pausado_para_abrir,pausado_para_fechar, fechando_pelo_timer, intermediario, intermediario_2);
 signal estado, estado_futuro :st;
 signal controle : std_logic;
 signal rst_counter : std_logic;
@@ -58,7 +58,6 @@ process(estado, dezseg, aberta, fechada, controle, flag)
 begin
 
 	case  estado is
-	
 		when fchd => 
 			ligar <= '0';
 			direcao <= '1';
@@ -89,7 +88,7 @@ begin
 			direcao <= '0';
 			ena <= '1';
 			rst_counter <= '1';
-			
+			rst_flag <= '0';
 			if(controle = '1' and flag = '1') then 
 				estado_futuro <= pausado_para_abrir; 
 			elsif(fechada = '1') then 
@@ -118,7 +117,7 @@ begin
 			ena <= '0';
 			rst_counter <= '0';
 			set_flag <= '0';
-			if(controle = '1' and flag = '1') then 
+			if(controle = '1' and flag = '0') then 
 				estado_futuro <= intermediario; 
 			elsif(dezseg = 3)  then 
 				estado_futuro <= fechando_pelo_timer;
@@ -131,9 +130,8 @@ begin
 			direcao <= '0';
 			ena <= '0';
 			rst_counter <= '0';
-			
-			if(controle = '1' and flag = '0') then
-				estado_futuro <= fechando; 
+			if(controle = '1' and flag = '1') then
+				estado_futuro <= intermediario_2; 
 			elsif(dezseg = 3) then
 				estado_futuro <= fechando; 
 			else					 		                               
@@ -155,6 +153,15 @@ begin
 			set_flag <= '1';
 			else 
 			estado_futuro <= intermediario;
+			end if;
+		when intermediario_2 => 
+			ligar <= '1';
+			direcao <= '0';
+			if(controle = '0' and flag = '1') then
+			estado_futuro <= fechando;
+			rst_flag <= '1';
+			else 
+			estado_futuro <= intermediario_2;
 			end if;
 			
 	end case;

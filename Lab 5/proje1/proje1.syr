@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Reading design: proje1.prj
@@ -138,10 +138,10 @@ Analyzing hierarchy for entity <display> in library <work> (architecture <hardwa
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <proje1> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" line 164: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" line 172: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <set_flag>, <flag>
-WARNING:Xst:751 - "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" line 208: Bad association for formal port 'sU' of component 'counter'.
-WARNING:Xst:751 - "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" line 208: Bad association for formal port 'sD' of component 'counter'.
+WARNING:Xst:751 - "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" line 216: Bad association for formal port 'sU' of component 'counter'.
+WARNING:Xst:751 - "/home/jeas/Microeletronica/Lab 5/proje1/proje1.vhd" line 216: Bad association for formal port 'sD' of component 'counter'.
 Entity <proje1> analyzed. Unit <proje1> generated.
 
 Analyzing generic Entity <counter> in library <work> (Architecture <hardware>).
@@ -208,10 +208,10 @@ Synthesizing Unit <proje1>.
 INFO:Xst:1608 - Relative priorities of control signals on register <flag> differ from those commonly found in the selected device family. This will result in additional logic around the register.
     Found finite state machine <FSM_0> for signal <estado>.
     -----------------------------------------------------------------------
-    | States             | 8                                              |
-    | Transitions        | 32                                             |
+    | States             | 9                                              |
+    | Transitions        | 35                                             |
     | Inputs             | 5                                              |
-    | Outputs            | 10                                             |
+    | Outputs            | 11                                             |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | rst                       (positive)           |
     | Reset type         | asynchronous                                   |
@@ -231,8 +231,8 @@ INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and 
     Found 1-bit register for signal <flag>.
     Found 4-bit register for signal <number>.
     Found 3-bit register for signal <sel_led>.
-    Found 19-bit adder for signal <sel_led$add0000> created at line 191.
-    Found 3-bit adder for signal <sel_led$addsub0000> created at line 194.
+    Found 19-bit adder for signal <sel_led$add0000> created at line 199.
+    Found 3-bit adder for signal <sel_led$addsub0000> created at line 202.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   1 Counter(s).
@@ -274,19 +274,20 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <estado/FSM> on signal <estado[1:3]> with gray encoding.
----------------------------------
+Optimizing FSM <estado/FSM> on signal <estado[1:9]> with one-hot encoding.
+----------------------------------
  State               | Encoding
----------------------------------
- abrindo             | 000
- fechando            | 011
- abrt                | 110
- fchd                | 001
- pausado_para_abrir  | 111
- pausado_para_fechar | 101
- fechando_pelo_timer | 010
- intermediario       | 100
----------------------------------
+----------------------------------
+ abrindo             | 000000001
+ fechando            | 000000100
+ abrt                | 000010000
+ fchd                | 000000010
+ pausado_para_abrir  | 000100000
+ pausado_para_fechar | 001000000
+ fechando_pelo_timer | 000001000
+ intermediario       | 010000000
+ intermediario_2     | 100000000
+----------------------------------
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -338,8 +339,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 65
- Flip-Flops                                            : 65
+# Registers                                            : 71
+ Flip-Flops                                            : 71
 
 =========================================================================
 
@@ -368,29 +369,29 @@ Design Statistics
 # IOs                              : 22
 
 Cell Usage :
-# BELS                             : 285
+# BELS                             : 291
 #      GND                         : 1
-#      INV                         : 10
+#      INV                         : 9
 #      LUT1                        : 40
-#      LUT2                        : 10
-#      LUT3                        : 39
-#      LUT4                        : 36
+#      LUT2                        : 12
+#      LUT3                        : 38
+#      LUT4                        : 44
 #      LUT4_D                      : 3
 #      MUXCY                       : 76
-#      MUXF5                       : 4
-#      MUXF6                       : 1
+#      MUXF5                       : 3
 #      VCC                         : 1
 #      XORCY                       : 64
-# FlipFlops/Latches                : 68
+# FlipFlops/Latches                : 74
 #      FD                          : 7
-#      FDC                         : 2
+#      FDC                         : 8
 #      FDCE                        : 32
 #      FDCP_1                      : 1
 #      FDE                         : 1
 #      FDP                         : 1
 #      FDR                         : 19
 #      FDS                         : 2
-#      LD_1                        : 3
+#      LD                          : 1
+#      LD_1                        : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 21
@@ -403,9 +404,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                       75  out of   4656     1%  
- Number of Slice Flip Flops:             68  out of   9312     0%  
- Number of 4 input LUTs:                138  out of   9312     1%  
+ Number of Slices:                       77  out of   4656     1%  
+ Number of Slice Flip Flops:             74  out of   9312     0%  
+ Number of 4 input LUTs:                146  out of   9312     1%  
  Number of IOs:                          22
  Number of bonded IOBs:                  22  out of    232     9%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -428,15 +429,15 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------+------------------------+-------+
-Clock Signal                         | Clock buffer(FF name)  | Load  |
--------------------------------------+------------------------+-------+
-clk                                  | BUFGP                  | 64    |
-button/result                        | NONE(flag)             | 1     |
-estado_cmp_eq0008(estado_FSM_Out71:O)| NONE(*)(ena)           | 1     |
-rst_flag_or0000(rst_flag_or00001:O)  | NONE(*)(rst_flag)      | 1     |
-set_flag_or0000(set_flag_or0000_f5:O)| NONE(*)(set_flag)      | 1     |
--------------------------------------+------------------------+-------+
+--------------------------------------+------------------------+-------+
+Clock Signal                          | Clock buffer(FF name)  | Load  |
+--------------------------------------+------------------------+-------+
+clk                                   | BUFGP                  | 70    |
+button/result                         | NONE(flag)             | 1     |
+ena_or0000(ena_or00001:O)             | NONE(*)(ena)           | 1     |
+rst_flag_not0001(rst_flag_not000128:O)| NONE(*)(rst_flag)      | 1     |
+set_flag_or0000(set_flag_or000017:O)  | NONE(*)(set_flag)      | 1     |
+--------------------------------------+------------------------+-------+
 (*) These 3 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -448,7 +449,7 @@ Asynchronous Control Signals Information:
 Control Signal                     | Buffer(FF name)          | Load  |
 -----------------------------------+--------------------------+-------+
 ena(ena:Q)                         | NONE(Contador/cont_clk_0)| 32    |
-rst                                | IBUF                     | 3     |
+rst                                | IBUF                     | 9     |
 flag_and0000(flag_and00001:O)      | NONE(flag)               | 1     |
 flag_or0000(flag_or00001:O)        | NONE(flag)               | 1     |
 -----------------------------------+--------------------------+-------+
@@ -458,8 +459,8 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 9.235ns (Maximum Frequency: 108.284MHz)
-   Minimum input arrival time before clock: 4.730ns
-   Maximum output required time after clock: 5.668ns
+   Minimum input arrival time before clock: 3.609ns
+   Maximum output required time after clock: 5.651ns
    Maximum combinational path delay: 4.774ns
 
 Timing Detail:
@@ -469,7 +470,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 9.235ns (frequency: 108.284MHz)
-  Total number of paths / destination ports: 14784 / 91
+  Total number of paths / destination ports: 14791 / 97
 -------------------------------------------------------------------------
 Delay:               9.235ns (Levels of Logic = 21)
   Source:            cont_clk_1 (FF)
@@ -502,7 +503,7 @@ Delay:               9.235ns (Levels of Logic = 21)
      MUXCY:CI->O           1   0.051   0.000  cont_clk_cmp_eq0000_wg_cy<3> (cont_clk_cmp_eq0000_wg_cy<3>)
      MUXCY:CI->O          25   0.288   1.074  cont_clk_cmp_eq0000_wg_cy<4> (cont_clk_cmp_eq0000)
      LUT4_D:I3->O          5   0.612   0.541  number_mux0000<0>21 (N3)
-     LUT4:I3->O            1   0.612   0.357  number_mux0000<0>_SW0 (N41)
+     LUT4:I3->O            1   0.612   0.357  number_mux0000<0>_SW0 (N20)
      FDS:S                     0.795          number_0
     ----------------------------------------
     Total                      9.235ns (6.222ns logic, 3.013ns route)
@@ -510,10 +511,10 @@ Delay:               9.235ns (Levels of Logic = 21)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'button/result'
-  Clock period: 2.568ns (frequency: 389.431MHz)
+  Clock period: 2.644ns (frequency: 378.165MHz)
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               2.568ns (Levels of Logic = 1)
+Delay:               2.644ns (Levels of Logic = 1)
   Source:            flag (FF)
   Destination:       flag (FF)
   Source Clock:      button/result falling
@@ -523,60 +524,60 @@ Delay:               2.568ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCP_1:C->Q          12   0.514   0.817  flag (flag)
+     FDCP_1:C->Q          17   0.514   0.893  flag (flag)
      INV:I->O              1   0.612   0.357  flag_not00011_INV_0 (flag_not0001)
      FDCP_1:D                  0.268          flag
     ----------------------------------------
-    Total                      2.568ns (1.394ns logic, 1.174ns route)
-                                       (54.3% logic, 45.7% route)
+    Total                      2.644ns (1.394ns logic, 1.250ns route)
+                                       (52.7% logic, 47.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 6 / 4
+  Total number of paths / destination ports: 8 / 6
 -------------------------------------------------------------------------
-Offset:              4.730ns (Levels of Logic = 4)
+Offset:              3.609ns (Levels of Logic = 3)
   Source:            aberta (PAD)
-  Destination:       estado_FSM_FFd1 (FF)
+  Destination:       estado_FSM_FFd5 (FF)
   Destination Clock: clk rising
 
-  Data Path: aberta to estado_FSM_FFd1
+  Data Path: aberta to estado_FSM_FFd5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.106   0.502  aberta_IBUF (aberta_led_OBUF)
-     LUT4:I3->O            1   0.612   0.509  estado_FSM_FFd1-In17 (estado_FSM_FFd1-In17)
-     LUT4:I0->O            1   0.612   0.509  estado_FSM_FFd1-In79_SW0 (N6)
-     LUT4:I0->O            1   0.612   0.000  estado_FSM_FFd1-In79 (estado_FSM_FFd1-In)
-     FDC:D                     0.268          estado_FSM_FFd1
+     IBUF:I->O             4   1.106   0.651  aberta_IBUF (aberta_led_OBUF)
+     LUT4:I0->O            1   0.612   0.360  estado_FSM_FFd5-In_SW0 (N15)
+     LUT4:I3->O            1   0.612   0.000  estado_FSM_FFd5-In (estado_FSM_FFd5-In)
+     FDC:D                     0.268          estado_FSM_FFd5
     ----------------------------------------
-    Total                      4.730ns (3.210ns logic, 1.520ns route)
-                                       (67.9% logic, 32.1% route)
+    Total                      3.609ns (2.598ns logic, 1.011ns route)
+                                       (72.0% logic, 28.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 37 / 12
+  Total number of paths / destination ports: 40 / 12
 -------------------------------------------------------------------------
-Offset:              5.668ns (Levels of Logic = 2)
-  Source:            estado_FSM_FFd2 (FF)
-  Destination:       direcao (PAD)
+Offset:              5.651ns (Levels of Logic = 3)
+  Source:            estado_FSM_FFd1 (FF)
+  Destination:       ligar (PAD)
   Source Clock:      clk rising
 
-  Data Path: estado_FSM_FFd2 to direcao
+  Data Path: estado_FSM_FFd1 to ligar
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             15   0.514   1.016  estado_FSM_FFd2 (estado_FSM_FFd2)
-     LUT3:I0->O            1   0.612   0.357  estado_FSM_Out91 (ligar_OBUF)
+     FDC:C->Q              6   0.514   0.721  estado_FSM_FFd1 (estado_FSM_FFd1)
+     LUT4:I0->O            1   0.612   0.000  estado_FSM_Out101 (estado_FSM_Out10)
+     MUXF5:I0->O           1   0.278   0.357  estado_FSM_Out10_f5 (ligar_OBUF)
      OBUF:I->O                 3.169          ligar_OBUF (ligar)
     ----------------------------------------
-    Total                      5.668ns (4.295ns logic, 1.373ns route)
-                                       (75.8% logic, 24.2% route)
+    Total                      5.651ns (4.573ns logic, 1.078ns route)
+                                       (80.9% logic, 19.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'button/result'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              4.500ns (Levels of Logic = 1)
+Offset:              4.576ns (Levels of Logic = 1)
   Source:            flag (FF)
   Destination:       flag_led (PAD)
   Source Clock:      button/result falling
@@ -585,26 +586,26 @@ Offset:              4.500ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCP_1:C->Q          12   0.514   0.817  flag (flag)
+     FDCP_1:C->Q          17   0.514   0.893  flag (flag)
      OBUF:I->O                 3.169          flag_led_OBUF (flag_led)
     ----------------------------------------
-    Total                      4.500ns (3.683ns logic, 0.817ns route)
-                                       (81.8% logic, 18.2% route)
+    Total                      4.576ns (3.683ns logic, 0.893ns route)
+                                       (80.5% logic, 19.5% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
 Delay:               4.774ns (Levels of Logic = 2)
-  Source:            aberta (PAD)
-  Destination:       aberta_led (PAD)
+  Source:            fechada (PAD)
+  Destination:       fechada_led (PAD)
 
-  Data Path: aberta to aberta_led
+  Data Path: fechada to fechada_led
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.106   0.499  aberta_IBUF (aberta_led_OBUF)
-     OBUF:I->O                 3.169          aberta_led_OBUF (aberta_led)
+     IBUF:I->O             4   1.106   0.499  fechada_IBUF (fechada_led_OBUF)
+     OBUF:I->O                 3.169          fechada_led_OBUF (fechada_led)
     ----------------------------------------
     Total                      4.774ns (4.275ns logic, 0.499ns route)
                                        (89.5% logic, 10.5% route)
@@ -612,13 +613,13 @@ Delay:               4.774ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.67 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.44 secs
  
 --> 
 
 
-Total memory usage is 506492 kilobytes
+Total memory usage is 506696 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   12 (   0 filtered)

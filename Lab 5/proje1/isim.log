@@ -6,7 +6,12 @@ This is a Full version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 500 ns
+# run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# exit 0
 # exit 0
