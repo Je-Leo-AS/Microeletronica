@@ -1,0 +1,11 @@
+EN display NULL /home/jeas/Microeletronica/PA/Genius/display.vhd sub00/vhpl03 1700603607
+AR display behavioral /home/jeas/Microeletronica/PA/Genius/display.vhd sub00/vhpl04 1700603608
+AR driver_vga behavioral /home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd sub00/vhpl09 1700603604
+EN genius NULL /home/jeas/Microeletronica/PA/Genius/Genius.vhd sub00/vhpl00 1700603609
+EN debounce NULL /home/jeas/Microeletronica/PA/Genius/debounce.vhd sub00/vhpl01 1700603605
+EN driver_vga NULL /home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd sub00/vhpl08 1700603603
+AR debounce behavioral /home/jeas/Microeletronica/PA/Genius/debounce.vhd sub00/vhpl02 1700603606
+AR genius behavioral /home/jeas/Microeletronica/PA/Genius/Genius.vhd sub00/vhpl05 1700603610
+PB modulos modulos /home/jeas/Microeletronica/PA/Genius/modulos.vhd sub00/vhpl07 1700603602
+PH modulos NULL /home/jeas/Microeletronica/PA/Genius/modulos.vhd sub00/vhpl06 1700603601
+PH rom_characters NULL /home/jeas/Microeletronica/PA/Genius/char_rom.vhd sub00/vhpl10 1700601623

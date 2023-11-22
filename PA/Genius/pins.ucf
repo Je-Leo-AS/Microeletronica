@@ -1,0 +1,47 @@
+NET "start" LOC = "R17";
+NET "clk" LOC = "B8";
+
+NET "rst" LOC = "N17";
+
+NET "LED(0)" LOC = "R4";
+NET "LED(1)" LOC = "F4";
+NET "LED(2)" LOC = "P15";
+NET "LED(3)" LOC = "E17";
+
+NET "state_led(0)" LOC = "K14";
+NET "state_led(1)" LOC = "K15";
+#NET "state_led(2)" LOC = "J15";
+NET "state_led(3)" LOC = "J14";
+
+
+NET "Btns_colors(0)" LOC = "H13";
+NET "Btns_colors(1)" LOC = "E18";
+NET "Btns_colors(2)" LOC = "D18";
+NET "Btns_colors(3)" LOC = "B18";
+
+NET "dif(0)" LOC = "H18";
+NET "dif(1)" LOC = "G18";
+
+net "display7(6)" loc = "H14";
+net "display7(5)" loc = "J17";
+net "display7(4)" loc = "G14";
+net "display7(3)" loc = "D16";
+net "display7(2)" loc = "D17";
+net "display7(1)" loc = "F18";
+net "display7(0)" loc = "L18";
+
+net "anodo(0)" loc = "F17";
+net "anodo(1)" loc = "H17";
+net "anodo(2)" loc = "C18";
+net "anodo(3)" loc = "F15";
+
+net "R(2)" loc = "R8";
+net "R(1)" loc = "T8";
+net "R(0)" loc = "R9";
+net "G(2)" loc = "P6";
+net "G(1)" loc = "P8";
+net "G(0)" loc = "N8";
+net "B(1)" loc = "U4";
+net "B(0)" loc = "U5";
+net "H_SYNC" loc = "T4";
+net "V_SYNC" loc = "U3";

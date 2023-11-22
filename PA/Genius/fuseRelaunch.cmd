@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/jeas/Microeletronica/PA/Genius/Genius_tb_isim_beh.exe" -prj "/home/jeas/Microeletronica/PA/Genius/Genius_tb_beh.prj" "work.Genius_tb" 

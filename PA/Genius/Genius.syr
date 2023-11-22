@@ -1,0 +1,1117 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: Genius.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Genius.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Genius"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : Genius
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" in Library work.
+Package <modulos> compiled.
+Package body <modulos> compiled.
+Compiling vhdl file "/home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd" in Library work.
+Architecture behavioral of Entity driver_vga is up to date.
+Compiling vhdl file "/home/jeas/Microeletronica/PA/Genius/debounce.vhd" in Library work.
+Entity <debounce> compiled.
+Entity <debounce> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/jeas/Microeletronica/PA/Genius/display.vhd" in Library work.
+Architecture behavioral of Entity display is up to date.
+Compiling vhdl file "/home/jeas/Microeletronica/PA/Genius/Genius.vhd" in Library work.
+Entity <genius> compiled.
+Entity <genius> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Genius> in library <work> (architecture <behavioral>) with generics.
+	F_att = 8000
+	Fmax = 50000000
+	N = 2
+	Sequencia_por_nivel = 4
+	s_time = 100
+	time_out = 5
+
+Analyzing hierarchy for entity <Driver_VGA> in library <work> (architecture <behavioral>) with generics.
+	h_aw = 800
+	h_bp = 64
+	h_fp = 56
+	h_sp = 120
+	v_aw = 600
+	v_bp = 23
+	v_fp = 37
+	v_sp = 6
+
+Analyzing hierarchy for entity <debounce> in library <work> (architecture <behavioral>) with generics.
+	Fmax = 50000000
+	s_time = 100
+WARNING:Xst:1760 - "/home/jeas/Microeletronica/PA/Genius/debounce.vhd" line 15: Overflow in constant operation.
+
+Analyzing hierarchy for entity <display> in library <work> (architecture <behavioral>) with generics.
+	F_att = 8000
+	Fmax = 50000000
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <Genius> in library <work> (Architecture <behavioral>).
+	F_att = 8000
+	Fmax = 50000000
+	N = 2
+	Sequencia_por_nivel = 4
+	s_time = 100
+	time_out = 5
+INFO:Xst:1607 - Contents of array <sequencia> may be accessed with an index that does not cover the full array size.
+INFO:Xst:1432 - Contents of array <sequencia> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <sequencia> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:819 - "/home/jeas/Microeletronica/PA/Genius/Genius.vhd" line 153: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <color>, <sequencia>
+WARNING:Xst:819 - "/home/jeas/Microeletronica/PA/Genius/Genius.vhd" line 435: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <color_show>, <Btns_colors>
+Entity <Genius> analyzed. Unit <Genius> generated.
+
+Analyzing generic Entity <Driver_VGA> in library <work> (Architecture <behavioral>).
+	h_aw = 800
+	h_bp = 64
+	h_fp = 56
+	h_sp = 120
+	v_aw = 600
+	v_bp = 23
+	v_fp = 37
+	v_sp = 6
+Entity <Driver_VGA> analyzed. Unit <Driver_VGA> generated.
+
+Analyzing generic Entity <debounce> in library <work> (Architecture <behavioral>).
+	Fmax = 50000000
+	s_time = 100
+WARNING:Xst:1760 - "/home/jeas/Microeletronica/PA/Genius/debounce.vhd" line 15: Overflow in constant operation.
+Entity <debounce> analyzed. Unit <debounce> generated.
+
+Analyzing generic Entity <display> in library <work> (Architecture <behavioral>).
+	F_att = 8000
+	Fmax = 50000000
+WARNING:Xst:819 - "/home/jeas/Microeletronica/PA/Genius/display.vhd" line 24: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <clk_enable>, <number>
+Entity <display> analyzed. Unit <display> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Driver_VGA>.
+    Related source file is "/home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd".
+WARNING:Xst:647 - Input <points> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 11-bit up counter for signal <h_count>.
+    Found 11-bit comparator greatequal for signal <next_h_sync$cmp_le0000> created at line 82.
+    Found 10-bit comparator greatequal for signal <next_v_sync$cmp_le0000> created at line 84.
+    Found 10-bit comparator greater for signal <RGBp$cmp_lt0000> created at line 95.
+    Found 10-bit comparator less for signal <RGBp$cmp_lt0001> created at line 95.
+    Found 11-bit comparator greater for signal <RGBp$cmp_lt0002> created at line 95.
+    Found 11-bit comparator less for signal <RGBp$cmp_lt0003> created at line 95.
+    Found 11-bit comparator greater for signal <RGBp$cmp_lt0004> created at line 101.
+    Found 11-bit comparator less for signal <RGBp$cmp_lt0005> created at line 101.
+    Found 10-bit comparator greater for signal <RGBp$cmp_lt0006> created at line 107.
+    Found 10-bit comparator less for signal <RGBp$cmp_lt0007> created at line 107.
+    Found 10-bit up counter for signal <v_count>.
+    Found 10-bit comparator less for signal <v_count$cmp_lt0000> created at line 72.
+    Found 11-bit comparator less for signal <v_count$cmp_lt0001> created at line 68.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  12 Comparator(s).
+Unit <Driver_VGA> synthesized.
+
+
+Synthesizing Unit <debounce>.
+    Related source file is "/home/jeas/Microeletronica/PA/Genius/debounce.vhd".
+    Found 20-bit up counter for signal <count>.
+    Found 20-bit adder for signal <count$add0000> created at line 24.
+    Found 20-bit comparator greater for signal <count$cmp_gt0000> created at line 25.
+    Found 1-bit xor2 for signal <count$xor0000> created at line 23.
+    Found 1-bit register for signal <result>.
+    Found 20-bit comparator lessequal for signal <result$cmp_le0000> created at line 25.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <debounce> synthesized.
+
+
+Synthesizing Unit <display>.
+    Related source file is "/home/jeas/Microeletronica/PA/Genius/display.vhd".
+WARNING:Xst:737 - Found 7-bit latch for signal <LED>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 32x7-bit ROM for signal <LED$mux0002>.
+    Found 4-bit register for signal <anodo>.
+    Found 1-bit register for signal <clk_enable>.
+    Found 26-bit up counter for signal <cont_clk>.
+    Found 32-bit register for signal <number>.
+    Found 3-bit register for signal <sel_led>.
+    Found 26-bit adder for signal <sel_led$add0000> created at line 29.
+    Found 3-bit adder for signal <sel_led$addsub0000> created at line 33.
+    Found 3-bit comparator greater for signal <sel_led$cmp_gt0000> created at line 34.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <display> synthesized.
+
+
+Synthesizing Unit <Genius>.
+    Related source file is "/home/jeas/Microeletronica/PA/Genius/Genius.vhd".
+WARNING:Xst:1306 - Output <state_led<2>> is never assigned.
+    Found finite state machine <FSM_0> for signal <estado>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | inicio                                         |
+    | Power Up State     | inicio                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <flag>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nxt_level>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 2-bit latch for signal <nivel>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 32-bit latch for signal <points>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <waiting>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 3-bit latch for signal <color>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <acerto>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 29x32-bit ROM for signal <$varindex0002> created at line 137.
+    Found 29x32-bit ROM for signal <$varindex0001> created at line 180.
+    Found 16x2-bit ROM for signal <$rom0000>.
+WARNING:Xst:737 - Found 32-bit latch for signal <caracter4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 32-bit latch for signal <caracter3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 32-bit latch for signal <caracter2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 32-bit latch for signal <caracter1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 32-bit comparator equal for signal <acerto$cmp_eq0000> created at line 180.
+    Found 32-bit register for signal <color_show>.
+    Found 32-bit register for signal <count_clk>.
+    Found 32-bit comparator greatequal for signal <count_clk$cmp_ge0000> created at line 136.
+    Found 26-bit up counter for signal <count_clk0>.
+    Found 26-bit adder for signal <count_clk0$add0000> created at line 257.
+    Found 25-bit up counter for signal <count_time_tela>.
+    Found 2-bit comparator greater for signal <estado$cmp_gt0000> created at line 223.
+    Found 32-bit 4-to-1 multiplexer for signal <index>.
+    Found 32-bit adder for signal <index$addsub0000> created at line 185.
+    Found 4-bit up counter for signal <index_show>.
+    Found 32-bit adder for signal <index_show$add0000> created at line 135.
+    Found 4-bit comparator greater for signal <index_show$cmp_gt0000> created at line 142.
+    Found 2-bit adder for signal <nivel$add0000> created at line 189.
+    Found 32-bit comparator greatequal for signal <nxt_level$cmp_ge0000> created at line 187.
+    Found 1-bit register for signal <overtime>.
+    Found 32-bit adder for signal <points$add0000> created at line 199.
+    Found 32-bit up counter for signal <tela>.
+    Found 25-bit adder for signal <tela$addsub0000> created at line 292.
+    Found 32-bit down counter for signal <timer>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   3 ROM(s).
+	inferred   5 Counter(s).
+	inferred  65 D-type flip-flop(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred   5 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <Genius> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 16x2-bit ROM                                          : 1
+ 29x32-bit ROM                                         : 2
+ 32x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 13
+ 2-bit adder                                           : 1
+ 20-bit adder                                          : 5
+ 25-bit adder                                          : 1
+ 26-bit adder                                          : 2
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 3
+# Counters                                             : 13
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 20-bit up counter                                     : 5
+ 25-bit up counter                                     : 1
+ 26-bit up counter                                     : 2
+ 32-bit down counter                                   : 1
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 12
+ 1-bit register                                        : 7
+ 3-bit register                                        : 1
+ 32-bit register                                       : 3
+ 4-bit register                                        : 1
+# Latches                                              : 12
+ 1-bit latch                                           : 4
+ 2-bit latch                                           : 1
+ 3-bit latch                                           : 1
+ 32-bit latch                                          : 5
+ 7-bit latch                                           : 1
+# Comparators                                          : 28
+ 10-bit comparator greatequal                          : 1
+ 10-bit comparator greater                             : 2
+ 10-bit comparator less                                : 3
+ 11-bit comparator greatequal                          : 1
+ 11-bit comparator greater                             : 2
+ 11-bit comparator less                                : 3
+ 2-bit comparator greater                              : 1
+ 20-bit comparator greater                             : 5
+ 20-bit comparator lessequal                           : 5
+ 3-bit comparator greater                              : 1
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greatequal                          : 2
+ 4-bit comparator greater                              : 1
+# Multiplexers                                         : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+# Xors                                                 : 5
+ 1-bit xor2                                            : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <estado/FSM> on signal <estado[1:3]> with gray encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ inicio      | 000
+ jogando     | 011
+ aguardando  | 001
+ parabens    | 110
+ fim_de_jogo | 010
+-------------------------
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <16>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <18>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <19>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <20>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <21>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <22>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <24>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <27>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <28>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <30>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <31>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <8>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <9>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <10>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <12>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <13>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <14>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <16>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <17>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <18>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <19>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <20>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <21>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <22>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <23>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <24>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <25>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <26>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <27>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <28>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <30>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <31>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <Genius>.
+INFO:Xst:3044 - The ROM <Mrom__varindex0002> will be implemented as a read-only BLOCK RAM, absorbing the register: <color_show>.
+INFO:Xst:3225 - The RAM <Mrom__varindex0002> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 29-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to signal <index_show_and0000> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <index_show>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <color_show>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <Genius> synthesized (advanced).
+
+Synthesizing (advanced) Unit <display>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_LED_mux0002> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <display> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 1
+ 29x32-bit single-port block RAM                       : 1
+# ROMs                                                 : 3
+ 16x2-bit ROM                                          : 1
+ 29x32-bit ROM                                         : 1
+ 32x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 13
+ 2-bit adder                                           : 1
+ 20-bit adder                                          : 5
+ 25-bit adder                                          : 1
+ 26-bit adder                                          : 2
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 3
+# Counters                                             : 13
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 20-bit up counter                                     : 5
+ 25-bit up counter                                     : 1
+ 26-bit up counter                                     : 2
+ 32-bit down counter                                   : 1
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 78
+ Flip-Flops                                            : 78
+# Latches                                              : 12
+ 1-bit latch                                           : 4
+ 2-bit latch                                           : 1
+ 3-bit latch                                           : 1
+ 32-bit latch                                          : 5
+ 7-bit latch                                           : 1
+# Comparators                                          : 28
+ 10-bit comparator greatequal                          : 1
+ 10-bit comparator greater                             : 2
+ 10-bit comparator less                                : 3
+ 11-bit comparator greatequal                          : 1
+ 11-bit comparator greater                             : 2
+ 11-bit comparator less                                : 3
+ 2-bit comparator greater                              : 1
+ 20-bit comparator greater                             : 5
+ 20-bit comparator lessequal                           : 5
+ 3-bit comparator greater                              : 1
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greatequal                          : 2
+ 4-bit comparator greater                              : 1
+# Multiplexers                                         : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+# Xors                                                 : 5
+ 1-bit xor2                                            : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <caracter3_7> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_8> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_9> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_10> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_11> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_12> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_13> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_14> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_15> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_16> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_17> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_18> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_19> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_20> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_21> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_22> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_23> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_24> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_25> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_26> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_27> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_28> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_29> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_30> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter3_31> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_7> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_8> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_9> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_10> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_11> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_12> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_13> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_14> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_15> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_16> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_17> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_18> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_19> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_20> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_21> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_22> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_23> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_24> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_25> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_26> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_27> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_28> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_29> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_30> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <caracter2_31> (without init value) has a constant value of 0 in block <Genius>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <caracter3_5> in Unit <Genius> is equivalent to the following FF/Latch, which will be removed : <caracter3_6> 
+INFO:Xst:2261 - The FF/Latch <caracter2_5> in Unit <Genius> is equivalent to the following FF/Latch, which will be removed : <caracter2_6> 
+WARNING:Xst:2170 - Unit Genius : the following signal(s) form a combinatorial loop: Mcompar_nxt_level_cmp_ge0000_cy<6>, Mcompar_nxt_level_cmp_ge0000_cy<1>, Mcompar_nxt_level_cmp_ge0000_cy<2>, index_mux0004<2>, acerto_cmp_eq0000, Mcompar_nxt_level_cmp_ge0000_cy<3>, Mcompar_nxt_level_cmp_ge0000_cy<8>, acerto_mux0006, acerto_cmp_eq00001, Mcompar_nxt_level_cmp_ge0000_cy<7>, nxt_level_cmp_ge0000, index<0>, Mcompar_nxt_level_cmp_ge0000_cy<0>, Mcompar_nxt_level_cmp_ge0000_cy<4>, Mcompar_nxt_level_cmp_ge0000_cy<5>, Mrom__varindex0001, index<2>.
+
+Optimizing unit <Genius> ...
+
+Optimizing unit <Driver_VGA> ...
+
+Optimizing unit <debounce> ...
+
+Optimizing unit <display> ...
+
+Mapping all equations...
+WARNING:Xst:2170 - Unit Genius : the following signal(s) form a combinatorial loop: acerto_mux000629, Mrom__varindex00012, index<4>, acerto_mux000633, acerto_mux000674, acerto_mux0006, index_mux0004<4>.
+WARNING:Xst:2170 - Unit Genius : the following signal(s) form a combinatorial loop: index<1>.
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Genius, actual ratio is 14.
+Latch nxt_level has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 347
+ Flip-Flops                                            : 347
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Genius.ngr
+Top Level Output File Name         : Genius
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 38
+
+Cell Usage :
+# BELS                             : 2435
+#      GND                         : 1
+#      INV                         : 80
+#      LUT1                        : 475
+#      LUT2                        : 243
+#      LUT3                        : 105
+#      LUT3_L                      : 24
+#      LUT4                        : 282
+#      LUT4_D                      : 2
+#      LUT4_L                      : 1
+#      MUXCY                       : 658
+#      MUXF5                       : 28
+#      VCC                         : 1
+#      XORCY                       : 535
+# FlipFlops/Latches                : 472
+#      FD                          : 28
+#      FDC                         : 35
+#      FDCE                        : 91
+#      FDE                         : 31
+#      FDPE                        : 3
+#      FDR                         : 139
+#      FDRE                        : 10
+#      FDS                         : 10
+#      LD                          : 119
+#      LDC                         : 2
+#      LDE                         : 2
+#      LDP                         : 1
+#      LDPE                        : 1
+# RAMS                             : 1
+#      RAMB16_S36                  : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 36
+#      IBUF                        : 8
+#      OBUF                        : 28
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                      646  out of   4656    13%  
+ Number of Slice Flip Flops:            464  out of   9312     4%  
+ Number of 4 input LUTs:               1212  out of   9312    13%  
+ Number of IOs:                          38
+ Number of bonded IOBs:                  37  out of    232    15%  
+    IOB Flip Flops:                       8
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------+--------------------------+-------+
+Clock Signal                                              | Clock buffer(FF name)    | Load  |
+----------------------------------------------------------+--------------------------+-------+
+clk                                                       | BUFGP                    | 348   |
+acerto_not0002(acerto_not00021:O)                         | NONE(*)(acerto)          | 1     |
+index_show_cmp_gt0000(index_show_cmp_gt00001:O)           | NONE(*)(waiting)         | 1     |
+nxt_level_cmp_ge0000(Mcompar_nxt_level_cmp_ge0000_cy<9>:O)| NONE(*)(nxt_level)       | 2     |
+estado_cmp_eq0000(estado_FSM_Out01:O)                     | NONE(*)(flag)            | 6     |
+caracter4_not00011(caracter4_not00011111:O)               | BUFG(*)(caracter1_0)     | 76    |
+nxt_level_not00011(nxt_level_not00011:O)                  | BUFG(*)(points_0)        | 32    |
+LED_component/clk_enable                                  | NONE(LED_component/LED_6)| 7     |
+----------------------------------------------------------+--------------------------+-------+
+(*) These 6 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------+------------------------+-------+
+Control Signal                                 | Buffer(FF name)        | Load  |
+-----------------------------------------------+------------------------+-------+
+rst_counter(rst_counter:O)                     | NONE(count_clk0_0)     | 58    |
+waiting_not0001(waiting_not00011:O)            | NONE(count_clk_0)      | 33    |
+rst_tela(rst_tela81:O)                         | NONE(tela_0)           | 32    |
+index_show_cmp_gt0000(index_show_cmp_gt00001:O)| NONE(index_show_0)     | 4     |
+nxt_level_not00011(nxt_level_not00011:O)       | NONE(acerto)           | 3     |
+rst                                            | IBUF                   | 3     |
+-----------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 12.540ns (Maximum Frequency: 79.745MHz)
+   Minimum input arrival time before clock: 9.724ns
+   Maximum output required time after clock: 13.558ns
+   Maximum combinational path delay: 9.223ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 10.341ns (frequency: 96.701MHz)
+  Total number of paths / destination ports: 145797 / 640
+-------------------------------------------------------------------------
+Delay:               10.341ns (Levels of Logic = 30)
+  Source:            LED_component/cont_clk_1 (FF)
+  Destination:       LED_component/number_9 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: LED_component/cont_clk_1 to LED_component/number_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.514   0.532  LED_component/cont_clk_1 (LED_component/cont_clk_1)
+     LUT1:I0->O            1   0.612   0.000  LED_component/Madd_sel_led_add0000_cy<1>_rt (LED_component/Madd_sel_led_add0000_cy<1>_rt)
+     MUXCY:S->O            1   0.404   0.000  LED_component/Madd_sel_led_add0000_cy<1> (LED_component/Madd_sel_led_add0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  LED_component/Madd_sel_led_add0000_cy<2> (LED_component/Madd_sel_led_add0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  LED_component/Madd_sel_led_add0000_cy<3> (LED_component/Madd_sel_led_add0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  LED_component/Madd_sel_led_add0000_cy<4> (LED_component/Madd_sel_led_add0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  LED_component/Madd_sel_led_add0000_cy<5> (LED_component/Madd_sel_led_add0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  LED_component/Madd_sel_led_add0000_cy<6> (LED_component/Madd_sel_led_add0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  LED_component/Madd_sel_led_add0000_cy<7> (LED_component/Madd_sel_led_add0000_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<8> (LED_component/Madd_sel_led_add0000_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<9> (LED_component/Madd_sel_led_add0000_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<10> (LED_component/Madd_sel_led_add0000_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<11> (LED_component/Madd_sel_led_add0000_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<12> (LED_component/Madd_sel_led_add0000_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<13> (LED_component/Madd_sel_led_add0000_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<14> (LED_component/Madd_sel_led_add0000_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<15> (LED_component/Madd_sel_led_add0000_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<16> (LED_component/Madd_sel_led_add0000_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/Madd_sel_led_add0000_cy<17> (LED_component/Madd_sel_led_add0000_cy<17>)
+     XORCY:CI->O           1   0.699   0.509  LED_component/Madd_sel_led_add0000_xor<18> (LED_component/sel_led_add0000<18>)
+     LUT2:I0->O            1   0.612   0.000  LED_component/cont_clk_cmp_eq0000_wg_lut<0> (LED_component/cont_clk_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  LED_component/cont_clk_cmp_eq0000_wg_cy<0> (LED_component/cont_clk_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/cont_clk_cmp_eq0000_wg_cy<1> (LED_component/cont_clk_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/cont_clk_cmp_eq0000_wg_cy<2> (LED_component/cont_clk_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/cont_clk_cmp_eq0000_wg_cy<3> (LED_component/cont_clk_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/cont_clk_cmp_eq0000_wg_cy<4> (LED_component/cont_clk_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  LED_component/cont_clk_cmp_eq0000_wg_cy<5> (LED_component/cont_clk_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O          35   0.288   1.077  LED_component/cont_clk_cmp_eq0000_wg_cy<6> (LED_component/cont_clk_cmp_eq0000)
+     LUT4:I3->O           42   0.612   1.145  LED_component/sel_led_mux0001<2>1 (LED_component/sel_led_mux0001<2>)
+     LUT3:I1->O            1   0.612   0.360  LED_component/number_mux0003<9>_SW0 (N152)
+     LUT4:I3->O            1   0.612   0.000  LED_component/number_mux0003<9> (LED_component/number_mux0003<9>)
+     FD:D                      0.268          LED_component/number_9
+    ----------------------------------------
+    Total                     10.341ns (6.719ns logic, 3.622ns route)
+                                       (65.0% logic, 35.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'acerto_not0002'
+  Clock period: 1.134ns (frequency: 881.834MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.134ns (Levels of Logic = 1)
+  Source:            acerto (LATCH)
+  Destination:       acerto (LATCH)
+  Source Clock:      acerto_not0002 falling
+  Destination Clock: acerto_not0002 falling
+
+  Data Path: acerto to acerto
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDPE:G->Q             5   0.588   0.000  acerto (acerto)
+     MUXF5:I1->O           1   0.278   0.000  acerto_mux000689_f5 (acerto_mux0006)
+     LDPE:D                    0.268          acerto
+    ----------------------------------------
+    Total                      1.134ns (1.134ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'estado_cmp_eq0000'
+  Clock period: 12.540ns (frequency: 79.745MHz)
+  Total number of paths / destination ports: 271 / 7
+-------------------------------------------------------------------------
+Delay:               12.540ns (Levels of Logic = 38)
+  Source:            flag (LATCH)
+  Destination:       nivel_0 (LATCH)
+  Source Clock:      estado_cmp_eq0000 falling
+  Destination Clock: estado_cmp_eq0000 falling
+
+  Data Path: flag to nivel_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q              10   0.588   0.753  flag (flag)
+     LUT4_L:I3->LO         1   0.612   0.252  index_mux0004<0>1_1 (index_mux0004<0>1)
+     LUT4_D:I0->O          8   0.612   0.643  Mmux_index11 (index<0>)
+     INV:I->O              1   0.612   0.000  Madd_index_addsub0000_lut<0>_INV_0 (Madd_index_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  Madd_index_addsub0000_cy<0> (Madd_index_addsub0000_cy<0>)
+     XORCY:CI->O           2   0.699   0.383  Madd_index_addsub0000_xor<1> (index_addsub0000<1>)
+     LUT4:I3->O            1   0.612   0.000  Mmux_index1211 (Mmux_index121)
+     MUXCY:S->O            1   0.404   0.000  Madd_index_addsub0000_cy<1> (Madd_index_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<2> (Madd_index_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<3> (Madd_index_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<4> (Madd_index_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<5> (Madd_index_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<6> (Madd_index_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<7> (Madd_index_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<8> (Madd_index_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<9> (Madd_index_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<10> (Madd_index_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<11> (Madd_index_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<12> (Madd_index_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<13> (Madd_index_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<14> (Madd_index_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<15> (Madd_index_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<16> (Madd_index_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<17> (Madd_index_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<18> (Madd_index_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<19> (Madd_index_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<20> (Madd_index_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<21> (Madd_index_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<22> (Madd_index_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<23> (Madd_index_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<24> (Madd_index_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<25> (Madd_index_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<26> (Madd_index_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_addsub0000_cy<27> (Madd_index_addsub0000_cy<27>)
+     XORCY:CI->O           1   0.699   0.387  Madd_index_addsub0000_xor<28> (index_addsub0000<28>)
+     LUT3:I2->O            3   0.612   0.603  index_mux0004<28>1 (index_mux0004<28>)
+     LUT3:I0->O            1   0.612   0.000  Mcompar_nxt_level_cmp_ge0000_lut<8> (Mcompar_nxt_level_cmp_ge0000_lut<8>)
+     MUXCY:S->O            1   0.404   0.000  Mcompar_nxt_level_cmp_ge0000_cy<8> (Mcompar_nxt_level_cmp_ge0000_cy<8>)
+     MUXCY:CI->O           5   0.288   0.538  Mcompar_nxt_level_cmp_ge0000_cy<9> (nxt_level_cmp_ge0000)
+     LDE:GE                    0.483          nivel_1
+    ----------------------------------------
+    Total                     12.540ns (8.980ns logic, 3.559ns route)
+                                       (71.6% logic, 28.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'nxt_level_not00011'
+  Clock period: 4.596ns (frequency: 217.559MHz)
+  Total number of paths / destination ports: 528 / 32
+-------------------------------------------------------------------------
+Delay:               4.596ns (Levels of Logic = 32)
+  Source:            points_1 (LATCH)
+  Destination:       points_31 (LATCH)
+  Source Clock:      nxt_level_not00011 falling
+  Destination Clock: nxt_level_not00011 falling
+
+  Data Path: points_1 to points_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.588   0.532  points_1 (points_1)
+     LUT1:I0->O            1   0.612   0.000  Madd_points_add0000_cy<1>_rt (Madd_points_add0000_cy<1>_rt)
+     MUXCY:S->O            1   0.404   0.000  Madd_points_add0000_cy<1> (Madd_points_add0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<2> (Madd_points_add0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<3> (Madd_points_add0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<4> (Madd_points_add0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<5> (Madd_points_add0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<6> (Madd_points_add0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<7> (Madd_points_add0000_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<8> (Madd_points_add0000_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<9> (Madd_points_add0000_cy<9>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_points_add0000_cy<10> (Madd_points_add0000_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<11> (Madd_points_add0000_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<12> (Madd_points_add0000_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<13> (Madd_points_add0000_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<14> (Madd_points_add0000_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<15> (Madd_points_add0000_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<16> (Madd_points_add0000_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<17> (Madd_points_add0000_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<18> (Madd_points_add0000_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<19> (Madd_points_add0000_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<20> (Madd_points_add0000_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<21> (Madd_points_add0000_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<22> (Madd_points_add0000_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<23> (Madd_points_add0000_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<24> (Madd_points_add0000_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<25> (Madd_points_add0000_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<26> (Madd_points_add0000_cy<26>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<27> (Madd_points_add0000_cy<27>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<28> (Madd_points_add0000_cy<28>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_points_add0000_cy<29> (Madd_points_add0000_cy<29>)
+     MUXCY:CI->O           0   0.051   0.000  Madd_points_add0000_cy<30> (Madd_points_add0000_cy<30>)
+     XORCY:CI->O           1   0.699   0.000  Madd_points_add0000_xor<31> (points_add0000<31>)
+     LD:D                      0.268          points_31
+    ----------------------------------------
+    Total                      4.596ns (4.065ns logic, 0.532ns route)
+                                       (88.4% logic, 11.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 4891 / 147
+-------------------------------------------------------------------------
+Offset:              9.724ns (Levels of Logic = 35)
+  Source:            dif<1> (PAD)
+  Destination:       Mrom__varindex0002 (RAM)
+  Destination Clock: clk rising
+
+  Data Path: dif<1> to Mrom__varindex0002
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.106   0.520  dif_1_IBUF (dif_1_IBUF)
+     LUT3:I1->O            1   0.612   0.000  Madd_index_show_add0000_lut<0> (Madd_index_show_add0000_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  Madd_index_show_add0000_cy<0> (Madd_index_show_add0000_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<1> (Madd_index_show_add0000_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<2> (Madd_index_show_add0000_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<3> (Madd_index_show_add0000_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<4> (Madd_index_show_add0000_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<5> (Madd_index_show_add0000_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<6> (Madd_index_show_add0000_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<7> (Madd_index_show_add0000_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<8> (Madd_index_show_add0000_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<9> (Madd_index_show_add0000_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<10> (Madd_index_show_add0000_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<11> (Madd_index_show_add0000_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<12> (Madd_index_show_add0000_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<13> (Madd_index_show_add0000_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<14> (Madd_index_show_add0000_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<15> (Madd_index_show_add0000_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<16> (Madd_index_show_add0000_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<17> (Madd_index_show_add0000_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<18> (Madd_index_show_add0000_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<19> (Madd_index_show_add0000_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<20> (Madd_index_show_add0000_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<21> (Madd_index_show_add0000_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<22> (Madd_index_show_add0000_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<23> (Madd_index_show_add0000_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<24> (Madd_index_show_add0000_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<25> (Madd_index_show_add0000_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<26> (Madd_index_show_add0000_cy<26>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_index_show_add0000_cy<27> (Madd_index_show_add0000_cy<27>)
+     XORCY:CI->O           2   0.699   0.532  Madd_index_show_add0000_xor<28> (index_show_add0000<28>)
+     LUT3:I0->O            1   0.612   0.000  Mcompar_count_clk_cmp_ge0000_lut<13> (Mcompar_count_clk_cmp_ge0000_lut<13>)
+     MUXCY:S->O            1   0.404   0.000  Mcompar_count_clk_cmp_ge0000_cy<13> (Mcompar_count_clk_cmp_ge0000_cy<13>)
+     MUXCY:CI->O          33   0.399   1.225  Mcompar_count_clk_cmp_ge0000_cy<14> (count_clk_cmp_ge0000)
+     LUT3:I0->O            5   0.612   0.538  index_show_and00001 (index_show_and0000)
+     RAMB16_S36:EN             0.670          Mrom__varindex0002
+    ----------------------------------------
+    Total                      9.724ns (6.909ns logic, 2.815ns route)
+                                       (71.0% logic, 29.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2601 / 19
+-------------------------------------------------------------------------
+Offset:              13.558ns (Levels of Logic = 14)
+  Source:            Mrom__varindex0002 (RAM)
+  Destination:       R<2> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Mrom__varindex0002 to R<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S36:CLK->DO23    1   2.436   0.509  Mrom__varindex0002 (color_show<23>)
+     LUT4:I0->O            1   0.612   0.000  colors_vector_and0000_wg_lut<1> (colors_vector_and0000_wg_lut<1>)
+     MUXCY:S->O            1   0.404   0.000  colors_vector_and0000_wg_cy<1> (colors_vector_and0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  colors_vector_and0000_wg_cy<2> (colors_vector_and0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  colors_vector_and0000_wg_cy<3> (colors_vector_and0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  colors_vector_and0000_wg_cy<4> (colors_vector_and0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  colors_vector_and0000_wg_cy<5> (colors_vector_and0000_wg_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  colors_vector_and0000_wg_cy<6> (colors_vector_and0000_wg_cy<6>)
+     MUXCY:CI->O           4   0.399   0.502  colors_vector_and0000_wg_cy<7> (colors_vector_and0000)
+     LUT4:I3->O            1   0.612   0.360  colors_vector<3>31_SW0 (N204)
+     LUT4:I3->O            4   0.612   0.651  colors_vector<3>31 (LED_3_OBUF)
+     LUT4:I0->O            1   0.612   0.360  VGA_Controller/R<1>22 (VGA_Controller/R<1>22)
+     LUT4:I3->O            1   0.612   0.387  VGA_Controller/R<1>53_SW0 (N252)
+     LUT4:I2->O            3   0.612   0.451  VGA_Controller/R<1>53 (R_0_OBUF)
+     OBUF:I->O                 3.169          R_2_OBUF (R<2>)
+    ----------------------------------------
+    Total                     13.558ns (10.338ns logic, 3.220ns route)
+                                       (76.2% logic, 23.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'LED_component/clk_enable'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              4.114ns (Levels of Logic = 1)
+  Source:            LED_component/LED_6 (LATCH)
+  Destination:       display7<6> (PAD)
+  Source Clock:      LED_component/clk_enable falling
+
+  Data Path: LED_component/LED_6 to display7<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.588   0.357  LED_component/LED_6 (LED_component/LED_6)
+     OBUF:I->O                 3.169          display7_6_OBUF (display7<6>)
+    ----------------------------------------
+    Total                      4.114ns (3.757ns logic, 0.357ns route)
+                                       (91.3% logic, 8.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'nxt_level_cmp_ge0000'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.114ns (Levels of Logic = 1)
+  Source:            nxt_level_1 (LATCH)
+  Destination:       state_led<1> (PAD)
+  Source Clock:      nxt_level_cmp_ge0000 falling
+
+  Data Path: nxt_level_1 to state_led<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.588   0.357  nxt_level_1 (nxt_level_1)
+     OBUF:I->O                 3.169          state_led_1_OBUF (state_led<1>)
+    ----------------------------------------
+    Total                      4.114ns (3.757ns logic, 0.357ns route)
+                                       (91.3% logic, 8.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'acerto_not0002'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.295ns (Levels of Logic = 1)
+  Source:            acerto (LATCH)
+  Destination:       state_led<0> (PAD)
+  Source Clock:      acerto_not0002 falling
+
+  Data Path: acerto to state_led<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDPE:G->Q             5   0.588   0.538  acerto (acerto)
+     OBUF:I->O                 3.169          state_led_0_OBUF (state_led<0>)
+    ----------------------------------------
+    Total                      4.295ns (3.757ns logic, 0.538ns route)
+                                       (87.5% logic, 12.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 39 / 12
+-------------------------------------------------------------------------
+Delay:               9.223ns (Levels of Logic = 6)
+  Source:            Btns_colors<3> (PAD)
+  Destination:       R<2> (PAD)
+
+  Data Path: Btns_colors<3> to R<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.106   0.651  Btns_colors_3_IBUF (Btns_colors_3_IBUF)
+     LUT4:I0->O            4   0.612   0.651  colors_vector<3>31 (LED_3_OBUF)
+     LUT4:I0->O            1   0.612   0.360  VGA_Controller/R<1>22 (VGA_Controller/R<1>22)
+     LUT4:I3->O            1   0.612   0.387  VGA_Controller/R<1>53_SW0 (N252)
+     LUT4:I2->O            3   0.612   0.451  VGA_Controller/R<1>53 (R_0_OBUF)
+     OBUF:I->O                 3.169          R_2_OBUF (R<2>)
+    ----------------------------------------
+    Total                      9.223ns (6.723ns logic, 2.500ns route)
+                                       (72.9% logic, 27.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.50 secs
+ 
+--> 
+
+
+Total memory usage is 529220 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  122 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

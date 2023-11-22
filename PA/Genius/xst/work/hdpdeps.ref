@@ -1,0 +1,32 @@
+V3 20
+FL /home/jeas/Microeletronica/PA/Genius/char_rom.vhd 2018/06/25.09:28:26 P.20131013
+PH work/rom_characters 1700601623 \
+      FL /home/jeas/Microeletronica/PA/Genius/char_rom.vhd PB ieee/std_logic_1164 1381692176
+FL /home/jeas/Microeletronica/PA/Genius/debounce.vhd 2023/11/21.18:51:52 P.20131013
+EN work/debounce 1700603605 FL /home/jeas/Microeletronica/PA/Genius/debounce.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/debounce/Behavioral 1700603606 \
+      FL /home/jeas/Microeletronica/PA/Genius/debounce.vhd EN work/debounce 1700603605
+FL /home/jeas/Microeletronica/PA/Genius/display.vhd 2023/11/17.22:00:56 P.20131013
+EN work/display 1700603607 FL /home/jeas/Microeletronica/PA/Genius/display.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/display/Behavioral 1700603608 \
+      FL /home/jeas/Microeletronica/PA/Genius/display.vhd EN work/display 1700603607
+FL /home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd 2023/11/21.18:40:43 P.20131013
+EN work/Driver_VGA 1700603603 \
+      FL /home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd \
+      PB ieee/std_logic_1164 1381692176 PB work/modulos 1700603602 \
+      PH work/rom_characters 1700601623
+AR work/Driver_VGA/Behavioral 1700603604 \
+      FL /home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd EN work/Driver_VGA 1700603603
+FL /home/jeas/Microeletronica/PA/Genius/Genius.vhd 2023/11/21.18:53:19 P.20131013
+EN work/Genius 1700603609 FL /home/jeas/Microeletronica/PA/Genius/Genius.vhd \
+      PB ieee/std_logic_1164 1381692176 PB work/modulos 1700603602
+AR work/Genius/Behavioral 1700603610 \
+      FL /home/jeas/Microeletronica/PA/Genius/Genius.vhd EN work/Genius 1700603609 \
+      CP Driver_VGA CP debounce CP display
+FL /home/jeas/Microeletronica/PA/Genius/modulos.vhd 2023/11/21.18:47:59 P.20131013
+PH work/modulos 1700603601 FL /home/jeas/Microeletronica/PA/Genius/modulos.vhd \
+      PB ieee/std_logic_1164 1381692176 PH work/rom_characters 1700601623
+PB work/modulos 1700603602 \
+      FL /home/jeas/Microeletronica/PA/Genius/modulos.vhd PH work/modulos 1700603601

@@ -1,0 +1,5 @@
+vhdl work "modulos.vhd"
+vhdl work "Driver_VGA.vhd"
+vhdl work "display.vhd"
+vhdl work "debounce.vhd"
+vhdl work "Genius.vhd"

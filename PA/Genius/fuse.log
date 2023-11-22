@@ -1,0 +1,26 @@
+Running: /home/jeas/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/jeas/Microeletronica/PA/Genius/Genius_tb_isim_beh.exe -prj /home/jeas/Microeletronica/PA/Genius/Genius_tb_beh.prj work.Genius_tb 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" into library work
+ERROR:HDLCompiler:104 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 3: Cannot find <rom_characters> in library <work>. Please ensure that the library was compiled, and that a library and a use clause are present in the VHDL file.
+ERROR:HDLCompiler:854 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 4: Unit <modulos> ignored due to previous errors.
+ERROR:HDLCompiler:688 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 15: Package declaration modulos is not yet compiled
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 16: <integer> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 17: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 21: <led> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 23: <led> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 25: <led> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 27: <led> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 29: <led> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 19: <color_shown> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 31: <led> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 34: <std_logic_vector> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 35: <integer> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 39: <speed> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 41: <speed> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 43: <speed> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 37: <dif> is not declared.
+ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 45: <speed> is not declared.
+VHDL file /home/jeas/Microeletronica/PA/Genius/modulos.vhd ignored due to errors

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/jeas/Microeletronica/PA/Genius/Genius.ncd
+OUTFILE=/home/jeas/Microeletronica/PA/Genius/Genius.bit
+FAMILY=Spartan3E
+PART=xc3s500e-5fg320
+WORKINGDIR=/home/jeas/Microeletronica/PA/Genius
+LICENSE=WebPack
+USER_INFO=__0_0_0
