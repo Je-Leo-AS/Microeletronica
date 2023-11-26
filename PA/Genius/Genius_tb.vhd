@@ -1,4 +1,3 @@
-
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
@@ -17,20 +16,25 @@ ARCHITECTURE behavior OF Genius_tb IS
 	 Generic(Fmax :integer;
 			  N :integer;
 			  time_out : integer;
-			  Sequencia_por_nivel : integer;
 			  s_time : integer;
 			  F_att : integer);
-    PORT(start : IN  std_logic;
-         clk : IN  std_logic;
-         dif : IN  std_logic_vector(1 downto 0);
-         LED : OUT  std_logic_vector(3 downto 0);
-         display7 : OUT  std_logic_vector(6 downto 0);
-         Btns_colors : IN  std_logic_vector(3 downto 0);
-         anodo : OUT  std_logic_vector(3 downto 0);
-         state_led : OUT  std_logic_vector(3 downto 0);
-         rst : IN  std_logic);
+    Port ( start : in  STD_LOGIC;
+			  clk : in  STD_LOGIC;
+           dif : in  STD_LOGIC_VECTOR (1 downto 0);
+           Btns_colors : in  STD_LOGIC_VECTOR (3 downto 0);
+			  rst : in STD_LOGIC;
+           LED : out  STD_LOGIC_VECTOR (3 downto 0);
+           display7 : out  STD_LOGIC_VECTOR (6 downto 0);
+			  anodo : out std_logic_vector(3 downto 0);
+			  state_led : out std_logic_vector(3 downto 0);
+			  H_SYNC    : OUT STD_LOGIC;        
+			  V_SYNC    : OUT STD_LOGIC;
+			  R            : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			  G            : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+			  B            : OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
     END COMPONENT;
     
+
 
    --Inputs
    signal start : std_logic := '0';
@@ -44,9 +48,15 @@ ARCHITECTURE behavior OF Genius_tb IS
    signal display7 : std_logic_vector(6 downto 0);
    signal anodo : std_logic_vector(3 downto 0);
    signal state_led : std_logic_vector(3 downto 0);
+	
+	signal H_SYNC: STD_LOGIC;        
+	signal V_SYNC: STD_LOGIC;
+	signal R     : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	signal G     : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	signal B     : STD_LOGIC_VECTOR(1 DOWNTO 0);
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 20 ns;
  
 BEGIN
  
@@ -55,8 +65,7 @@ BEGIN
 			GENERIC MAP(
 			  Fmax => 1,
 			  N => 2,
-			  time_out => 5,
-			  Sequencia_por_nivel => 4,
+			  time_out => 10,
 			  s_time => 1,
 			  F_att => 5)
 			PORT MAP (
@@ -66,9 +75,14 @@ BEGIN
           LED => LED,
           display7 => display7,
           Btns_colors => Btns_colors,
+			 rst => rst,
           anodo => anodo,
           state_led => state_led,
-          rst => rst);
+			 H_SYNC => H_SYNC,
+			V_SYNC => V_SYNC,
+			R  => R,
+			G  => G,
+			B  => B);
 
    clk_process :process
    begin
@@ -82,9 +96,14 @@ BEGIN
    stim_proc: process
    begin			
 	start <= '1';
-      wait for 5*clk_period;
+      wait for 1*clk_period;
 	start <= '0';
-      wait for 25*clk_period;
+      wait for 10*clk_period;
+			wait;
+	Btns_colors <= "0001";
+		 wait for 2*clk_period;
+	Btns_colors <= "0000";
+	    wait for 20*clk_period;
 	Btns_colors <= "0001";
 		 wait for 2*clk_period;
 	Btns_colors <= "0000";
@@ -92,33 +111,7 @@ BEGIN
 	Btns_colors <= "0010";
 		 wait for 2*clk_period;
 	Btns_colors <= "0000";
-		 wait for 1*clk_period;
-	Btns_colors <= "0100";
-		 wait for 2*clk_period;
-	Btns_colors <= "0000";
-		 wait for 1*clk_period;
-	Btns_colors <= "1000";
-		 wait for 2*clk_period;
-	Btns_colors <= "0000";
-		wait for 50*clk_period;
-		
-		
-		
-	Btns_colors <= "0001";
-		 wait for 2*clk_period;
-	Btns_colors <= "0000";
-		 wait for 1*clk_period;
-	Btns_colors <= "0010";
-		 wait for 2*clk_period;
-	Btns_colors <= "0000";
-		 wait for 1*clk_period;
-	Btns_colors <= "0100";
-		 wait for 2*clk_period;
-	Btns_colors <= "0000";
-		 wait for 1*clk_period;
-	Btns_colors <= "1000";
-		 wait for 2*clk_period;
-	Btns_colors <= "0000";
+	
    end process;
 
 END;

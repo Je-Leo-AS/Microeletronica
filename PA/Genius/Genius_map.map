@@ -9,20 +9,33 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Tue Nov 21 18:53:31 2023
+Mapped Date    : Fri Nov 24 16:31:58 2023
 
 Mapping design into LUTs...
 Running directed packing...
+WARNING:Pack:266 - The function generator caracter1_mux0006<2>21 failed to merge
+   with F5 multiplexer caracter4_mux0006<1>1_f5.  There is a conflict for the
+   FXMUX.  The design will exhibit suboptimal timing.
 Running delay-based LUT packing...
 Running related packing...
 Updating timing models...
-WARNING:PhysDesignRules:372 - Gated clock. Clock net acerto_not0002 is sourced
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   VGA_Controller/bit_addr_not0001 is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net state_led_1_OBUF is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net estado_cmp_eq0000 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net index_buton_not0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net index_show_cmp_gt0000 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net enable_counter_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net color_click_cmp_eq0000 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net rst_counter_not0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 
@@ -31,34 +44,34 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    3
+Number of warnings:    7
 Logic Utilization:
-  Total Number Slice Registers:         464 out of   9,312    4%
-    Number used as Flip Flops:          347
-    Number used as Latches:             117
-  Number of 4 input LUTs:               708 out of   9,312    7%
+  Total Number Slice Registers:         487 out of   9,312    5%
+    Number used as Flip Flops:          351
+    Number used as Latches:             136
+  Number of 4 input LUTs:               785 out of   9,312    8%
 Logic Distribution:
-  Number of occupied Slices:            615 out of   4,656   13%
-    Number of Slices containing only related logic:     615 out of     615 100%
-    Number of Slices containing unrelated logic:          0 out of     615   0%
+  Number of occupied Slices:            646 out of   4,656   13%
+    Number of Slices containing only related logic:     646 out of     646 100%
+    Number of Slices containing unrelated logic:          0 out of     646   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,186 out of   9,312   12%
-    Number used as logic:               708
-    Number used as a route-thru:        478
+  Total Number of 4 input LUTs:       1,240 out of   9,312   13%
+    Number used as logic:               785
+    Number used as a route-thru:        455
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 37 out of     232   15%
-    IOB Latches:                          8
+  Number of bonded IOBs:                 38 out of     232   16%
+    IOB Latches:                          7
   Number of RAMB16s:                      1 out of      20    5%
   Number of BUFGMUXs:                     3 out of      24   12%
 
-Average Fanout of Non-Clock Nets:                2.41
+Average Fanout of Non-Clock Nets:                2.63
 
 Peak Memory Usage:  575 MB
 Total REAL time to MAP completion:  2 secs 
-Total CPU time to MAP completion:   1 secs 
+Total CPU time to MAP completion:   2 secs 
 
 NOTES:
 

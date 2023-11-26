@@ -4,23 +4,32 @@ Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
 Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" into library work
-ERROR:HDLCompiler:104 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 3: Cannot find <rom_characters> in library <work>. Please ensure that the library was compiled, and that a library and a use clause are present in the VHDL file.
-ERROR:HDLCompiler:854 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 4: Unit <modulos> ignored due to previous errors.
-ERROR:HDLCompiler:688 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 15: Package declaration modulos is not yet compiled
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 16: <integer> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 17: <std_logic_vector> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 21: <led> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 23: <led> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 25: <led> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 27: <led> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 29: <led> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 19: <color_shown> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 31: <led> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 34: <std_logic_vector> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 35: <integer> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 39: <speed> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 41: <speed> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 43: <speed> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 37: <dif> is not declared.
-ERROR:HDLCompiler:69 - "/home/jeas/Microeletronica/PA/Genius/modulos.vhd" Line 45: <speed> is not declared.
-VHDL file /home/jeas/Microeletronica/PA/Genius/modulos.vhd ignored due to errors
+Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/char_rom.vhd" into library work
+Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd" into library work
+WARNING:HDLCompiler:946 - "/home/jeas/Microeletronica/PA/Genius/Driver_VGA.vhd" Line 75: Actual for formal port clk is neither a static name nor a globally static expression
+Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/display.vhd" into library work
+Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/debounce.vhd" into library work
+Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/Genius.vhd" into library work
+Parsing VHDL file "/home/jeas/Microeletronica/PA/Genius/Genius_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 87636 KB
+Fuse CPU Usage: 1580 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package modulos
+Compiling package numeric_std
+Compiling architecture arch of entity font_rom [font_rom_default]
+Compiling architecture behavioral of entity Driver_VGA [\Driver_VGA(64,800,56,120,23,600...]
+Compiling architecture behavioral of entity debounce [\debounce(1,1)\]
+Compiling architecture behavioral of entity display [\display(1,5)\]
+Compiling architecture behavioral of entity Genius [\Genius(1,2,10,1,5)\]
+Compiling architecture behavior of entity genius_tb
+Time Resolution for simulation is 1ps.
+Compiled 17 VHDL Units
+Built simulation executable /home/jeas/Microeletronica/PA/Genius/Genius_tb_isim_beh.exe
+Fuse Memory Usage: 1190196 KB
+Fuse CPU Usage: 1760 ms
+GCC CPU Usage: 1030 ms

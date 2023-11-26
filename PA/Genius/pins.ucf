@@ -1,16 +1,19 @@
 NET "start" LOC = "R17";
-NET "clk" LOC = "B8";
-
 NET "rst" LOC = "N17";
+NET "clk" LOC = "B8";
 
 NET "LED(0)" LOC = "R4";
 NET "LED(1)" LOC = "F4";
 NET "LED(2)" LOC = "P15";
 NET "LED(3)" LOC = "E17";
+#NET "LED(0)" LOC = "P4";
+#NET "LED(1)" LOC = "E4";
+#NET "LED(2)" LOC = "P16";
+#NET "LED(3)" LOC = "E16";
 
 NET "state_led(0)" LOC = "K14";
 NET "state_led(1)" LOC = "K15";
-#NET "state_led(2)" LOC = "J15";
+NET "state_led(2)" LOC = "J15";
 NET "state_led(3)" LOC = "J14";
 
 
@@ -38,10 +41,13 @@ net "anodo(3)" loc = "F15";
 net "R(2)" loc = "R8";
 net "R(1)" loc = "T8";
 net "R(0)" loc = "R9";
+
 net "G(2)" loc = "P6";
 net "G(1)" loc = "P8";
 net "G(0)" loc = "N8";
+
 net "B(1)" loc = "U4";
 net "B(0)" loc = "U5";
+
 net "H_SYNC" loc = "T4";
 net "V_SYNC" loc = "U3";

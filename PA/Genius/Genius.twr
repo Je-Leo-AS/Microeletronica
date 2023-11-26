@@ -44,13 +44,14 @@ Setup/Hold to clock clk
               |Max Setup to|Max Hold to |                  | Clock  |
 Source        | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 --------------+------------+------------+------------------+--------+
-Btns_colors<0>|    1.713(R)|    1.446(R)|clk_BUFGP         |   0.000|
-Btns_colors<1>|    2.199(R)|    0.355(R)|clk_BUFGP         |   0.000|
-Btns_colors<2>|    1.809(R)|    1.218(R)|clk_BUFGP         |   0.000|
-Btns_colors<3>|    2.640(R)|    0.331(R)|clk_BUFGP         |   0.000|
-dif<0>        |    8.273(R)|   -0.578(R)|clk_BUFGP         |   0.000|
-dif<1>        |    8.369(R)|   -0.506(R)|clk_BUFGP         |   0.000|
-start         |    2.460(R)|    0.655(R)|clk_BUFGP         |   0.000|
+Btns_colors<0>|    2.831(R)|    0.083(R)|clk_BUFGP         |   0.000|
+Btns_colors<1>|    3.691(R)|    0.665(R)|clk_BUFGP         |   0.000|
+Btns_colors<2>|    3.250(R)|   -0.465(R)|clk_BUFGP         |   0.000|
+Btns_colors<3>|    4.046(R)|   -0.095(R)|clk_BUFGP         |   0.000|
+dif<0>        |    9.287(R)|   -0.222(R)|clk_BUFGP         |   0.000|
+dif<1>        |    9.360(R)|   -0.088(R)|clk_BUFGP         |   0.000|
+rst           |    3.386(R)|   -0.197(R)|clk_BUFGP         |   0.000|
+start         |    3.322(R)|   -0.232(R)|clk_BUFGP         |   0.000|
 --------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -58,25 +59,28 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-B<0>        |   19.996(R)|clk_BUFGP         |   0.000|
-B<1>        |   19.994(R)|clk_BUFGP         |   0.000|
-G<0>        |   20.714(R)|clk_BUFGP         |   0.000|
-G<1>        |   20.869(R)|clk_BUFGP         |   0.000|
-G<2>        |   21.080(R)|clk_BUFGP         |   0.000|
-H_SYNC      |    9.999(R)|clk_BUFGP         |   0.000|
-LED<0>      |   16.702(R)|clk_BUFGP         |   0.000|
-LED<1>      |   16.993(R)|clk_BUFGP         |   0.000|
-LED<2>      |   14.913(R)|clk_BUFGP         |   0.000|
-LED<3>      |   15.172(R)|clk_BUFGP         |   0.000|
-R<0>        |   19.981(R)|clk_BUFGP         |   0.000|
-R<1>        |   20.532(R)|clk_BUFGP         |   0.000|
-R<2>        |   20.223(R)|clk_BUFGP         |   0.000|
-V_SYNC      |   11.018(R)|clk_BUFGP         |   0.000|
-anodo<0>    |    7.677(R)|clk_BUFGP         |   0.000|
-anodo<1>    |    7.105(R)|clk_BUFGP         |   0.000|
-anodo<2>    |    7.836(R)|clk_BUFGP         |   0.000|
-anodo<3>    |    7.673(R)|clk_BUFGP         |   0.000|
-state_led<3>|    7.419(R)|clk_BUFGP         |   0.000|
+B<0>        |   15.776(R)|clk_BUFGP         |   0.000|
+B<1>        |   15.774(R)|clk_BUFGP         |   0.000|
+G<0>        |   16.443(R)|clk_BUFGP         |   0.000|
+G<1>        |   16.937(R)|clk_BUFGP         |   0.000|
+G<2>        |   16.929(R)|clk_BUFGP         |   0.000|
+H_SYNC      |   10.426(R)|clk_BUFGP         |   0.000|
+LED<0>      |   10.968(R)|clk_BUFGP         |   0.000|
+LED<1>      |   10.885(R)|clk_BUFGP         |   0.000|
+LED<2>      |   10.180(R)|clk_BUFGP         |   0.000|
+LED<3>      |   10.032(R)|clk_BUFGP         |   0.000|
+R<0>        |   16.544(R)|clk_BUFGP         |   0.000|
+R<1>        |   17.007(R)|clk_BUFGP         |   0.000|
+R<2>        |   17.029(R)|clk_BUFGP         |   0.000|
+V_SYNC      |   10.903(R)|clk_BUFGP         |   0.000|
+anodo<0>    |    7.381(R)|clk_BUFGP         |   0.000|
+anodo<1>    |    6.472(R)|clk_BUFGP         |   0.000|
+anodo<2>    |    7.723(R)|clk_BUFGP         |   0.000|
+anodo<3>    |    7.532(R)|clk_BUFGP         |   0.000|
+state_led<0>|    9.701(R)|clk_BUFGP         |   0.000|
+state_led<1>|    8.721(R)|clk_BUFGP         |   0.000|
+state_led<2>|   10.684(R)|clk_BUFGP         |   0.000|
+state_led<3>|    9.138(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -84,60 +88,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    9.325|         |         |         |
+clk            |   14.226|         |    5.149|         |
 ---------------+---------+---------+---------+---------+
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-Btns_colors<0> |B<0>           |   12.203|
-Btns_colors<0> |B<1>           |   12.201|
-Btns_colors<0> |G<0>           |   11.781|
-Btns_colors<0> |G<1>           |   11.936|
-Btns_colors<0> |G<2>           |   12.147|
-Btns_colors<0> |LED<0>         |    9.122|
-Btns_colors<0> |R<0>           |   10.244|
-Btns_colors<0> |R<1>           |   10.795|
-Btns_colors<0> |R<2>           |   10.486|
-Btns_colors<1> |B<0>           |   12.201|
-Btns_colors<1> |B<1>           |   12.199|
-Btns_colors<1> |G<0>           |   10.780|
-Btns_colors<1> |G<1>           |   10.935|
-Btns_colors<1> |G<2>           |   11.146|
-Btns_colors<1> |LED<1>         |    9.961|
-Btns_colors<1> |R<0>           |   10.889|
-Btns_colors<1> |R<1>           |   11.440|
-Btns_colors<1> |R<2>           |   11.131|
-Btns_colors<2> |B<0>           |   13.312|
-Btns_colors<2> |B<1>           |   13.310|
-Btns_colors<2> |G<0>           |   14.030|
-Btns_colors<2> |G<1>           |   14.185|
-Btns_colors<2> |G<2>           |   14.396|
-Btns_colors<2> |LED<2>         |    8.239|
-Btns_colors<2> |R<0>           |   13.297|
-Btns_colors<2> |R<1>           |   13.848|
-Btns_colors<2> |R<2>           |   13.539|
-Btns_colors<3> |B<0>           |   12.278|
-Btns_colors<3> |B<1>           |   12.276|
-Btns_colors<3> |G<0>           |   10.590|
-Btns_colors<3> |G<1>           |   10.745|
-Btns_colors<3> |G<2>           |   10.956|
-Btns_colors<3> |LED<3>         |    8.519|
-Btns_colors<3> |R<0>           |   11.606|
-Btns_colors<3> |R<1>           |   12.157|
-Btns_colors<3> |R<2>           |   11.848|
----------------+---------------+---------+
 
-
-Analysis completed Tue Nov 21 18:54:10 2023 
+Analysis completed Fri Nov 24 16:32:26 2023 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 355 MB
+Peak Memory Usage: 352 MB
 
 
 

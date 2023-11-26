@@ -1,3 +1,4 @@
+work	"Driver_VGA.vhd"
 work	"Genius.vhd"
 work	"debounce.vhd"
 work	"display.vhd"

@@ -1,5 +1,0 @@
-vhdl isim_temp "modulos.vhd"
-vhdl isim_temp "display.vhd"
-vhdl isim_temp "debounce.vhd"
-vhdl isim_temp "Genius.vhd"
-vhdl isim_temp "Genius_tb.vhd"

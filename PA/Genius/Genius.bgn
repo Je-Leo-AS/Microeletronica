@@ -5,7 +5,7 @@ Loading device for application Rf_Device from file '3s500e.nph' in environment
    "Genius" is an NCD, version 3.2, device xc3s500e, package fg320, speed -5
 Opened constraints file Genius.pcf.
 
-Tue Nov 21 18:42:06 2023
+Fri Nov 24 16:32:57 2023
 
 /home/jeas/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No Genius.ncd 
 
@@ -90,16 +90,26 @@ There were 0 CONFIG constraint(s) processed from Genius.pcf.
 
 
 Running DRC.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net estado_cmp_eq0000 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net index_show_cmp_gt0000 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net acerto_and0000 is sourced
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   VGA_Controller/bit_addr_not0001 is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net state_led_1_OBUF is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-DRC detected 0 errors and 3 warnings.  Please see the previously displayed
+WARNING:PhysDesignRules:372 - Gated clock. Clock net index_buton_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net enable_counter_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net color_click_cmp_eq0000 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net rst_counter_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 6 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "Genius.bit".

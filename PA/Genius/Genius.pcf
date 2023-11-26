@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Nov 21 18:53:33 2023
+// Written by: Map P.20131013 on Fri Nov 24 16:32:00 2023
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -35,6 +35,7 @@ COMP "dif<0>" LOCATE = SITE "H18" LEVEL 1;
 COMP "dif<1>" LOCATE = SITE "G18" LEVEL 1;
 COMP "state_led<0>" LOCATE = SITE "K14" LEVEL 1;
 COMP "state_led<1>" LOCATE = SITE "K15" LEVEL 1;
+COMP "state_led<2>" LOCATE = SITE "J15" LEVEL 1;
 COMP "state_led<3>" LOCATE = SITE "J14" LEVEL 1;
 COMP "Btns_colors<0>" LOCATE = SITE "H13" LEVEL 1;
 COMP "Btns_colors<1>" LOCATE = SITE "E18" LEVEL 1;
